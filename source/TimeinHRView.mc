@@ -7,213 +7,217 @@ import Toybox.Time;
 import Toybox.Math;
 
 class TimeinHRView extends WatchUi.DataField {
+  hidden var mValue as Numeric;
+  hidden var timeInHeartRateZones as Array;
+  hidden var userHeartRateZones as Lang.Array<Lang.Number> = [0, 0, 0, 0, 0, 0];
+  hidden var mZoneColors as Lang.Array<Lang.Number> = [
+    Graphics.COLOR_BLUE,
+    Graphics.COLOR_BLUE,
+    Graphics.COLOR_GREEN,
+    Graphics.COLOR_YELLOW,
+    Graphics.COLOR_ORANGE,
+    Graphics.COLOR_RED,
+  ];
+  hidden var timeInZoneFraction as Array<Lang.Float>;
+  hidden var currentZoneFraction as Float = 1.0;
+  hidden var currentZone as Number = 0;
 
-    hidden var mValue as Numeric;
-    hidden var timeInHeartRateZones as Array;
-    hidden var userHeartRateZones = [0, 0, 0, 0, 0, 0]; // 6 elements
-    hidden var mZoneColors = [Graphics.COLOR_BLUE, Graphics.COLOR_BLUE, Graphics.COLOR_GREEN, Graphics.COLOR_YELLOW, Graphics.COLOR_ORANGE, Graphics.COLOR_RED];
-    hidden var mZonePercentage as Array<Lang.Float>;
-    hidden var currentZoneFraction as Float = 1.0;
-    hidden var currentZone as Number = 0;
+  function initialize() {
+    DataField.initialize();
+    mValue = 0.0f;
+    timeInHeartRateZones = [0, 0, 0, 0, 0, 0];
+    var currentSport = UserProfile.getCurrentSport() as UserProfile.SportHrZone;
+    userHeartRateZones = UserProfile.getHeartRateZones(currentSport) as Lang.Array<Lang.Number>;
 
-    function initialize() {
-        DataField.initialize();
-        mValue = 0.0f;
-        timeInHeartRateZones = [0, 0, 0, 0, 0, 0];
-        var currentSport = UserProfile.getCurrentSport() as UserProfile.SportHrZone;
-        userHeartRateZones = UserProfile.getHeartRateZones(currentSport) as Lang.Array<Lang.Number>;
+    System.println("Current sport: " + currentSport);
+    System.println("Current zones: " + userHeartRateZones);
+    timeInZoneFraction = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0];
+  }
 
-        System.println("Current sport: " + currentSport);
-        System.println("Current zones: " + userHeartRateZones);
-        mZonePercentage = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0];
+  // Set your layout here. Anytime the size of obscurity of
+  // the draw context is changed this will be called.
+  function onLayout(dc as Dc) as Void {
+    var obscurityFlags = DataField.getObscurityFlags();
+    // Use the generic, centered layout
+    // View.setLayout(Rez.Layouts.MainLayout(dc));
+    drawBarsOnScreen(dc);
+  }
+
+  // The given info object contains all the current workout information.
+  // Calculate a value and save it locally in this method.
+  // Note that compute() and onUpdate() are asynchronous, and there is no
+  // guarantee that compute() will be called before onUpdate().
+  function compute(info as Activity.Info) as Void {
+    // See Activity.Info in the documentation for available information.
+    updateHeartRateZonesTime(info);
+  }
+
+  // Increase the time spent in the current heart rate zone
+  function updateHeartRateZonesTime(info as Activity.Info) as Void {
+    if (info == null) {
+      System.println("Info is null");
+      return;
     }
 
-    // Set your layout here. Anytime the size of obscurity of
-    // the draw context is changed this will be called.
-    function onLayout(dc as Dc) as Void {
-        var obscurityFlags = DataField.getObscurityFlags();
+    if (
+      info has :currentHeartRate && info has :elapsedTime &&
+      info.currentHeartRate != null &&
+      info.elapsedTime != null && info.elapsedTime > 1000
+    ) {
+      var currentHeartRate = info.currentHeartRate as Number;
 
-        // // Use the generic, centered layout
-        // View.setLayout(Rez.Layouts.MainLayout(dc));
+      var elapsedMilliSeconds = info.elapsedTime as Number;
+      var elapsedSeconds = elapsedMilliSeconds / 1000;
 
-        // var labelView = View.findDrawableById("label") as Text;
-        // labelView.locY = labelView.locY - 16;
-        // var valueView = View.findDrawableById("value") as Text;
-        // valueView.locY = valueView.locY + 7;
+    System.println("Current heart rate: " + currentHeartRate);
 
-        
-
-        updateBarsOnScreen(dc);
-
-        // labelView.setColor(Graphics.COLOR_BLACK);
-        // labelView.setText(Rez.Strings.label);
-    }
-
-    // The given info object contains all the current workout information.
-    // Calculate a value and save it locally in this method.
-    // Note that compute() and onUpdate() are asynchronous, and there is no
-    // guarantee that compute() will be called before onUpdate().
-    function compute(info as Activity.Info) as Void {
-        // See Activity.Info in the documentation for available information.
-        updateHeartRateZonesTime(info);
-        // if (info has :currentHeartRate && info.currentHeartRate != null) {
-        //     mValue = info.currentHeartRate as Number;
-        // } else {
-        //     mValue = 0.0f;
-        // }
-    }
-
-    // Increase the time spent in the current heart rate zone
-    function updateHeartRateZonesTime(info as Activity.Info) as Void {
-        if (info == null) {
-            System.println("Info is null");
-            return;
+      currentZone = 0;
+      if (currentHeartRate <= userHeartRateZones[0]) {
+        currentZone = 0;
+        currentZoneFraction = currentHeartRate.toFloat() / userHeartRateZones[0];
+      } else {
+        if (
+          currentHeartRate > userHeartRateZones[0] &&
+          currentHeartRate <= userHeartRateZones[1]
+        ) {
+          currentZone = 1;
+        } else if (
+          currentHeartRate > userHeartRateZones[1] &&
+          currentHeartRate <= userHeartRateZones[2]
+        ) {
+          currentZone = 2;
+        } else if (
+          currentHeartRate > userHeartRateZones[2] &&
+          currentHeartRate <= userHeartRateZones[3]
+        ) {
+          currentZone = 3;
+        } else if (
+          currentHeartRate > userHeartRateZones[3] &&
+          currentHeartRate <= userHeartRateZones[4]
+        ) {
+          currentZone = 4;
+        } else if (currentHeartRate >= userHeartRateZones[4]) {
+          currentZone = 5;
         }
-        
-        if (info has :currentHeartRate && info.currentHeartRate != null && info.elapsedTime != null && info.elapsedTime > 1000) {
-            var currentHeartRate = info.currentHeartRate as Number;
-            var elapsedMilliSeconds = info.elapsedTime as Number;
-            var elapsedSeconds = elapsedMilliSeconds / 1000;
+        currentZoneFraction =
+          (currentHeartRate - userHeartRateZones[currentZone - 1]).toFloat() /
+          (userHeartRateZones[currentZone] - userHeartRateZones[currentZone - 1]).toFloat();
+      }
 
-            currentZone = 0;
-            if (currentHeartRate <= userHeartRateZones[0]) {
-                currentZone = 0;
-                currentZoneFraction = currentHeartRate / userHeartRateZones[0];
-            } else {
-                if (currentHeartRate > userHeartRateZones[0] && currentHeartRate <= userHeartRateZones[1]) {
-                    currentZone = 1;
-                } else if (currentHeartRate > userHeartRateZones[1] && currentHeartRate < userHeartRateZones[2]) {
-                    currentZone = 2;
-                } else if (currentHeartRate >= userHeartRateZones[2] && currentHeartRate < userHeartRateZones[3]) {
-                    currentZone = 3;
-                } else if (currentHeartRate >= userHeartRateZones[3] && currentHeartRate < userHeartRateZones[4]) {
-                    currentZone = 4;
-                } else if (currentHeartRate >= userHeartRateZones[4]) {
-                    currentZone = 5;
-                }
-                currentZoneFraction = (currentHeartRate - userHeartRateZones[currentZone - 1]).toFloat() / 
-                (userHeartRateZones[currentZone] - userHeartRateZones[currentZone - 1]).toFloat();
-            }
-            
-            if (currentZoneFraction > 1.0) {
-                currentZoneFraction = 1.0;
-            }
+      if (currentZoneFraction > 1.0) {
+        currentZoneFraction = 1.0;
+      }
 
-            // Update the time in the current zone and calculate percentage
-            var timeInCurrentZone = (timeInHeartRateZones[currentZone] + 1) as Number;
-            timeInHeartRateZones[currentZone] = timeInCurrentZone;
-            var percentage = 0;
-            if (elapsedSeconds > 0) {
-                percentage = (timeInCurrentZone.toFloat() / elapsedSeconds.toFloat());
-            }
-            if (percentage > 1) {
-                percentage = 1;
-            }
-            mZonePercentage[currentZone] = percentage;
-            System.println("CurrentHeartRate: " + currentHeartRate + " Zone " + currentZone + " percentage: " + percentage + " timeInCurrentZone: " + timeInCurrentZone + " elapsedSeconds: " + elapsedSeconds + " elapsedMilliseconds: " + elapsedMilliSeconds);
+      // Update the time in the current zone and calculate fraction of time in each zone
+      var timeInCurrentZone = (timeInHeartRateZones[currentZone] + 1) as Number;
+      timeInHeartRateZones[currentZone] = timeInCurrentZone;
+      var fraction = 0.0;
+      if (elapsedSeconds > 0.0) {
+        fraction = timeInCurrentZone.toFloat() / elapsedSeconds.toFloat();
+      }
+      if (fraction > 1.0) {
+        fraction = 1.0;
+      }
+      timeInZoneFraction[currentZone] = fraction;
 
-            for (var i = 0; i < userHeartRateZones.size(); i++) {
-                if (i != currentZone) {
-                    var timeInZoneI = timeInHeartRateZones[i] as Number;
-                    var percentageI = 0;
-                    if (elapsedSeconds > 0) {
-                        percentageI = (timeInZoneI.toFloat() / elapsedSeconds.toFloat());
-                    }
-                    if (percentageI > 1) {
-                        percentageI = 1;
-                    }
-                    mZonePercentage[i] = percentageI;
-
-                    System.println("CurrentHeartRate: " + currentHeartRate + " Zone " + i + " percentage: " + percentageI + " timeInZoneI: " + timeInZoneI + " elapsedSeconds: " + elapsedSeconds + " elapsedMilliseconds: " + elapsedMilliSeconds);
-                }
-            }
-        } else {
-            System.println("No heart rate data");
+      for (var i = 0; i < userHeartRateZones.size(); i++) {
+        if (i != currentZone) {
+          var timeInZoneI = timeInHeartRateZones[i] as Number;
+          var fractionI = 0.0;
+          if (elapsedSeconds > 0.0) {
+            fractionI = timeInZoneI.toFloat() / elapsedSeconds.toFloat();
+          }
+          if (fractionI > 1.0) {
+            fractionI = 1.0;
+          }
+          timeInZoneFraction[i] = fractionI;
         }
+      }
+    } else {
+      System.println("No heart rate data");
     }
+  }
 
-    function updateBarsOnScreen(dc as Dc) as Void {
-        // Create the heart rate zone bars
-        var screenWidth = dc.getWidth();
-        var screenHeight = dc.getHeight();
+  hidden var cornerRadius as Number = 4;
+  hidden var penWidth as Number = 4;
 
-        dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_WHITE);
-        dc.fillRectangle(0, 0, screenWidth, screenHeight);
+  function drawBarsOnScreen(dc as Dc) as Void {
+    // Create the heart rate zone bars
+    var screenWidth = dc.getWidth();
+    var screenHeight = dc.getHeight();
 
-        var minimumBarWidth = 20;
-        var barVerticalSpacing = 0;
-        var barHeight = screenHeight / (timeInHeartRateZones.size() - 1);
-        var startX = 0;
-        var startY = 0;
-        for (var i = 1; i < timeInHeartRateZones.size(); i++) {
-            var barX = startX;
-            var barY = startY + (i - 1) * barHeight + barVerticalSpacing;
-            var barColor = mZoneColors[i];
-            var barWidth = minimumBarWidth + mZonePercentage[i] * (screenWidth - minimumBarWidth);
-            dc.setColor(barColor, Graphics.COLOR_WHITE);
-            dc.fillRectangle(barX, barY, barWidth, barHeight);
+    dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_WHITE);
+    dc.fillRectangle(0, 0, screenWidth, screenHeight);
 
-            if (currentZone == i) {
-                // draw a black rectangle around the current zone
-                dc.setPenWidth(4);
-                dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_TRANSPARENT);
-                dc.drawRectangle(0, (i - 1) * barHeight, screenWidth, barHeight);
+    var minimumBarWidth = 8;
+    var barVerticalSpacing = 0;
+    var barHeight = screenHeight / (timeInHeartRateZones.size() - 1);
 
-                // draw triangle pointing right
-                var triangleX = 1;
-                System.println("Current Zone " + currentZone + " currentZoneFraction: " + currentZoneFraction);
-                var triangleY = barY + currentZoneFraction * barHeight; // + barHeight / 2;
-                var triangleSize = 20;
-                dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_BLACK);
-                dc.fillPolygon([
-                    [triangleX, triangleY - triangleSize / 2], 
-                    [triangleX + triangleSize, triangleY], 
-                    [triangleX, triangleY + triangleSize / 2]
-                ]);
+    for (var i = 1; i < timeInHeartRateZones.size(); i++) {
+      var barX = 0;
+      var barY = (i - 1) * barHeight + barVerticalSpacing; // i - 1 to position at top of screen for zone 1
+      var barColor = mZoneColors[i];
+      var barWidth = minimumBarWidth + timeInZoneFraction[i] * (screenWidth - minimumBarWidth);
+      dc.setColor(barColor, Graphics.COLOR_WHITE);
+      dc.fillRoundedRectangle(barX, barY, barWidth, barHeight, cornerRadius);
 
-            }
+      var labelX = barX + minimumBarWidth + 30;
+      var fontHeight = Graphics.getFontHeight(Graphics.FONT_SYSTEM_LARGE);
+      System.println("Font height: " + fontHeight);
+      
+      var labelY = barY + fontHeight / 2 + penWidth;
+      var labelText = "Z" + i;
+      if (timeInHeartRateZones[i] > 0) {
+        labelText += " " + secondsToTimeString(timeInHeartRateZones[i]);
+      }
+      dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_TRANSPARENT);
+      dc.drawText(labelX, labelY, Graphics.FONT_SYSTEM_LARGE, labelText, Graphics.TEXT_JUSTIFY_LEFT);
 
-            dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_TRANSPARENT);
-            var labelX = barX + minimumBarWidth;
-            var labelY = barY + dc.getFontHeight(Graphics.FONT_NUMBER_MEDIUM) / 4;
+      System.println(
+          " Time in zone " + i + ": " + timeInHeartRateZones[i] +
+          " currentZone: " + currentZone +
+          " currentZoneFraction: " + currentZoneFraction +
+          " TimeFraction: " + timeInZoneFraction[i] +
+          " userHeartRateZones: " + userHeartRateZones
+      );
 
-            var labelText = "Z" + i;
-            if (timeInHeartRateZones[i] > 0) {
-                 labelText += " " + secondsToTimeString(timeInHeartRateZones[i]);
-            }
-            dc.drawText(labelX, labelY , Graphics.FONT_NUMBER_MEDIUM, labelText, Graphics.TEXT_JUSTIFY_LEFT);
-        }
+      if (currentZone == i) {
+        // draw a black rectangle around the current zone
+        dc.setPenWidth(penWidth);
+        dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_TRANSPARENT);
+        dc.drawRoundedRectangle(0, (i - 1) * barHeight, screenWidth, barHeight, cornerRadius);
+
+        // draw a triangle pointing right
+        var triangleX = minimumBarWidth;
+        var triangleY = barY + currentZoneFraction * (barHeight - penWidth);
+        var triangleSize = 25;
+        dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_BLACK);
+        dc.fillPolygon([
+          [triangleX, triangleY - triangleSize / 2],
+          [triangleX + triangleSize, triangleY],
+          [triangleX, triangleY + triangleSize / 2],
+        ]);
+      }
     }
-    
+  }
 
-    function secondsToTimeString(totalSeconds as Number) as String {
-        var hours = totalSeconds / 3600;
-        var minutes = (totalSeconds /60) % 60;
-        var seconds = totalSeconds % 60;
-        var timeString = format("$1$:$2$:$3$", [hours.format("%01d"), minutes.format("%02d"), seconds.format("%02d")]);
-        return timeString;
-    }
+  function secondsToTimeString(totalSeconds as Number) as String {
+    var hours = totalSeconds / 3600;
+    var minutes = (totalSeconds / 60) % 60;
+    var seconds = totalSeconds % 60;
+    var timeString = format("$1$:$2$:$3$", [
+      hours.format("%01d"),
+      minutes.format("%02d"),
+      seconds.format("%02d"),
+    ]);
+    return timeString;
+  }
 
-    // Display the value you computed here. This will be called
-    // once a second when the data field is visible.
-    function onUpdate(dc as Dc) as Void {
-        // Set the background color
-        // (View.findDrawableById("Background") as Text).setColor(getBackgroundColor());
-
-        // Set the foreground color and value
-        // var value = View.findDrawableById("value") as Text;
-        // if (getBackgroundColor() == Graphics.COLOR_BLACK) {
-        //     value.setColor(Graphics.COLOR_WHITE);
-        // } else {
-        //     value.setColor(Graphics.COLOR_BLACK);
-        // }
-        // value.setColor(Graphics.COLOR_BLACK);
-        // value.setText(mValue.format("%.2f"));
-
-        // Call parent's onUpdate(dc) to redraw the layout
-        View.onUpdate(dc);
-
-        updateBarsOnScreen(dc);
-    }
-
+  // Display the value you computed here. This will be called
+  // once a second when the data field is visible.
+  function onUpdate(dc as Dc) as Void {
+    // Call parent's onUpdate(dc) to redraw the layout
+    View.onUpdate(dc);
+    drawBarsOnScreen(dc);
+  }
 }
