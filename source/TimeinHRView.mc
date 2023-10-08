@@ -4,26 +4,28 @@ import Toybox.Lang;
 import Toybox.WatchUi;
 using Toybox.UserProfile;
 import Toybox.Time;
+import Toybox.Math;
 
 class TimeinHRView extends WatchUi.DataField {
 
     hidden var mValue as Numeric;
     hidden var timeInHeartRateZones as Array;
     hidden var userHeartRateZones = [0, 0, 0, 0, 0, 0]; // 6 elements
-    hidden var mZoneColors = [Graphics.COLOR_BLUE, Graphics.COLOR_GREEN, Graphics.COLOR_YELLOW, Graphics.COLOR_ORANGE, Graphics.COLOR_RED];
+    hidden var mZoneColors = [Graphics.COLOR_BLUE, Graphics.COLOR_BLUE, Graphics.COLOR_GREEN, Graphics.COLOR_YELLOW, Graphics.COLOR_ORANGE, Graphics.COLOR_RED];
     hidden var mZonePercentage as Array<Lang.Float>;
-    hidden var currentZone as Number = 1;
+    hidden var currentZoneFraction as Float = 1.0;
+    hidden var currentZone as Number = 0;
 
     function initialize() {
         DataField.initialize();
         mValue = 0.0f;
-        timeInHeartRateZones = [0, 0, 0, 0, 0];
+        timeInHeartRateZones = [0, 0, 0, 0, 0, 0];
         var currentSport = UserProfile.getCurrentSport() as UserProfile.SportHrZone;
         userHeartRateZones = UserProfile.getHeartRateZones(currentSport) as Lang.Array<Lang.Number>;
 
         System.println("Current sport: " + currentSport);
         System.println("Current zones: " + userHeartRateZones);
-        mZonePercentage = [0.0, 0.0, 0.0, 0.0, 0.0];
+        mZonePercentage = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0];
     }
 
     // Set your layout here. Anytime the size of obscurity of
@@ -72,27 +74,57 @@ class TimeinHRView extends WatchUi.DataField {
             var currentHeartRate = info.currentHeartRate as Number;
             var elapsedMilliSeconds = info.elapsedTime as Number;
             var elapsedSeconds = elapsedMilliSeconds / 1000;
-            for (var i = 1; i < userHeartRateZones.size(); i++) {
-                var zone = userHeartRateZones[i] as Number;
-                if (zone != null && currentHeartRate <= zone) {
-                    currentZone = i;
-                    try {
-                        var timeInZoneI = (timeInHeartRateZones[i] + 1) as Number;
-                        timeInHeartRateZones[i] = timeInZoneI;
-                        var percentage = 0;
-                        if (elapsedSeconds > 0) {
-                            percentage = (timeInZoneI.toFloat() / elapsedSeconds.toFloat());
-                        }
-                        mZonePercentage[i] = percentage;
-                        System.println("CurrentHeartRate: " + currentHeartRate + " Zone " + i + " percentage: " + percentage + " timeInZoneI: " + timeInZoneI + " elapsedSeconds: " + elapsedSeconds + " elpasedMiliseconds: " + elapsedMilliSeconds);
-                    } catch (e) {
-                        System.println("Exception: " + e + "\n" +
-                    "timeInHeartRateZones[i]: " + timeInHeartRateZones[i] + "\n" +
-                    "elapsedTime: " + elapsedSeconds + "\n" +
-                    "imZonePercentage: " + mZonePercentage + "\n" +
-                    "i: " + i);
+
+            currentZone = 0;
+            if (currentHeartRate <= userHeartRateZones[0]) {
+                currentZone = 0;
+                currentZoneFraction = currentHeartRate / userHeartRateZones[0];
+            } else {
+                if (currentHeartRate > userHeartRateZones[0] && currentHeartRate <= userHeartRateZones[1]) {
+                    currentZone = 1;
+                } else if (currentHeartRate > userHeartRateZones[1] && currentHeartRate < userHeartRateZones[2]) {
+                    currentZone = 2;
+                } else if (currentHeartRate >= userHeartRateZones[2] && currentHeartRate < userHeartRateZones[3]) {
+                    currentZone = 3;
+                } else if (currentHeartRate >= userHeartRateZones[3] && currentHeartRate < userHeartRateZones[4]) {
+                    currentZone = 4;
+                } else if (currentHeartRate >= userHeartRateZones[4]) {
+                    currentZone = 5;
+                }
+                currentZoneFraction = (currentHeartRate - userHeartRateZones[currentZone - 1]).toFloat() / 
+                (userHeartRateZones[currentZone] - userHeartRateZones[currentZone - 1]).toFloat();
+            }
+            
+            if (currentZoneFraction > 1.0) {
+                currentZoneFraction = 1.0;
+            }
+
+            // Update the time in the current zone and calculate percentage
+            var timeInCurrentZone = (timeInHeartRateZones[currentZone] + 1) as Number;
+            timeInHeartRateZones[currentZone] = timeInCurrentZone;
+            var percentage = 0;
+            if (elapsedSeconds > 0) {
+                percentage = (timeInCurrentZone.toFloat() / elapsedSeconds.toFloat());
+            }
+            if (percentage > 1) {
+                percentage = 1;
+            }
+            mZonePercentage[currentZone] = percentage;
+            System.println("CurrentHeartRate: " + currentHeartRate + " Zone " + currentZone + " percentage: " + percentage + " timeInCurrentZone: " + timeInCurrentZone + " elapsedSeconds: " + elapsedSeconds + " elapsedMilliseconds: " + elapsedMilliSeconds);
+
+            for (var i = 0; i < userHeartRateZones.size(); i++) {
+                if (i != currentZone) {
+                    var timeInZoneI = timeInHeartRateZones[i] as Number;
+                    var percentageI = 0;
+                    if (elapsedSeconds > 0) {
+                        percentageI = (timeInZoneI.toFloat() / elapsedSeconds.toFloat());
                     }
-                    break;
+                    if (percentageI > 1) {
+                        percentageI = 1;
+                    }
+                    mZonePercentage[i] = percentageI;
+
+                    System.println("CurrentHeartRate: " + currentHeartRate + " Zone " + i + " percentage: " + percentageI + " timeInZoneI: " + timeInZoneI + " elapsedSeconds: " + elapsedSeconds + " elapsedMilliseconds: " + elapsedMilliSeconds);
                 }
             }
         } else {
@@ -108,35 +140,47 @@ class TimeinHRView extends WatchUi.DataField {
         dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_WHITE);
         dc.fillRectangle(0, 0, screenWidth, screenHeight);
 
-
         var minimumBarWidth = 20;
-        var barHeight = screenHeight / timeInHeartRateZones.size();
-        var barVerticalSpacing = 1;
+        var barVerticalSpacing = 0;
+        var barHeight = screenHeight / (timeInHeartRateZones.size() - 1);
         var startX = 0;
         var startY = 0;
-        for (var i = 0; i < timeInHeartRateZones.size(); i++) {
+        for (var i = 1; i < timeInHeartRateZones.size(); i++) {
             var barX = startX;
-            var barY = startY + i * (barHeight + barVerticalSpacing);
+            var barY = startY + (i - 1) * barHeight + barVerticalSpacing;
             var barColor = mZoneColors[i];
             var barWidth = minimumBarWidth + mZonePercentage[i] * (screenWidth - minimumBarWidth);
             dc.setColor(barColor, Graphics.COLOR_WHITE);
             dc.fillRectangle(barX, barY, barWidth, barHeight);
 
             if (currentZone == i) {
-                // draw triangle pointing right using dc.drawLine(x1, y1, x2, y2)
+                // draw a black rectangle around the current zone
+                dc.setPenWidth(4);
+                dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_TRANSPARENT);
+                dc.drawRectangle(0, (i - 1) * barHeight, screenWidth, barHeight);
+
+                // draw triangle pointing right
                 var triangleX = 1;
-                var triangleY = barY + barHeight / 2;
+                System.println("Current Zone " + currentZone + " currentZoneFraction: " + currentZoneFraction);
+                var triangleY = barY + currentZoneFraction * barHeight; // + barHeight / 2;
                 var triangleSize = 20;
                 dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_BLACK);
-                dc.fillPolygon([[triangleX, triangleY - triangleSize / 2], [triangleX + triangleSize, triangleY], [triangleX, triangleY + triangleSize / 2]]);
+                dc.fillPolygon([
+                    [triangleX, triangleY - triangleSize / 2], 
+                    [triangleX + triangleSize, triangleY], 
+                    [triangleX, triangleY + triangleSize / 2]
+                ]);
+
             }
-            var transparentColor = Graphics.COLOR_TRANSPARENT;
-            // dc.createColor(128, 0, 0, 0)
-            dc.setColor(Graphics.COLOR_BLACK, transparentColor);
+
+            dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_TRANSPARENT);
             var labelX = barX + minimumBarWidth;
             var labelY = barY + dc.getFontHeight(Graphics.FONT_NUMBER_MEDIUM) / 4;
 
-            var labelText = "Z" + (i + 1) + " " + secondsToTimeString(timeInHeartRateZones[i]);
+            var labelText = "Z" + i;
+            if (timeInHeartRateZones[i] > 0) {
+                 labelText += " " + secondsToTimeString(timeInHeartRateZones[i]);
+            }
             dc.drawText(labelX, labelY , Graphics.FONT_NUMBER_MEDIUM, labelText, Graphics.TEXT_JUSTIFY_LEFT);
         }
     }
