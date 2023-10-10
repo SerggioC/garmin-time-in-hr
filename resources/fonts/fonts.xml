@@ -1,0 +1,5 @@
+<resources>
+    <fonts>
+        <font id="id_system_font" filename="system_font.fnt"/>
+    </fonts>
+</resources>

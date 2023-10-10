@@ -21,6 +21,7 @@ class TimeinHRView extends WatchUi.DataField {
   hidden var timeInZoneFraction as Array<Lang.Float>;
   hidden var currentZoneFraction as Float = 1.0;
   hidden var currentZone as Number = 0;
+  hidden var mFont as Toybox.WatchUi.FontReference = WatchUi.loadResource(Rez.Fonts.id_system_font);
 
   function initialize() {
     DataField.initialize();
@@ -162,7 +163,8 @@ class TimeinHRView extends WatchUi.DataField {
       dc.fillRoundedRectangle(barX, barY, barWidth, barHeight, cornerRadius);
 
       var labelX = barX + minimumBarWidth + 30;
-      var fontHeight = Graphics.getFontHeight(Graphics.FONT_SYSTEM_LARGE);
+      Graphics.FONT_SYSTEM_LARGE
+      var fontHeight = Graphics.getFontHeight(mFont);
       System.println("Font height: " + fontHeight);
       
       var labelY = barY + fontHeight / 2 + penWidth;
@@ -171,7 +173,7 @@ class TimeinHRView extends WatchUi.DataField {
         labelText += " " + secondsToTimeString(timeInHeartRateZones[i]);
       }
       dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_TRANSPARENT);
-      dc.drawText(labelX, labelY, Graphics.FONT_SYSTEM_LARGE, labelText, Graphics.TEXT_JUSTIFY_LEFT);
+      dc.drawText(labelX, labelY, mFont, labelText, Graphics.TEXT_JUSTIFY_LEFT);
 
       System.println(
           " Time in zone " + i + ": " + timeInHeartRateZones[i] +
