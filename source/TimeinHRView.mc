@@ -26,7 +26,6 @@ class TimeinHRView extends WatchUi.DataField {
   hidden var currentHeartRate as Number = 0;
   hidden var restingHeartRate as Float = 0.0;
   hidden var percentHRR as Float = 0.0;
-  hidden var percentHRZ1Z5 as Float = 0.0;
 
   function initialize() {
     DataField.initialize();
@@ -84,8 +83,6 @@ class TimeinHRView extends WatchUi.DataField {
       if (percentHRR > 1.0) {
         percentHRR = 1.0;
       }
-
-      percentHRZ1Z5 = (currentHeartRate.toFloat() - hrZ1Low) / (maxHR - hrZ1Low);
 
       var elapsedMilliSeconds = info.elapsedTime as Number;
       var elapsedSeconds = (elapsedMilliSeconds.toFloat() / 1000) as Float;
