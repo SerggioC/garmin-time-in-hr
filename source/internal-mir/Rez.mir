@@ -1,0 +1,1825 @@
+[ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 1; ]
+import Toybox.Lang;
+[ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 2; ]
+using Toybox.WatchUi;
+[ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 3; ]
+using Toybox.WatchUi as :Ui;
+[ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 4; ]
+using Toybox.Graphics;
+[ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 5; ]
+using Toybox.Graphics as :Gfx;
+[ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 7; ]
+module Rez {
+    [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 7; ]
+    <init> {
+    }
+    [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 8; ]
+    module Drawables {
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 8; ]
+        <init> {
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 9; @position = 27; initialized = true; ]
+        var LauncherIcon as Symbol;
+    }
+    [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 12; ]
+    module Fonts {
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 12; ]
+        <init> {
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 13; @position = 27; initialized = true; ]
+        var id_system_font as Symbol;
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 14; @position = 27; initialized = true; ]
+        var garmin_verdana_font as Symbol;
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 15; @position = 27; initialized = true; ]
+        var tahoma_font as Symbol;
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 16; @position = 27; initialized = true; ]
+        var verdana_font as Symbol;
+    }
+    [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 19; ]
+    module JsonData {
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 19; ]
+        <init> {
+        }
+    }
+    [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 22; ]
+    module Layouts {
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 22; ]
+        <init> {
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 23; ]
+        function MainLayout(dc as Graphics.Dc) as Array<WatchUi.Drawable> {
+c_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_gen_006_B4062_00_source_Rez_mcgen_23_74_start:
+[ "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen" 24 12 ]
+            [ "c_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_gen_006_B4062_00_source_Rez_mcgen_23_74_start" "c_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_gen_006_B4062_00_source_Rez_mcgen_23_74_stop" ]
+            %rez_cmp_local_var_dc_getHeight.1 = local;
+            %tmp.1 = lgetv %dc;
+            %tmp.2 = getv function %tmp.1 :getHeight;
+            %tmp.3 = invoke %tmp.1 %tmp.2();
+            lputv %rez_cmp_local_var_dc_getHeight.1 %tmp.3;
+[ "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen" 26 12 ]
+            [ "c_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_gen_006_B4062_00_source_Rez_mcgen_23_74_start" "c_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_gen_006_B4062_00_source_Rez_mcgen_23_74_stop" ]
+            %rez_cmp_local_var_dc_getWidth.2 = local;
+            %tmp.4 = lgetv %dc;
+            %tmp.5 = getv function %tmp.4 :getWidth;
+            %tmp.6 = invoke %tmp.4 %tmp.5();
+            lputv %rez_cmp_local_var_dc_getWidth.2 %tmp.6;
+[ "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen" 28 12 ]
+            [ "c_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_gen_006_B4062_00_source_Rez_mcgen_23_74_start" "c_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_gen_006_B4062_00_source_Rez_mcgen_23_74_stop" ]
+            %rez_cmp_local_custom_drawable_27451221912578891658.3 = local;
+            %tmp.10 = getv ? :Background;
+            %tmp.7 = newc %tmp.10 ();
+            lputv %rez_cmp_local_custom_drawable_27451221912578891658.3 %tmp.7;
+[ "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen" 30 12 ]
+            [ "c_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_gen_006_B4062_00_source_Rez_mcgen_23_74_start" "c_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_gen_006_B4062_00_source_Rez_mcgen_23_74_stop" ]
+            %rez_cmp_local_text_label.4 = local;
+            %tmp.13 = getm $.Toybox.WatchUi;
+            %tmp.14 = getv function ? %tmp.13 :Text;
+            %tmp.15 = newd 6;
+            %tmp.17 = const :identifier;
+            %tmp.18 = "label";
+            %tmp.19 = dup %tmp.15;
+            %tmp.20 = aputv %tmp.19 %tmp.17 %tmp.18;
+            %tmp.22 = const :color;
+            %tmp.23 = getm $.Toybox.Graphics;
+            %tmp.24 = getv %tmp.23 :COLOR_LT_GRAY;
+            %tmp.25 = dup %tmp.20;
+            %tmp.26 = aputv %tmp.25 %tmp.22 %tmp.24;
+            %tmp.28 = const :locX;
+            %tmp.30 = lgetv %rez_cmp_local_var_dc_getWidth.2;
+            %tmp.31 = 0.5;
+            %tmp.32 = mul %tmp.30 %tmp.31;
+            %tmp.33 = dup %tmp.26;
+            %tmp.34 = aputv %tmp.33 %tmp.28 %tmp.32;
+            %tmp.36 = const :locY;
+            %tmp.38 = lgetv %rez_cmp_local_var_dc_getHeight.1;
+            %tmp.39 = lgetv %dc;
+            %tmp.40 = getv function %tmp.39 :getFontHeight;
+            %tmp.41 = getm $.Toybox.Graphics;
+            %tmp.42 = getv %tmp.41 :FONT_LARGE;
+            %tmp.43 = invoke %tmp.39 %tmp.40(%tmp.42);
+            %tmp.44 = sub %tmp.38 %tmp.43;
+            %tmp.45 = 0.5;
+            %tmp.46 = mul %tmp.44 %tmp.45;
+            %tmp.47 = dup %tmp.34;
+            %tmp.48 = aputv %tmp.47 %tmp.36 %tmp.46;
+            %tmp.50 = const :justification;
+            %tmp.51 = getm $.Toybox.Graphics;
+            %tmp.52 = getv %tmp.51 :TEXT_JUSTIFY_CENTER;
+            %tmp.53 = dup %tmp.48;
+            %tmp.54 = aputv %tmp.53 %tmp.50 %tmp.52;
+            %tmp.56 = const :font;
+            %tmp.57 = getm $.Toybox.Graphics;
+            %tmp.58 = getv %tmp.57 :FONT_LARGE;
+            %tmp.59 = dup %tmp.54;
+            %tmp.60 = aputv %tmp.59 %tmp.56 %tmp.58;
+            %tmp.11 = newc %tmp.14 (%tmp.60);
+            lputv %rez_cmp_local_text_label.4 %tmp.11;
+[ "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen" 32 12 ]
+            [ "c_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_gen_006_B4062_00_source_Rez_mcgen_23_74_start" "c_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_gen_006_B4062_00_source_Rez_mcgen_23_74_stop" ]
+            %rez_cmp_local_text_value.5 = local;
+            %tmp.63 = getm $.Toybox.WatchUi;
+            %tmp.64 = getv function ? %tmp.63 :Text;
+            %tmp.65 = newd 6;
+            %tmp.67 = const :identifier;
+            %tmp.68 = "value";
+            %tmp.69 = dup %tmp.65;
+            %tmp.70 = aputv %tmp.69 %tmp.67 %tmp.68;
+            %tmp.72 = const :color;
+            %tmp.73 = getm $.Toybox.Graphics;
+            %tmp.74 = getv %tmp.73 :COLOR_WHITE;
+            %tmp.75 = dup %tmp.70;
+            %tmp.76 = aputv %tmp.75 %tmp.72 %tmp.74;
+            %tmp.78 = const :locX;
+            %tmp.80 = lgetv %rez_cmp_local_var_dc_getWidth.2;
+            %tmp.81 = 0.5;
+            %tmp.82 = mul %tmp.80 %tmp.81;
+            %tmp.83 = dup %tmp.76;
+            %tmp.84 = aputv %tmp.83 %tmp.78 %tmp.82;
+            %tmp.86 = const :locY;
+            %tmp.88 = lgetv %rez_cmp_local_var_dc_getHeight.1;
+            %tmp.89 = lgetv %dc;
+            %tmp.90 = getv function %tmp.89 :getFontHeight;
+            %tmp.91 = getm $.Toybox.Graphics;
+            %tmp.92 = getv %tmp.91 :FONT_LARGE;
+            %tmp.93 = invoke %tmp.89 %tmp.90(%tmp.92);
+            %tmp.94 = sub %tmp.88 %tmp.93;
+            %tmp.95 = 0.5;
+            %tmp.96 = mul %tmp.94 %tmp.95;
+            %tmp.97 = dup %tmp.84;
+            %tmp.98 = aputv %tmp.97 %tmp.86 %tmp.96;
+            %tmp.100 = const :justification;
+            %tmp.101 = getm $.Toybox.Graphics;
+            %tmp.102 = getv %tmp.101 :TEXT_JUSTIFY_CENTER;
+            %tmp.103 = dup %tmp.98;
+            %tmp.104 = aputv %tmp.103 %tmp.100 %tmp.102;
+            %tmp.106 = const :font;
+            %tmp.107 = getm $.Toybox.Graphics;
+            %tmp.108 = getv %tmp.107 :FONT_LARGE;
+            %tmp.109 = dup %tmp.104;
+            %tmp.110 = aputv %tmp.109 %tmp.106 %tmp.108;
+            %tmp.61 = newc %tmp.64 (%tmp.110);
+            lputv %rez_cmp_local_text_value.5 %tmp.61;
+[ "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen" 34 12 ]
+            %tmp.111 = newa Array<WatchUi.Drawable> 3;
+            %tmp.113 = lgetv %rez_cmp_local_custom_drawable_27451221912578891658.3;
+            %tmp.114 = dup %tmp.111;
+            %tmp.115 = aputv %tmp.114 0 %tmp.113;
+            %tmp.117 = lgetv %rez_cmp_local_text_label.4;
+            %tmp.118 = dup %tmp.115;
+            %tmp.119 = aputv %tmp.118 1 %tmp.117;
+            %tmp.121 = lgetv %rez_cmp_local_text_value.5;
+            %tmp.122 = dup %tmp.119;
+            %tmp.123 = aputv %tmp.122 2 %tmp.121;
+            ret %tmp.123;
+c_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_gen_006_B4062_00_source_Rez_mcgen_23_74_stop:
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 37; ]
+        function TopLeftLayout(dc as Graphics.Dc) as Array<WatchUi.Drawable> {
+c_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_gen_006_B4062_00_source_Rez_mcgen_37_77_start:
+[ "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen" 38 12 ]
+            [ "c_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_gen_006_B4062_00_source_Rez_mcgen_37_77_start" "c_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_gen_006_B4062_00_source_Rez_mcgen_37_77_stop" ]
+            %rez_cmp_local_custom_drawable_14020110164094283655.1 = local;
+            %tmp.4 = getv ? :Background;
+            %tmp.1 = newc %tmp.4 ();
+            lputv %rez_cmp_local_custom_drawable_14020110164094283655.1 %tmp.1;
+[ "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen" 40 12 ]
+            [ "c_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_gen_006_B4062_00_source_Rez_mcgen_37_77_start" "c_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_gen_006_B4062_00_source_Rez_mcgen_37_77_stop" ]
+            %rez_cmp_local_text_label.2 = local;
+            %tmp.7 = getm $.Toybox.WatchUi;
+            %tmp.8 = getv function ? %tmp.7 :Text;
+            %tmp.9 = newd 6;
+            %tmp.11 = const :identifier;
+            %tmp.12 = "label";
+            %tmp.13 = dup %tmp.9;
+            %tmp.14 = aputv %tmp.13 %tmp.11 %tmp.12;
+            %tmp.16 = const :color;
+            %tmp.17 = getm $.Toybox.Graphics;
+            %tmp.18 = getv %tmp.17 :COLOR_LT_GRAY;
+            %tmp.19 = dup %tmp.14;
+            %tmp.20 = aputv %tmp.19 %tmp.16 %tmp.18;
+            %tmp.22 = const :locX;
+            %tmp.23 = 95;
+            %tmp.24 = dup %tmp.20;
+            %tmp.25 = aputv %tmp.24 %tmp.22 %tmp.23;
+            %tmp.27 = const :locY;
+            %tmp.28 = 75;
+            %tmp.29 = dup %tmp.25;
+            %tmp.30 = aputv %tmp.29 %tmp.27 %tmp.28;
+            %tmp.32 = const :justification;
+            %tmp.33 = getm $.Toybox.Graphics;
+            %tmp.34 = getv %tmp.33 :TEXT_JUSTIFY_RIGHT;
+            %tmp.35 = dup %tmp.30;
+            %tmp.36 = aputv %tmp.35 %tmp.32 %tmp.34;
+            %tmp.38 = const :font;
+            %tmp.39 = getm $.Toybox.Graphics;
+            %tmp.40 = getv %tmp.39 :FONT_TINY;
+            %tmp.41 = dup %tmp.36;
+            %tmp.42 = aputv %tmp.41 %tmp.38 %tmp.40;
+            %tmp.5 = newc %tmp.8 (%tmp.42);
+            lputv %rez_cmp_local_text_label.2 %tmp.5;
+[ "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen" 42 12 ]
+            [ "c_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_gen_006_B4062_00_source_Rez_mcgen_37_77_start" "c_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_gen_006_B4062_00_source_Rez_mcgen_37_77_stop" ]
+            %rez_cmp_local_text_value.3 = local;
+            %tmp.45 = getm $.Toybox.WatchUi;
+            %tmp.46 = getv function ? %tmp.45 :Text;
+            %tmp.47 = newd 6;
+            %tmp.49 = const :identifier;
+            %tmp.50 = "value";
+            %tmp.51 = dup %tmp.47;
+            %tmp.52 = aputv %tmp.51 %tmp.49 %tmp.50;
+            %tmp.54 = const :color;
+            %tmp.55 = getm $.Toybox.Graphics;
+            %tmp.56 = getv %tmp.55 :COLOR_WHITE;
+            %tmp.57 = dup %tmp.52;
+            %tmp.58 = aputv %tmp.57 %tmp.54 %tmp.56;
+            %tmp.60 = const :locX;
+            %tmp.61 = 95;
+            %tmp.62 = dup %tmp.58;
+            %tmp.63 = aputv %tmp.62 %tmp.60 %tmp.61;
+            %tmp.65 = const :locY;
+            %tmp.66 = 42;
+            %tmp.67 = dup %tmp.63;
+            %tmp.68 = aputv %tmp.67 %tmp.65 %tmp.66;
+            %tmp.70 = const :justification;
+            %tmp.71 = getm $.Toybox.Graphics;
+            %tmp.72 = getv %tmp.71 :TEXT_JUSTIFY_RIGHT;
+            %tmp.73 = dup %tmp.68;
+            %tmp.74 = aputv %tmp.73 %tmp.70 %tmp.72;
+            %tmp.76 = const :font;
+            %tmp.77 = getm $.Toybox.Graphics;
+            %tmp.78 = getv %tmp.77 :FONT_LARGE;
+            %tmp.79 = dup %tmp.74;
+            %tmp.80 = aputv %tmp.79 %tmp.76 %tmp.78;
+            %tmp.43 = newc %tmp.46 (%tmp.80);
+            lputv %rez_cmp_local_text_value.3 %tmp.43;
+[ "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen" 44 12 ]
+            %tmp.81 = newa Array<WatchUi.Drawable> 3;
+            %tmp.83 = lgetv %rez_cmp_local_custom_drawable_14020110164094283655.1;
+            %tmp.84 = dup %tmp.81;
+            %tmp.85 = aputv %tmp.84 0 %tmp.83;
+            %tmp.87 = lgetv %rez_cmp_local_text_label.2;
+            %tmp.88 = dup %tmp.85;
+            %tmp.89 = aputv %tmp.88 1 %tmp.87;
+            %tmp.91 = lgetv %rez_cmp_local_text_value.3;
+            %tmp.92 = dup %tmp.89;
+            %tmp.93 = aputv %tmp.92 2 %tmp.91;
+            ret %tmp.93;
+c_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_gen_006_B4062_00_source_Rez_mcgen_37_77_stop:
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 47; ]
+        function TopRightLayout(dc as Graphics.Dc) as Array<WatchUi.Drawable> {
+c_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_gen_006_B4062_00_source_Rez_mcgen_47_78_start:
+[ "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen" 48 12 ]
+            [ "c_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_gen_006_B4062_00_source_Rez_mcgen_47_78_start" "c_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_gen_006_B4062_00_source_Rez_mcgen_47_78_stop" ]
+            %rez_cmp_local_custom_drawable_10767848349671453216.1 = local;
+            %tmp.4 = getv ? :Background;
+            %tmp.1 = newc %tmp.4 ();
+            lputv %rez_cmp_local_custom_drawable_10767848349671453216.1 %tmp.1;
+[ "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen" 50 12 ]
+            [ "c_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_gen_006_B4062_00_source_Rez_mcgen_47_78_start" "c_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_gen_006_B4062_00_source_Rez_mcgen_47_78_stop" ]
+            %rez_cmp_local_text_label.2 = local;
+            %tmp.7 = getm $.Toybox.WatchUi;
+            %tmp.8 = getv function ? %tmp.7 :Text;
+            %tmp.9 = newd 6;
+            %tmp.11 = const :identifier;
+            %tmp.12 = "label";
+            %tmp.13 = dup %tmp.9;
+            %tmp.14 = aputv %tmp.13 %tmp.11 %tmp.12;
+            %tmp.16 = const :color;
+            %tmp.17 = getm $.Toybox.Graphics;
+            %tmp.18 = getv %tmp.17 :COLOR_LT_GRAY;
+            %tmp.19 = dup %tmp.14;
+            %tmp.20 = aputv %tmp.19 %tmp.16 %tmp.18;
+            %tmp.22 = const :locX;
+            %tmp.23 = 14;
+            %tmp.24 = dup %tmp.20;
+            %tmp.25 = aputv %tmp.24 %tmp.22 %tmp.23;
+            %tmp.27 = const :locY;
+            %tmp.28 = 75;
+            %tmp.29 = dup %tmp.25;
+            %tmp.30 = aputv %tmp.29 %tmp.27 %tmp.28;
+            %tmp.32 = const :justification;
+            %tmp.33 = getm $.Toybox.Graphics;
+            %tmp.34 = getv %tmp.33 :TEXT_JUSTIFY_LEFT;
+            %tmp.35 = dup %tmp.30;
+            %tmp.36 = aputv %tmp.35 %tmp.32 %tmp.34;
+            %tmp.38 = const :font;
+            %tmp.39 = getm $.Toybox.Graphics;
+            %tmp.40 = getv %tmp.39 :FONT_TINY;
+            %tmp.41 = dup %tmp.36;
+            %tmp.42 = aputv %tmp.41 %tmp.38 %tmp.40;
+            %tmp.5 = newc %tmp.8 (%tmp.42);
+            lputv %rez_cmp_local_text_label.2 %tmp.5;
+[ "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen" 52 12 ]
+            [ "c_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_gen_006_B4062_00_source_Rez_mcgen_47_78_start" "c_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_gen_006_B4062_00_source_Rez_mcgen_47_78_stop" ]
+            %rez_cmp_local_text_value.3 = local;
+            %tmp.45 = getm $.Toybox.WatchUi;
+            %tmp.46 = getv function ? %tmp.45 :Text;
+            %tmp.47 = newd 6;
+            %tmp.49 = const :identifier;
+            %tmp.50 = "value";
+            %tmp.51 = dup %tmp.47;
+            %tmp.52 = aputv %tmp.51 %tmp.49 %tmp.50;
+            %tmp.54 = const :color;
+            %tmp.55 = getm $.Toybox.Graphics;
+            %tmp.56 = getv %tmp.55 :COLOR_WHITE;
+            %tmp.57 = dup %tmp.52;
+            %tmp.58 = aputv %tmp.57 %tmp.54 %tmp.56;
+            %tmp.60 = const :locX;
+            %tmp.61 = 14;
+            %tmp.62 = dup %tmp.58;
+            %tmp.63 = aputv %tmp.62 %tmp.60 %tmp.61;
+            %tmp.65 = const :locY;
+            %tmp.66 = 42;
+            %tmp.67 = dup %tmp.63;
+            %tmp.68 = aputv %tmp.67 %tmp.65 %tmp.66;
+            %tmp.70 = const :justification;
+            %tmp.71 = getm $.Toybox.Graphics;
+            %tmp.72 = getv %tmp.71 :TEXT_JUSTIFY_LEFT;
+            %tmp.73 = dup %tmp.68;
+            %tmp.74 = aputv %tmp.73 %tmp.70 %tmp.72;
+            %tmp.76 = const :font;
+            %tmp.77 = getm $.Toybox.Graphics;
+            %tmp.78 = getv %tmp.77 :FONT_LARGE;
+            %tmp.79 = dup %tmp.74;
+            %tmp.80 = aputv %tmp.79 %tmp.76 %tmp.78;
+            %tmp.43 = newc %tmp.46 (%tmp.80);
+            lputv %rez_cmp_local_text_value.3 %tmp.43;
+[ "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen" 54 12 ]
+            %tmp.81 = newa Array<WatchUi.Drawable> 3;
+            %tmp.83 = lgetv %rez_cmp_local_custom_drawable_10767848349671453216.1;
+            %tmp.84 = dup %tmp.81;
+            %tmp.85 = aputv %tmp.84 0 %tmp.83;
+            %tmp.87 = lgetv %rez_cmp_local_text_label.2;
+            %tmp.88 = dup %tmp.85;
+            %tmp.89 = aputv %tmp.88 1 %tmp.87;
+            %tmp.91 = lgetv %rez_cmp_local_text_value.3;
+            %tmp.92 = dup %tmp.89;
+            %tmp.93 = aputv %tmp.92 2 %tmp.91;
+            ret %tmp.93;
+c_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_gen_006_B4062_00_source_Rez_mcgen_47_78_stop:
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 57; ]
+        function BottomLeftLayout(dc as Graphics.Dc) as Array<WatchUi.Drawable> {
+c_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_gen_006_B4062_00_source_Rez_mcgen_57_80_start:
+[ "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen" 58 12 ]
+            [ "c_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_gen_006_B4062_00_source_Rez_mcgen_57_80_start" "c_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_gen_006_B4062_00_source_Rez_mcgen_57_80_stop" ]
+            %rez_cmp_local_custom_drawable_13646830228555338968.1 = local;
+            %tmp.4 = getv ? :Background;
+            %tmp.1 = newc %tmp.4 ();
+            lputv %rez_cmp_local_custom_drawable_13646830228555338968.1 %tmp.1;
+[ "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen" 60 12 ]
+            [ "c_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_gen_006_B4062_00_source_Rez_mcgen_57_80_start" "c_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_gen_006_B4062_00_source_Rez_mcgen_57_80_stop" ]
+            %rez_cmp_local_text_label.2 = local;
+            %tmp.7 = getm $.Toybox.WatchUi;
+            %tmp.8 = getv function ? %tmp.7 :Text;
+            %tmp.9 = newd 6;
+            %tmp.11 = const :identifier;
+            %tmp.12 = "label";
+            %tmp.13 = dup %tmp.9;
+            %tmp.14 = aputv %tmp.13 %tmp.11 %tmp.12;
+            %tmp.16 = const :color;
+            %tmp.17 = getm $.Toybox.Graphics;
+            %tmp.18 = getv %tmp.17 :COLOR_LT_GRAY;
+            %tmp.19 = dup %tmp.14;
+            %tmp.20 = aputv %tmp.19 %tmp.16 %tmp.18;
+            %tmp.22 = const :locX;
+            %tmp.23 = 95;
+            %tmp.24 = dup %tmp.20;
+            %tmp.25 = aputv %tmp.24 %tmp.22 %tmp.23;
+            %tmp.27 = const :locY;
+            %tmp.28 = 10;
+            %tmp.29 = dup %tmp.25;
+            %tmp.30 = aputv %tmp.29 %tmp.27 %tmp.28;
+            %tmp.32 = const :justification;
+            %tmp.33 = getm $.Toybox.Graphics;
+            %tmp.34 = getv %tmp.33 :TEXT_JUSTIFY_RIGHT;
+            %tmp.35 = dup %tmp.30;
+            %tmp.36 = aputv %tmp.35 %tmp.32 %tmp.34;
+            %tmp.38 = const :font;
+            %tmp.39 = getm $.Toybox.Graphics;
+            %tmp.40 = getv %tmp.39 :FONT_TINY;
+            %tmp.41 = dup %tmp.36;
+            %tmp.42 = aputv %tmp.41 %tmp.38 %tmp.40;
+            %tmp.5 = newc %tmp.8 (%tmp.42);
+            lputv %rez_cmp_local_text_label.2 %tmp.5;
+[ "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen" 62 12 ]
+            [ "c_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_gen_006_B4062_00_source_Rez_mcgen_57_80_start" "c_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_gen_006_B4062_00_source_Rez_mcgen_57_80_stop" ]
+            %rez_cmp_local_text_value.3 = local;
+            %tmp.45 = getm $.Toybox.WatchUi;
+            %tmp.46 = getv function ? %tmp.45 :Text;
+            %tmp.47 = newd 6;
+            %tmp.49 = const :identifier;
+            %tmp.50 = "value";
+            %tmp.51 = dup %tmp.47;
+            %tmp.52 = aputv %tmp.51 %tmp.49 %tmp.50;
+            %tmp.54 = const :color;
+            %tmp.55 = getm $.Toybox.Graphics;
+            %tmp.56 = getv %tmp.55 :COLOR_WHITE;
+            %tmp.57 = dup %tmp.52;
+            %tmp.58 = aputv %tmp.57 %tmp.54 %tmp.56;
+            %tmp.60 = const :locX;
+            %tmp.61 = 95;
+            %tmp.62 = dup %tmp.58;
+            %tmp.63 = aputv %tmp.62 %tmp.60 %tmp.61;
+            %tmp.65 = const :locY;
+            %tmp.66 = 27;
+            %tmp.67 = dup %tmp.63;
+            %tmp.68 = aputv %tmp.67 %tmp.65 %tmp.66;
+            %tmp.70 = const :justification;
+            %tmp.71 = getm $.Toybox.Graphics;
+            %tmp.72 = getv %tmp.71 :TEXT_JUSTIFY_RIGHT;
+            %tmp.73 = dup %tmp.68;
+            %tmp.74 = aputv %tmp.73 %tmp.70 %tmp.72;
+            %tmp.76 = const :font;
+            %tmp.77 = getm $.Toybox.Graphics;
+            %tmp.78 = getv %tmp.77 :FONT_LARGE;
+            %tmp.79 = dup %tmp.74;
+            %tmp.80 = aputv %tmp.79 %tmp.76 %tmp.78;
+            %tmp.43 = newc %tmp.46 (%tmp.80);
+            lputv %rez_cmp_local_text_value.3 %tmp.43;
+[ "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen" 64 12 ]
+            %tmp.81 = newa Array<WatchUi.Drawable> 3;
+            %tmp.83 = lgetv %rez_cmp_local_custom_drawable_13646830228555338968.1;
+            %tmp.84 = dup %tmp.81;
+            %tmp.85 = aputv %tmp.84 0 %tmp.83;
+            %tmp.87 = lgetv %rez_cmp_local_text_label.2;
+            %tmp.88 = dup %tmp.85;
+            %tmp.89 = aputv %tmp.88 1 %tmp.87;
+            %tmp.91 = lgetv %rez_cmp_local_text_value.3;
+            %tmp.92 = dup %tmp.89;
+            %tmp.93 = aputv %tmp.92 2 %tmp.91;
+            ret %tmp.93;
+c_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_gen_006_B4062_00_source_Rez_mcgen_57_80_stop:
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 67; ]
+        function BottomRightLayout(dc as Graphics.Dc) as Array<WatchUi.Drawable> {
+c_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_gen_006_B4062_00_source_Rez_mcgen_67_81_start:
+[ "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen" 68 12 ]
+            [ "c_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_gen_006_B4062_00_source_Rez_mcgen_67_81_start" "c_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_gen_006_B4062_00_source_Rez_mcgen_67_81_stop" ]
+            %rez_cmp_local_custom_drawable_17448700316930471291.1 = local;
+            %tmp.4 = getv ? :Background;
+            %tmp.1 = newc %tmp.4 ();
+            lputv %rez_cmp_local_custom_drawable_17448700316930471291.1 %tmp.1;
+[ "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen" 70 12 ]
+            [ "c_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_gen_006_B4062_00_source_Rez_mcgen_67_81_start" "c_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_gen_006_B4062_00_source_Rez_mcgen_67_81_stop" ]
+            %rez_cmp_local_text_label.2 = local;
+            %tmp.7 = getm $.Toybox.WatchUi;
+            %tmp.8 = getv function ? %tmp.7 :Text;
+            %tmp.9 = newd 6;
+            %tmp.11 = const :identifier;
+            %tmp.12 = "label";
+            %tmp.13 = dup %tmp.9;
+            %tmp.14 = aputv %tmp.13 %tmp.11 %tmp.12;
+            %tmp.16 = const :color;
+            %tmp.17 = getm $.Toybox.Graphics;
+            %tmp.18 = getv %tmp.17 :COLOR_LT_GRAY;
+            %tmp.19 = dup %tmp.14;
+            %tmp.20 = aputv %tmp.19 %tmp.16 %tmp.18;
+            %tmp.22 = const :locX;
+            %tmp.23 = 14;
+            %tmp.24 = dup %tmp.20;
+            %tmp.25 = aputv %tmp.24 %tmp.22 %tmp.23;
+            %tmp.27 = const :locY;
+            %tmp.28 = 10;
+            %tmp.29 = dup %tmp.25;
+            %tmp.30 = aputv %tmp.29 %tmp.27 %tmp.28;
+            %tmp.32 = const :justification;
+            %tmp.33 = getm $.Toybox.Graphics;
+            %tmp.34 = getv %tmp.33 :TEXT_JUSTIFY_LEFT;
+            %tmp.35 = dup %tmp.30;
+            %tmp.36 = aputv %tmp.35 %tmp.32 %tmp.34;
+            %tmp.38 = const :font;
+            %tmp.39 = getm $.Toybox.Graphics;
+            %tmp.40 = getv %tmp.39 :FONT_TINY;
+            %tmp.41 = dup %tmp.36;
+            %tmp.42 = aputv %tmp.41 %tmp.38 %tmp.40;
+            %tmp.5 = newc %tmp.8 (%tmp.42);
+            lputv %rez_cmp_local_text_label.2 %tmp.5;
+[ "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen" 72 12 ]
+            [ "c_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_gen_006_B4062_00_source_Rez_mcgen_67_81_start" "c_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_gen_006_B4062_00_source_Rez_mcgen_67_81_stop" ]
+            %rez_cmp_local_text_value.3 = local;
+            %tmp.45 = getm $.Toybox.WatchUi;
+            %tmp.46 = getv function ? %tmp.45 :Text;
+            %tmp.47 = newd 6;
+            %tmp.49 = const :identifier;
+            %tmp.50 = "value";
+            %tmp.51 = dup %tmp.47;
+            %tmp.52 = aputv %tmp.51 %tmp.49 %tmp.50;
+            %tmp.54 = const :color;
+            %tmp.55 = getm $.Toybox.Graphics;
+            %tmp.56 = getv %tmp.55 :COLOR_WHITE;
+            %tmp.57 = dup %tmp.52;
+            %tmp.58 = aputv %tmp.57 %tmp.54 %tmp.56;
+            %tmp.60 = const :locX;
+            %tmp.61 = 14;
+            %tmp.62 = dup %tmp.58;
+            %tmp.63 = aputv %tmp.62 %tmp.60 %tmp.61;
+            %tmp.65 = const :locY;
+            %tmp.66 = 27;
+            %tmp.67 = dup %tmp.63;
+            %tmp.68 = aputv %tmp.67 %tmp.65 %tmp.66;
+            %tmp.70 = const :justification;
+            %tmp.71 = getm $.Toybox.Graphics;
+            %tmp.72 = getv %tmp.71 :TEXT_JUSTIFY_LEFT;
+            %tmp.73 = dup %tmp.68;
+            %tmp.74 = aputv %tmp.73 %tmp.70 %tmp.72;
+            %tmp.76 = const :font;
+            %tmp.77 = getm $.Toybox.Graphics;
+            %tmp.78 = getv %tmp.77 :FONT_LARGE;
+            %tmp.79 = dup %tmp.74;
+            %tmp.80 = aputv %tmp.79 %tmp.76 %tmp.78;
+            %tmp.43 = newc %tmp.46 (%tmp.80);
+            lputv %rez_cmp_local_text_value.3 %tmp.43;
+[ "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen" 74 12 ]
+            %tmp.81 = newa Array<WatchUi.Drawable> 3;
+            %tmp.83 = lgetv %rez_cmp_local_custom_drawable_17448700316930471291.1;
+            %tmp.84 = dup %tmp.81;
+            %tmp.85 = aputv %tmp.84 0 %tmp.83;
+            %tmp.87 = lgetv %rez_cmp_local_text_label.2;
+            %tmp.88 = dup %tmp.85;
+            %tmp.89 = aputv %tmp.88 1 %tmp.87;
+            %tmp.91 = lgetv %rez_cmp_local_text_value.3;
+            %tmp.92 = dup %tmp.89;
+            %tmp.93 = aputv %tmp.92 2 %tmp.91;
+            ret %tmp.93;
+c_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_gen_006_B4062_00_source_Rez_mcgen_67_81_stop:
+        }
+    }
+    [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 78; ]
+    module Menus {
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 78; ]
+        <init> {
+        }
+    }
+    [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 81; ]
+    module Strings {
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 81; ]
+        <init> {
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 82; @position = 27; initialized = true; ]
+        var label as Symbol;
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 83; @position = 27; initialized = true; ]
+        var AppName as Symbol;
+    }
+    [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 86; ]
+    module Styles {
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 86; ]
+        <init> {
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 87; ]
+        module prompt_font_enhanced_readability__body_with_title {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 87; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 88; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 91; ]
+        module system_size__menu_header {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 91; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 92; @position = 18; ]
+            const height as Number = 0;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 95; ]
+        module system_loc__hint_button_left_bottom {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 95; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 96; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 99; ]
+        module prompt_font_enhanced_readability__body_no_title {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 99; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 100; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 103; ]
+        module prompt_loc__body_no_title {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 103; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 104; @position = 18; ]
+            const x as Number = 8;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 105; @position = 18; ]
+            const y as Number = 14;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 108; ]
+        module system_icon_dark__about {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 108; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 109; @position = 18; ]
+            const filename as String = "C:\\Users\\Sergio\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\edge840\\system_icon_dark__about.svg";
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 110; @position = 18; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 111; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 112; @position = 18; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 115; ]
+        module system_icon_light__question {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 115; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 116; @position = 18; ]
+            const filename as String = "C:\\Users\\Sergio\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\edge840\\system_icon_light__question.svg";
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 117; @position = 18; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 118; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 119; @position = 18; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 122; ]
+        module system_loc__hint_button_left_top {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 122; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 123; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 126; ]
+        module prompt_font__title {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 126; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 127; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 130; ]
+        module system_icon_dark__discard {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 130; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 131; @position = 18; ]
+            const filename as String = "C:\\Users\\Sergio\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\edge840\\system_icon_dark__discard.svg";
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 132; @position = 18; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 133; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 134; @position = 18; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 137; ]
+        module system_size__menu_item {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 137; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 138; @position = 18; ]
+            const width as Number = 246;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 139; @position = 18; ]
+            const height as Number = 70;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 142; ]
+        module system_color_dark__text {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 142; ]
+            <init> {
+[ "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen" 144 18 ]
+                %tmp.94 = getm $.Toybox.Graphics;
+                %tmp.95 = getv %tmp.94 :COLOR_TRANSPARENT;
+                putv self :background %tmp.95;
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 143; @position = 18; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 144; @position = 18; ]
+            const background;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 147; ]
+        module system_icon_destructive__discard {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 147; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 148; @position = 18; ]
+            const filename as String = "C:\\Users\\Sergio\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\edge840\\system_icon_destructive__discard.svg";
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 149; @position = 18; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 150; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 151; @position = 18; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 154; ]
+        module system_icon_dark__hint_action_menu {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 154; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 155; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 158; ]
+        module prompt_size__title {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 158; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 159; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 162; ]
+        module confirmation_font__body {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 162; ]
+            <init> {
+[ "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen" 163 18 ]
+                %tmp.96 = getm $.Toybox.Graphics;
+                %tmp.97 = getv %tmp.96 :TEXT_JUSTIFY_CENTER;
+                %tmp.98 = getm $.Toybox.Graphics;
+                %tmp.99 = getv %tmp.98 :TEXT_JUSTIFY_VCENTER;
+                %tmp.100 = bitor %tmp.97 %tmp.99;
+                putv self :justification %tmp.100;
+[ "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen" 164 18 ]
+                %tmp.101 = getm $.Toybox.Graphics;
+                %tmp.102 = getv %tmp.101 :FONT_MEDIUM;
+                putv self :font %tmp.102;
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 163; @position = 18; ]
+            const justification;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 164; @position = 18; ]
+            const font;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 167; ]
+        module system_color_dark__background {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 167; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 168; @position = 18; ]
+            const color as Number = 0x000000;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 169; @position = 18; ]
+            const background as Number = 0x000000;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 172; ]
+        module system_icon_destructive__hint_button_left_top {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 172; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 173; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 176; ]
+        module system_size__launch_icon {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 176; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 177; @position = 18; ]
+            const scaleX as Number = 35;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 178; @position = 18; ]
+            const scaleY as Number = 35;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 179; @position = 18; ]
+            const scaleRelativeTo as String = "screen";
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 182; ]
+        module confirmation_input__confirm {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 182; ]
+            <init> {
+[ "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen" 183 18 ]
+                %tmp.103 = getm $.Toybox.WatchUi;
+                %tmp.104 = getv %tmp.103 :KEY_ENTER;
+                putv self :button %tmp.104;
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 183; @position = 18; ]
+            const button;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 186; ]
+        module prompt_font__body_with_title {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 186; ]
+            <init> {
+[ "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen" 187 18 ]
+                %tmp.105 = getm $.Toybox.Graphics;
+                %tmp.106 = getv %tmp.105 :TEXT_JUSTIFY_CENTER;
+                %tmp.107 = getm $.Toybox.Graphics;
+                %tmp.108 = getv %tmp.107 :TEXT_JUSTIFY_VCENTER;
+                %tmp.109 = bitor %tmp.106 %tmp.108;
+                putv self :justification %tmp.109;
+[ "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen" 188 18 ]
+                %tmp.110 = getm $.Toybox.Graphics;
+                %tmp.111 = getv %tmp.110 :FONT_MEDIUM;
+                putv self :font %tmp.111;
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 187; @position = 18; ]
+            const justification;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 188; @position = 18; ]
+            const font;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 191; ]
+        module confirmation_loc__body {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 191; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 192; @position = 18; ]
+            const x as Number = 1;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 193; @position = 18; ]
+            const y as Number = 23;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 196; ]
+        module system_icon_destructive__hint_button_left_bottom {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 196; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 197; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 200; ]
+        module prompt_color_dark__background {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 200; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 201; @position = 18; ]
+            const color as Number = 0x000000;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 202; @position = 18; ]
+            const background as Number = 0x000000;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 205; ]
+        module system_loc__hint_action_menu {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 205; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 206; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 209; ]
+        module confirmation_icon__hint_confirm {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 209; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 210; @position = 18; ]
+            const filename as String = "C:\\Users\\Sergio\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\edge840\\confirmation_icon__hint_completion.svg";
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 211; @position = 18; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 212; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 213; @position = 18; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 216; ]
+        module system_loc__hint_button_left_middle {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 216; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 217; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 220; ]
+        module prompt_size__body_no_title {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 220; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 221; @position = 18; ]
+            const width as Number = 230;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 222; @position = 18; ]
+            const height as Number = 225;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 225; ]
+        module system_icon_light__hint_button_left_top {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 225; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 226; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 229; ]
+        module prompt_color_light__background {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 229; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 230; @position = 18; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 231; @position = 18; ]
+            const background as Number = 0xFFFFFF;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 234; ]
+        module confirmation_input__delete {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 234; ]
+            <init> {
+[ "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen" 235 18 ]
+                %tmp.112 = getm $.Toybox.WatchUi;
+                %tmp.113 = getv %tmp.112 :KEY_ESC;
+                putv self :button %tmp.113;
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 235; @position = 18; ]
+            const button;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 238; ]
+        module system_icon_dark__hint_button_left_top {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 238; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 239; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 242; ]
+        module system_input__action_menu {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 242; ]
+            <init> {
+[ "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen" 243 18 ]
+                %tmp.114 = getm $.Toybox.WatchUi;
+                %tmp.115 = getv %tmp.114 :KEY_MENU;
+                putv self :button %tmp.115;
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 243; @position = 18; ]
+            const button;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 246; ]
+        module system_icon_light__save {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 246; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 247; @position = 18; ]
+            const filename as String = "C:\\Users\\Sergio\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\edge840\\system_icon_light__save.svg";
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 248; @position = 18; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 249; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 250; @position = 18; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 253; ]
+        module prompt_color_light__body {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 253; ]
+            <init> {
+[ "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen" 255 18 ]
+                %tmp.116 = getm $.Toybox.Graphics;
+                %tmp.117 = getv %tmp.116 :COLOR_TRANSPARENT;
+                putv self :background %tmp.117;
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 254; @position = 18; ]
+            const color as Number = 0x000000;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 255; @position = 18; ]
+            const background;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 258; ]
+        module system_loc__subwindow {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 258; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 259; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 262; ]
+        module system_icon_light__warning {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 262; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 263; @position = 18; ]
+            const filename as String = "C:\\Users\\Sergio\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\edge840\\system_icon_light__warning.svg";
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 264; @position = 18; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 265; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 266; @position = 18; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 269; ]
+        module confirmation_color_light__body {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 269; ]
+            <init> {
+[ "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen" 271 18 ]
+                %tmp.118 = getm $.Toybox.Graphics;
+                %tmp.119 = getv %tmp.118 :COLOR_TRANSPARENT;
+                putv self :background %tmp.119;
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 270; @position = 18; ]
+            const color as Number = 0x000000;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 271; @position = 18; ]
+            const background;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 274; ]
+        module activity_color_light__background {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 274; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 275; @position = 18; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 276; @position = 18; ]
+            const background as Number = 0xFFFFFF;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 279; ]
+        module system_icon_positive__hint_button_right_top {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 279; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 280; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 283; ]
+        module system_size__screen {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 283; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 284; @position = 18; ]
+            const width as Number = 246;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 285; @position = 18; ]
+            const height as Number = 322;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 288; ]
+        module system_icon_destructive__hint_button_right_bottom {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 288; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 289; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 292; ]
+        module system_color_light__background {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 292; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 293; @position = 18; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 294; @position = 18; ]
+            const background as Number = 0xFFFFFF;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 297; ]
+        module system_icon_destructive__hint_button_right_top {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 297; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 298; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 301; ]
+        module confirmation_loc__hint_confirm {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 301; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 302; @position = 18; ]
+            const x as Number = 195;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 303; @position = 18; ]
+            const y as Number = 30;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 304; @position = 18; ]
+            const horizontalJustification as String = "center";
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 305; @position = 18; ]
+            const verticalJustification as String = "center";
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 308; ]
+        module activity_color_dark__text {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 308; ]
+            <init> {
+[ "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen" 310 18 ]
+                %tmp.120 = getm $.Toybox.Graphics;
+                %tmp.121 = getv %tmp.120 :COLOR_TRANSPARENT;
+                putv self :background %tmp.121;
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 309; @position = 18; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 310; @position = 18; ]
+            const background;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 313; ]
+        module confirmation_input__keep {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 313; ]
+            <init> {
+[ "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen" 314 18 ]
+                %tmp.122 = getm $.Toybox.WatchUi;
+                %tmp.123 = getv %tmp.122 :KEY_ENTER;
+                putv self :button %tmp.123;
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 314; @position = 18; ]
+            const button;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 317; ]
+        module prompt_loc__body_with_title {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 317; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 318; @position = 18; ]
+            const x as Number = 8;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 319; @position = 18; ]
+            const y as Number = 93;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 322; ]
+        module system_icon_dark__search {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 322; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 323; @position = 18; ]
+            const filename as String = "C:\\Users\\Sergio\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\edge840\\system_icon_dark__search.svg";
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 324; @position = 18; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 325; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 326; @position = 18; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 329; ]
+        module activity_color_light__text {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 329; ]
+            <init> {
+[ "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen" 331 18 ]
+                %tmp.124 = getm $.Toybox.Graphics;
+                %tmp.125 = getv %tmp.124 :COLOR_TRANSPARENT;
+                putv self :background %tmp.125;
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 330; @position = 18; ]
+            const color as Number = 0x000000;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 331; @position = 18; ]
+            const background;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 334; ]
+        module confirmation_icon__hint_keep {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 334; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 335; @position = 18; ]
+            const filename as String = "C:\\Users\\Sergio\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\edge840\\confirmation_icon__hint_completion.svg";
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 336; @position = 18; ]
+            const disableTransparency as Boolean = false;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 337; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 338; @position = 18; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 341; ]
+        module system_icon_dark__save {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 341; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 342; @position = 18; ]
+            const filename as String = "C:\\Users\\Sergio\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\edge840\\system_icon_dark__save.svg";
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 343; @position = 18; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 344; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 345; @position = 18; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 348; ]
+        module system_icon_destructive__hint_button_left_middle {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 348; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 349; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 352; ]
+        module system_icon_light__search {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 352; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 353; @position = 18; ]
+            const filename as String = "C:\\Users\\Sergio\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\edge840\\system_icon_light__search.svg";
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 354; @position = 18; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 355; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 356; @position = 18; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 359; ]
+        module system_icon_dark__hint_button_left_bottom {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 359; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 360; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 363; ]
+        module system_icon_positive__hint_button_left_top {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 363; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 364; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 367; ]
+        module system_loc__hint_button_right_bottom {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 367; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 368; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 371; ]
+        module confirmation_color_dark__body {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 371; ]
+            <init> {
+[ "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen" 373 18 ]
+                %tmp.126 = getm $.Toybox.Graphics;
+                %tmp.127 = getv %tmp.126 :COLOR_TRANSPARENT;
+                putv self :background %tmp.127;
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 372; @position = 18; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 373; @position = 18; ]
+            const background;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 376; ]
+        module prompt_color_dark__title {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 376; ]
+            <init> {
+[ "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen" 378 18 ]
+                %tmp.128 = getm $.Toybox.Graphics;
+                %tmp.129 = getv %tmp.128 :COLOR_TRANSPARENT;
+                putv self :background %tmp.129;
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 377; @position = 18; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 378; @position = 18; ]
+            const background;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 381; ]
+        module system_icon_destructive__cancel {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 381; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 382; @position = 18; ]
+            const filename as String = "C:\\Users\\Sergio\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\edge840\\system_icon_destructive__cancel.svg";
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 383; @position = 18; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 384; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 385; @position = 18; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 388; ]
+        module system_icon_light__hint_button_right_bottom {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 388; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 389; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 392; ]
+        module prompt_loc__title {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 392; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 393; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 396; ]
+        module confirmation_font_enhanced_readability__body {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 396; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 397; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 400; ]
+        module prompt_color_light__title {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 400; ]
+            <init> {
+[ "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen" 402 18 ]
+                %tmp.130 = getm $.Toybox.Graphics;
+                %tmp.131 = getv %tmp.130 :COLOR_TRANSPARENT;
+                putv self :background %tmp.131;
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 401; @position = 18; ]
+            const color as Number = 0x000000;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 402; @position = 18; ]
+            const background;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 405; ]
+        module system_icon_dark__hint_button_right_top {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 405; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 406; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 409; ]
+        module system_icon_dark__hint_button_left_middle {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 409; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 410; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 413; ]
+        module system_icon_light__cancel {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 413; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 414; @position = 18; ]
+            const filename as String = "C:\\Users\\Sergio\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\edge840\\system_icon_light__cancel.svg";
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 415; @position = 18; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 416; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 417; @position = 18; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 420; ]
+        module system_icon_light__about {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 420; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 421; @position = 18; ]
+            const filename as String = "C:\\Users\\Sergio\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\edge840\\system_icon_light__about.svg";
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 422; @position = 18; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 423; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 424; @position = 18; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 427; ]
+        module system_size__toast_icon {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 427; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 428; @position = 18; ]
+            const scaleX as Number = 32;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 429; @position = 18; ]
+            const scaleY as Number = 32;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 430; @position = 18; ]
+            const scaleRelativeTo as String = "screen";
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 433; ]
+        module system_icon_dark__hint_button_right_middle {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 433; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 434; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 437; ]
+        module confirmation_icon__hint_reject {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 437; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 438; @position = 18; ]
+            const filename as String = "C:\\Users\\Sergio\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\edge840\\confirmation_icon__hint_x.svg";
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 439; @position = 18; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 440; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 441; @position = 18; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 444; ]
+        module system_icon_light__hint_action_menu {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 444; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 445; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 448; ]
+        module system_icon_light__hint_button_right_middle {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 448; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 449; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 452; ]
+        module system_icon_destructive__hint_button_right_middle {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 452; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 453; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 456; ]
+        module confirmation_loc__hint_reject {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 456; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 457; @position = 18; ]
+            const x as Number = 214;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 458; @position = 18; ]
+            const y as Number = 249;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 459; @position = 18; ]
+            const horizontalJustification as String = "center";
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 460; @position = 18; ]
+            const verticalJustification as String = "center";
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 463; ]
+        module activity_color_dark__background {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 463; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 464; @position = 18; ]
+            const color as Number = 0x000000;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 465; @position = 18; ]
+            const background as Number = 0x000000;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 468; ]
+        module system_icon_light__hint_button_left_bottom {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 468; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 469; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 472; ]
+        module system_icon_positive__hint_button_left_middle {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 472; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 473; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 476; ]
+        module system_size__menu_icon {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 476; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 477; @position = 18; ]
+            const scaleX as Number = 40;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 478; @position = 18; ]
+            const scaleY as Number = 40;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 479; @position = 18; ]
+            const scaleRelativeTo as String = "screen";
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 482; ]
+        module system_icon_destructive__warning {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 482; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 483; @position = 18; ]
+            const filename as String = "C:\\Users\\Sergio\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\edge840\\system_icon_destructive__warning.svg";
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 484; @position = 18; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 485; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 486; @position = 18; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 489; ]
+        module system_loc__hint_button_right_middle {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 489; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 490; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 493; ]
+        module system_icon_dark__cancel {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 493; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 494; @position = 18; ]
+            const filename as String = "C:\\Users\\Sergio\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\edge840\\system_icon_dark__cancel.svg";
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 495; @position = 18; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 496; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 497; @position = 18; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 500; ]
+        module prompt_size__body_with_title {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 500; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 501; @position = 18; ]
+            const width as Number = 230;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 502; @position = 18; ]
+            const height as Number = 135;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 505; ]
+        module system_loc__hint_button_right_top {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 505; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 506; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 509; ]
+        module system_color_light__text {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 509; ]
+            <init> {
+[ "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen" 511 18 ]
+                %tmp.132 = getm $.Toybox.Graphics;
+                %tmp.133 = getv %tmp.132 :COLOR_TRANSPARENT;
+                putv self :background %tmp.133;
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 510; @position = 18; ]
+            const color as Number = 0x000000;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 511; @position = 18; ]
+            const background;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 514; ]
+        module system_icon_light__check {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 514; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 515; @position = 18; ]
+            const filename as String = "C:\\Users\\Sergio\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\edge840\\system_icon_light__check.svg";
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 516; @position = 18; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 517; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 518; @position = 18; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 521; ]
+        module confirmation_input__reject {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 521; ]
+            <init> {
+[ "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen" 522 18 ]
+                %tmp.134 = getm $.Toybox.WatchUi;
+                %tmp.135 = getv %tmp.134 :KEY_ESC;
+                putv self :button %tmp.135;
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 522; @position = 18; ]
+            const button;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 525; ]
+        module system_icon_light__revert {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 525; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 526; @position = 18; ]
+            const filename as String = "C:\\Users\\Sergio\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\edge840\\system_icon_light__revert.svg";
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 527; @position = 18; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 528; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 529; @position = 18; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 532; ]
+        module system_size__subwindow {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 532; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 533; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 536; ]
+        module system_icon_positive__hint_button_left_bottom {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 536; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 537; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 540; ]
+        module system_icon_dark__check {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 540; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 541; @position = 18; ]
+            const filename as String = "C:\\Users\\Sergio\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\edge840\\system_icon_dark__check.svg";
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 542; @position = 18; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 543; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 544; @position = 18; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 547; ]
+        module confirmation_loc__hint_keep {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 547; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 548; @position = 18; ]
+            const x as Number = 195;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 549; @position = 18; ]
+            const y as Number = 30;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 550; @position = 18; ]
+            const horizontalJustification as String = "center";
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 551; @position = 18; ]
+            const verticalJustification as String = "center";
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 554; ]
+        module confirmation_loc__hint_delete {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 554; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 555; @position = 18; ]
+            const x as Number = 195;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 556; @position = 18; ]
+            const y as Number = 249;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 557; @position = 18; ]
+            const horizontalJustification as String = "center";
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 558; @position = 18; ]
+            const verticalJustification as String = "center";
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 561; ]
+        module system_icon_positive__hint_button_right_middle {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 561; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 562; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 565; ]
+        module system_icon_light__hint_button_left_middle {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 565; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 566; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 569; ]
+        module system_icon_dark__hint_button_right_bottom {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 569; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 570; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 573; ]
+        module system_icon_positive__hint_button_right_bottom {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 573; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 574; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 577; ]
+        module system_icon_dark__revert {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 577; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 578; @position = 18; ]
+            const filename as String = "C:\\Users\\Sergio\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\edge840\\system_icon_dark__revert.svg";
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 579; @position = 18; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 580; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 581; @position = 18; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 584; ]
+        module system_icon_dark__question {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 584; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 585; @position = 18; ]
+            const filename as String = "C:\\Users\\Sergio\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\edge840\\system_icon_dark__question.svg";
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 586; @position = 18; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 587; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 588; @position = 18; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 591; ]
+        module system_icon_light__discard {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 591; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 592; @position = 18; ]
+            const filename as String = "C:\\Users\\Sergio\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\edge840\\system_icon_light__discard.svg";
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 593; @position = 18; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 594; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 595; @position = 18; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 598; ]
+        module device_info {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 598; ]
+            <init> {
+[ "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen" 600 18 ]
+                %tmp.136 = getm $.Toybox.System;
+                %tmp.137 = getv %tmp.136 :SCREEN_SHAPE_RECTANGLE;
+                putv self :screenShape %tmp.137;
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 599; @position = 18; ]
+            const screenWidth as Number = 246;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 600; @position = 18; ]
+            const screenShape;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 601; @position = 18; ]
+            const hasNightMode as Boolean = true;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 602; @position = 18; ]
+            const screenHeight as Number = 322;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 603; @position = 18; ]
+            const hasTouchScreen as Boolean = false;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 604; @position = 18; ]
+            const hasEnhancedReadabilityMode as Boolean = false;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 607; ]
+        module prompt_font__body_no_title {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 607; ]
+            <init> {
+[ "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen" 608 18 ]
+                %tmp.138 = getm $.Toybox.Graphics;
+                %tmp.139 = getv %tmp.138 :TEXT_JUSTIFY_CENTER;
+                %tmp.140 = getm $.Toybox.Graphics;
+                %tmp.141 = getv %tmp.140 :TEXT_JUSTIFY_VCENTER;
+                %tmp.142 = bitor %tmp.139 %tmp.141;
+                putv self :justification %tmp.142;
+[ "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen" 609 18 ]
+                %tmp.143 = getm $.Toybox.Graphics;
+                %tmp.144 = getv %tmp.143 :FONT_MEDIUM;
+                putv self :font %tmp.144;
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 608; @position = 18; ]
+            const justification;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 609; @position = 18; ]
+            const font;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 612; ]
+        module prompt_size__title_icon {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 612; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 613; @position = 18; ]
+            const scaleX as Number = 55;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 614; @position = 18; ]
+            const scaleY as Number = 55;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 615; @position = 18; ]
+            const scaleRelativeTo as String = "screen";
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 618; ]
+        module system_icon_dark__warning {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 618; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 619; @position = 18; ]
+            const filename as String = "C:\\Users\\Sergio\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\edge840\\system_icon_dark__warning.svg";
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 620; @position = 18; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 621; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 622; @position = 18; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 625; ]
+        module prompt_loc__title_icon {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 625; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 626; @position = 18; ]
+            const x as Number = 123;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 627; @position = 18; ]
+            const y as Number = 44;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 628; @position = 18; ]
+            const horizontalJustification as String = "center";
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 629; @position = 18; ]
+            const verticalJustification as String = "center";
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 632; ]
+        module prompt_font_enhanced_readability__title {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 632; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 633; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 636; ]
+        module prompt_color_dark__body {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 636; ]
+            <init> {
+[ "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen" 638 18 ]
+                %tmp.145 = getm $.Toybox.Graphics;
+                %tmp.146 = getv %tmp.145 :COLOR_TRANSPARENT;
+                putv self :background %tmp.146;
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 637; @position = 18; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 638; @position = 18; ]
+            const background;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 641; ]
+        module confirmation_icon__hint_delete {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 641; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 642; @position = 18; ]
+            const filename as String = "C:\\Users\\Sergio\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\edge840\\confirmation_icon__hint_back.svg";
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 643; @position = 18; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 644; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 645; @position = 18; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 648; ]
+        module system_icon_light__hint_button_right_top {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 648; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 649; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 652; ]
+        module confirmation_size__body {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 652; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 653; @position = 18; ]
+            const width as Number = 246;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 654; @position = 18; ]
+            const height as Number = 236;
+        }
+        [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 657; ]
+        module system_icon_positive__check {
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 657; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 658; @position = 18; ]
+            const filename as String = "C:\\Users\\Sergio\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\edge840\\system_icon_positive__check.svg";
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 659; @position = 18; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 660; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 661; @position = 18; ]
+            const automaticPalette as Boolean = true;
+        }
+    }
+}
+[ @file = "c:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\gen\006-B4062-00\source\Rez.mcgen"; @line = 1; ]
+<init> {
+}

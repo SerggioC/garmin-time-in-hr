@@ -2,5 +2,7 @@
     <fonts>
         <font id="id_system_font" filename="system_font.fnt"/>
         <font id="garmin_verdana_font" filename="garmin_verdana_font.fnt" antialias="true" filter="Z: 0.123456789"/>
+        <font id="tahoma_font" filename="tahoma.fnt" antialias="true"/>
+        <font id="verdana_font" filename="verdana.fnt" antialias="true"/>
     </fonts>
 </resources>

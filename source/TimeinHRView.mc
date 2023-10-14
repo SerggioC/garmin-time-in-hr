@@ -74,13 +74,11 @@ class TimeinHRView extends WatchUi.DataField {
       currentHeartRate = info.currentHeartRate as Number;
 
       var maxHR = userHeartRateZones[userHeartRateZones.size() - 1].toFloat();
-      var hrZ1Low = userHeartRateZones[0].toFloat();
 
       percentHRR = (currentHeartRate.toFloat() - restingHeartRate.toFloat()) / (maxHR - restingHeartRate);
       if (percentHRR < 0.0) {
         percentHRR = 0.0;
-      }
-      if (percentHRR > 1.0) {
+      } else if (percentHRR > 1.0) {
         percentHRR = 1.0;
       }
 
@@ -131,9 +129,7 @@ class TimeinHRView extends WatchUi.DataField {
         if (i != currentZone) {
           var timeInZoneI = (timeInHeartRateZones[i] as Number).toFloat();
           var fractionI = 0.0;
-          if (elapsedSeconds > 0.0) {
-            fractionI = timeInZoneI / elapsedSeconds;
-          }
+          fractionI = timeInZoneI / elapsedSeconds;
           if (fractionI > 1.0) {
             fractionI = 1.0;
           }
@@ -153,7 +149,7 @@ class TimeinHRView extends WatchUi.DataField {
     drawBarsOnScreen(dc);
   }
 
-  hidden var cornerRadius as Number = 4;
+  hidden var cornerRadius as Number = 2;
   hidden var penWidth as Number = 4;
 
   function drawBarsOnScreen(dc as Dc) as Void {
@@ -181,8 +177,7 @@ class TimeinHRView extends WatchUi.DataField {
 
       var labelX = barX + minimumBarWidth + 30;
       
-      
-      var labelY = barY + (barHeight - fontHeight) / 2;
+      var labelY = barY + ((barHeight - fontHeight) / 2) - 2;
       var labelText = "Z" + indexZone;
       if (timeInHeartRateZones[indexZone] > 0) {
         labelText += " " + secondsToTimeString(timeInHeartRateZones[indexZone]);
@@ -198,8 +193,8 @@ class TimeinHRView extends WatchUi.DataField {
           " userHeartRateZones: " + userHeartRateZones
       );
 
+      // draw a black rectangle around the current zone
       if (currentZone == indexZone) {
-        // draw a black rectangle around the current zone
         dc.setPenWidth(penWidth);
         dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_TRANSPARENT);
         dc.drawRoundedRectangle(0, (indexBar - 1) * barHeight, screenWidth, barHeight, cornerRadius);
@@ -214,7 +209,7 @@ class TimeinHRView extends WatchUi.DataField {
       dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_BLACK);
       dc.fillPolygon([
         [triangleX, triangleY - triangleSize],      // Top vertex
-        [triangleX + barHeight / 2, triangleY],     // Right vertex
+        [triangleX + 25, triangleY],                // Right vertex
         [triangleX, triangleY + triangleSize],      // Bottom vertex
       ]);
     }
@@ -234,7 +229,6 @@ class TimeinHRView extends WatchUi.DataField {
     
     // bar with %HRR
     var barColor = mZoneColors[currentZone];
-    barColor = interpolateColor(1 - (currentZoneDecimal / 6));
     var barWidth = percentHRR * (screenWidth / 2);
     dc.setColor(barColor, Graphics.COLOR_WHITE);
 

@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<debugInfo>
+    <manifest filename="C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\manifest.xml"/>
+    <pcToLineNum>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRApp.mc" id="1" lineNum="5" parent="globals/TimeinHRApp" pc="268435457" symbol="&lt;init&gt;"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRApp.mc" id="3" lineNum="20" parent="globals/TimeinHRApp" pc="268435476" symbol="getInitialView"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRApp.mc" id="3" lineNum="21" parent="globals/TimeinHRApp" pc="268435478" symbol="getInitialView"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRApp.mc" id="4" lineNum="7" parent="globals/TimeinHRApp" pc="268435519" symbol="initialize"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRApp.mc" id="4" lineNum="8" parent="globals/TimeinHRApp" pc="268435521" symbol="initialize"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRApp.mc" id="6" lineNum="26" parent="globals" pc="268435540" symbol="getApp"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRApp.mc" id="6" lineNum="27" parent="globals" pc="268435550" symbol="getApp"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRBackground.mc" id="7" lineNum="5" parent="globals/Background" pc="268435566" symbol="&lt;init&gt;"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRBackground.mc" id="8" lineNum="19" parent="globals/Background" pc="268435585" symbol="setColor"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRBackground.mc" id="8" lineNum="20" parent="globals/Background" pc="268435587" symbol="setColor"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRBackground.mc" id="9" lineNum="9" parent="globals/Background" pc="268435598" symbol="initialize"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRBackground.mc" id="9" lineNum="10" parent="globals/Background" pc="268435602" symbol="initialize"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRBackground.mc" id="9" lineNum="14" parent="globals/Background" pc="268435623" symbol="initialize"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRBackground.mc" id="9" lineNum="16" parent="globals/Background" pc="268435643" symbol="initialize"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRBackground.mc" id="10" lineNum="23" parent="globals/Background" pc="268435657" symbol="draw"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRBackground.mc" id="10" lineNum="24" parent="globals/Background" pc="268435659" symbol="draw"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRBackground.mc" id="10" lineNum="25" parent="globals/Background" pc="268435684" symbol="draw"/>
+        <entry filename="c:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\gen\\006-B4062-00\\source\\Rez.mcgen" id="11" lineNum="7" parent="globals/Rez" pc="268435697" symbol="&lt;init&gt;"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="12" lineNum="9" parent="globals/TimeinHRView" pc="268435721" symbol="&lt;init&gt;"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="12" lineNum="12" parent="globals/TimeinHRView" pc="268435739" symbol="&lt;init&gt;"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="12" lineNum="13" parent="globals/TimeinHRView" pc="268435831" symbol="&lt;init&gt;"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="12" lineNum="24" parent="globals/TimeinHRView" pc="268435923" symbol="&lt;init&gt;"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="13" lineNum="242" parent="globals/TimeinHRView" pc="268435971" symbol="secondsToTimeString"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="13" lineNum="243" parent="globals/TimeinHRView" pc="268435975" symbol="secondsToTimeString"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="13" lineNum="244" parent="globals/TimeinHRView" pc="268435985" symbol="secondsToTimeString"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="13" lineNum="245" parent="globals/TimeinHRView" pc="268436001" symbol="secondsToTimeString"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="13" lineNum="246" parent="globals/TimeinHRView" pc="268436011" symbol="secondsToTimeString"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="13" lineNum="251" parent="globals/TimeinHRView" pc="268436107" symbol="secondsToTimeString"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="14" lineNum="51" parent="globals/TimeinHRView" pc="268436110" symbol="onLayout"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="14" lineNum="52" parent="globals/TimeinHRView" pc="268436114" symbol="onLayout"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="14" lineNum="55" parent="globals/TimeinHRView" pc="268436133" symbol="onLayout"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="15" lineNum="281" parent="globals/TimeinHRView" pc="268436148" symbol="interpolate"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="15" lineNum="282" parent="globals/TimeinHRView" pc="268436152" symbol="interpolate"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="15" lineNum="283" parent="globals/TimeinHRView" pc="268436201" symbol="interpolate"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="15" lineNum="284" parent="globals/TimeinHRView" pc="268436268" symbol="interpolate"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="15" lineNum="285" parent="globals/TimeinHRView" pc="268436335" symbol="interpolate"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="15" lineNum="287" parent="globals/TimeinHRView" pc="268436381" symbol="interpolate"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="16" lineNum="255" parent="globals/TimeinHRView" pc="268436405" symbol="interpolateColor"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="16" lineNum="260" parent="globals/TimeinHRView" pc="268436409" symbol="interpolateColor"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="16" lineNum="261" parent="globals/TimeinHRView" pc="268436446" symbol="interpolateColor"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="16" lineNum="262" parent="globals/TimeinHRView" pc="268436483" symbol="interpolateColor"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="16" lineNum="263" parent="globals/TimeinHRView" pc="268436520" symbol="interpolateColor"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="16" lineNum="264" parent="globals/TimeinHRView" pc="268436557" symbol="interpolateColor"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="16" lineNum="267" parent="globals/TimeinHRView" pc="268436594" symbol="interpolateColor"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="16" lineNum="268" parent="globals/TimeinHRView" pc="268436605" symbol="interpolateColor"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="16" lineNum="269" parent="globals/TimeinHRView" pc="268436632" symbol="interpolateColor"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="16" lineNum="270" parent="globals/TimeinHRView" pc="268436643" symbol="interpolateColor"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="16" lineNum="271" parent="globals/TimeinHRView" pc="268436676" symbol="interpolateColor"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="16" lineNum="272" parent="globals/TimeinHRView" pc="268436687" symbol="interpolateColor"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="16" lineNum="273" parent="globals/TimeinHRView" pc="268436720" symbol="interpolateColor"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="16" lineNum="274" parent="globals/TimeinHRView" pc="268436731" symbol="interpolateColor"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="16" lineNum="276" parent="globals/TimeinHRView" pc="268436764" symbol="interpolateColor"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="17" lineNum="62" parent="globals/TimeinHRView" pc="268436768" symbol="compute"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="17" lineNum="64" parent="globals/TimeinHRView" pc="268436770" symbol="compute"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="18" lineNum="68" parent="globals/TimeinHRView" pc="268436785" symbol="updateHeartRateZonesTime"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="18" lineNum="69" parent="globals/TimeinHRView" pc="268436789" symbol="updateHeartRateZonesTime"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="18" lineNum="74" parent="globals/TimeinHRView" pc="268436866" symbol="updateHeartRateZonesTime"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="18" lineNum="76" parent="globals/TimeinHRView" pc="268436882" symbol="updateHeartRateZonesTime"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="18" lineNum="78" parent="globals/TimeinHRView" pc="268436925" symbol="updateHeartRateZonesTime"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="18" lineNum="79" parent="globals/TimeinHRView" pc="268436980" symbol="updateHeartRateZonesTime"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="18" lineNum="80" parent="globals/TimeinHRView" pc="268436997" symbol="updateHeartRateZonesTime"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="18" lineNum="81" parent="globals/TimeinHRView" pc="268437013" symbol="updateHeartRateZonesTime"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="18" lineNum="82" parent="globals/TimeinHRView" pc="268437030" symbol="updateHeartRateZonesTime"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="18" lineNum="85" parent="globals/TimeinHRView" pc="268437043" symbol="updateHeartRateZonesTime"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="18" lineNum="86" parent="globals/TimeinHRView" pc="268437053" symbol="updateHeartRateZonesTime"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="18" lineNum="88" parent="globals/TimeinHRView" pc="268437072" symbol="updateHeartRateZonesTime"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="18" lineNum="90" parent="globals/TimeinHRView" pc="268437104" symbol="updateHeartRateZonesTime"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="18" lineNum="91" parent="globals/TimeinHRView" pc="268437117" symbol="updateHeartRateZonesTime"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="18" lineNum="92" parent="globals/TimeinHRView" pc="268437143" symbol="updateHeartRateZonesTime"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="18" lineNum="93" parent="globals/TimeinHRView" pc="268437156" symbol="updateHeartRateZonesTime"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="18" lineNum="95" parent="globals/TimeinHRView" pc="268437199" symbol="updateHeartRateZonesTime"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="18" lineNum="96" parent="globals/TimeinHRView" pc="268437254" symbol="updateHeartRateZonesTime"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="18" lineNum="97" parent="globals/TimeinHRView" pc="268437270" symbol="updateHeartRateZonesTime"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="18" lineNum="98" parent="globals/TimeinHRView" pc="268437325" symbol="updateHeartRateZonesTime"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="18" lineNum="99" parent="globals/TimeinHRView" pc="268437341" symbol="updateHeartRateZonesTime"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="18" lineNum="100" parent="globals/TimeinHRView" pc="268437396" symbol="updateHeartRateZonesTime"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="18" lineNum="101" parent="globals/TimeinHRView" pc="268437412" symbol="updateHeartRateZonesTime"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="18" lineNum="102" parent="globals/TimeinHRView" pc="268437467" symbol="updateHeartRateZonesTime"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="18" lineNum="103" parent="globals/TimeinHRView" pc="268437483" symbol="updateHeartRateZonesTime"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="18" lineNum="104" parent="globals/TimeinHRView" pc="268437509" symbol="updateHeartRateZonesTime"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="18" lineNum="106" parent="globals/TimeinHRView" pc="268437522" symbol="updateHeartRateZonesTime"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="18" lineNum="111" parent="globals/TimeinHRView" pc="268437622" symbol="updateHeartRateZonesTime"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="18" lineNum="112" parent="globals/TimeinHRView" pc="268437639" symbol="updateHeartRateZonesTime"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="18" lineNum="114" parent="globals/TimeinHRView" pc="268437652" symbol="updateHeartRateZonesTime"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="18" lineNum="117" parent="globals/TimeinHRView" pc="268437677" symbol="updateHeartRateZonesTime"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="18" lineNum="118" parent="globals/TimeinHRView" pc="268437702" symbol="updateHeartRateZonesTime"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="18" lineNum="119" parent="globals/TimeinHRView" pc="268437721" symbol="updateHeartRateZonesTime"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="18" lineNum="120" parent="globals/TimeinHRView" pc="268437728" symbol="updateHeartRateZonesTime"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="18" lineNum="121" parent="globals/TimeinHRView" pc="268437739" symbol="updateHeartRateZonesTime"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="18" lineNum="123" parent="globals/TimeinHRView" pc="268437755" symbol="updateHeartRateZonesTime"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="18" lineNum="124" parent="globals/TimeinHRView" pc="268437766" symbol="updateHeartRateZonesTime"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="18" lineNum="126" parent="globals/TimeinHRView" pc="268437773" symbol="updateHeartRateZonesTime"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="18" lineNum="128" parent="globals/TimeinHRView" pc="268437792" symbol="updateHeartRateZonesTime"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="18" lineNum="129" parent="globals/TimeinHRView" pc="268437822" symbol="updateHeartRateZonesTime"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="18" lineNum="130" parent="globals/TimeinHRView" pc="268437836" symbol="updateHeartRateZonesTime"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="18" lineNum="131" parent="globals/TimeinHRView" pc="268437858" symbol="updateHeartRateZonesTime"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="18" lineNum="132" parent="globals/TimeinHRView" pc="268437865" symbol="updateHeartRateZonesTime"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="18" lineNum="133" parent="globals/TimeinHRView" pc="268437872" symbol="updateHeartRateZonesTime"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="18" lineNum="134" parent="globals/TimeinHRView" pc="268437883" symbol="updateHeartRateZonesTime"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="18" lineNum="136" parent="globals/TimeinHRView" pc="268437890" symbol="updateHeartRateZonesTime"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="18" lineNum="140" parent="globals/TimeinHRView" pc="268437919" symbol="updateHeartRateZonesTime"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="19" lineNum="155" parent="globals/TimeinHRView" pc="268437943" symbol="drawBarsOnScreen"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="19" lineNum="157" parent="globals/TimeinHRView" pc="268437947" symbol="drawBarsOnScreen"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="19" lineNum="158" parent="globals/TimeinHRView" pc="268437960" symbol="drawBarsOnScreen"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="19" lineNum="160" parent="globals/TimeinHRView" pc="268437973" symbol="drawBarsOnScreen"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="19" lineNum="161" parent="globals/TimeinHRView" pc="268437995" symbol="drawBarsOnScreen"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="19" lineNum="163" parent="globals/TimeinHRView" pc="268438021" symbol="drawBarsOnScreen"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="19" lineNum="164" parent="globals/TimeinHRView" pc="268438028" symbol="drawBarsOnScreen"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="19" lineNum="165" parent="globals/TimeinHRView" pc="268438035" symbol="drawBarsOnScreen"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="19" lineNum="166" parent="globals/TimeinHRView" pc="268438075" symbol="drawBarsOnScreen"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="19" lineNum="167" parent="globals/TimeinHRView" pc="268438100" symbol="drawBarsOnScreen"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="19" lineNum="168" parent="globals/TimeinHRView" pc="268438113" symbol="drawBarsOnScreen"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="19" lineNum="169" parent="globals/TimeinHRView" pc="268438149" symbol="drawBarsOnScreen"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="19" lineNum="170" parent="globals/TimeinHRView" pc="268438156" symbol="drawBarsOnScreen"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="19" lineNum="171" parent="globals/TimeinHRView" pc="268438178" symbol="drawBarsOnScreen"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="19" lineNum="172" parent="globals/TimeinHRView" pc="268438213" symbol="drawBarsOnScreen"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="19" lineNum="173" parent="globals/TimeinHRView" pc="268438229" symbol="drawBarsOnScreen"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="19" lineNum="174" parent="globals/TimeinHRView" pc="268438242" symbol="drawBarsOnScreen"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="19" lineNum="175" parent="globals/TimeinHRView" pc="268438264" symbol="drawBarsOnScreen"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="19" lineNum="176" parent="globals/TimeinHRView" pc="268438283" symbol="drawBarsOnScreen"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="19" lineNum="178" parent="globals/TimeinHRView" pc="268438311" symbol="drawBarsOnScreen"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="19" lineNum="180" parent="globals/TimeinHRView" pc="268438324" symbol="drawBarsOnScreen"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="19" lineNum="181" parent="globals/TimeinHRView" pc="268438346" symbol="drawBarsOnScreen"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="19" lineNum="182" parent="globals/TimeinHRView" pc="268438356" symbol="drawBarsOnScreen"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="19" lineNum="183" parent="globals/TimeinHRView" pc="268438376" symbol="drawBarsOnScreen"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="19" lineNum="185" parent="globals/TimeinHRView" pc="268438409" symbol="drawBarsOnScreen"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="19" lineNum="186" parent="globals/TimeinHRView" pc="268438431" symbol="drawBarsOnScreen"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="19" lineNum="188" parent="globals/TimeinHRView" pc="268438462" symbol="drawBarsOnScreen"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="19" lineNum="197" parent="globals/TimeinHRView" pc="268438569" symbol="drawBarsOnScreen"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="19" lineNum="198" parent="globals/TimeinHRView" pc="268438583" symbol="drawBarsOnScreen"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="19" lineNum="199" parent="globals/TimeinHRView" pc="268438603" symbol="drawBarsOnScreen"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="19" lineNum="200" parent="globals/TimeinHRView" pc="268438625" symbol="drawBarsOnScreen"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="19" lineNum="205" parent="globals/TimeinHRView" pc="268438678" symbol="drawBarsOnScreen"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="19" lineNum="206" parent="globals/TimeinHRView" pc="268438695" symbol="drawBarsOnScreen"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="19" lineNum="207" parent="globals/TimeinHRView" pc="268438705" symbol="drawBarsOnScreen"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="19" lineNum="208" parent="globals/TimeinHRView" pc="268438709" symbol="drawBarsOnScreen"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="19" lineNum="209" parent="globals/TimeinHRView" pc="268438734" symbol="drawBarsOnScreen"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="19" lineNum="210" parent="globals/TimeinHRView" pc="268438756" symbol="drawBarsOnScreen"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="19" lineNum="217" parent="globals/TimeinHRView" pc="268438888" symbol="drawBarsOnScreen"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="19" lineNum="219" parent="globals/TimeinHRView" pc="268438895" symbol="drawBarsOnScreen"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="19" lineNum="220" parent="globals/TimeinHRView" pc="268438908" symbol="drawBarsOnScreen"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="19" lineNum="221" parent="globals/TimeinHRView" pc="268438928" symbol="drawBarsOnScreen"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="19" lineNum="222" parent="globals/TimeinHRView" pc="268438950" symbol="drawBarsOnScreen"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="19" lineNum="224" parent="globals/TimeinHRView" pc="268438973" symbol="drawBarsOnScreen"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="19" lineNum="226" parent="globals/TimeinHRView" pc="268439005" symbol="drawBarsOnScreen"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="19" lineNum="227" parent="globals/TimeinHRView" pc="268439021" symbol="drawBarsOnScreen"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="19" lineNum="228" parent="globals/TimeinHRView" pc="268439079" symbol="drawBarsOnScreen"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="19" lineNum="231" parent="globals/TimeinHRView" pc="268439130" symbol="drawBarsOnScreen"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="19" lineNum="232" parent="globals/TimeinHRView" pc="268439149" symbol="drawBarsOnScreen"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="19" lineNum="233" parent="globals/TimeinHRView" pc="268439168" symbol="drawBarsOnScreen"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="19" lineNum="235" parent="globals/TimeinHRView" pc="268439187" symbol="drawBarsOnScreen"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="19" lineNum="236" parent="globals/TimeinHRView" pc="268439258" symbol="drawBarsOnScreen"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="19" lineNum="237" parent="globals/TimeinHRView" pc="268439320" symbol="drawBarsOnScreen"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="19" lineNum="238" parent="globals/TimeinHRView" pc="268439342" symbol="drawBarsOnScreen"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="20" lineNum="30" parent="globals/TimeinHRView" pc="268439389" symbol="initialize"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="20" lineNum="31" parent="globals/TimeinHRView" pc="268439393" symbol="initialize"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="20" lineNum="32" parent="globals/TimeinHRView" pc="268439411" symbol="initialize"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="20" lineNum="33" parent="globals/TimeinHRView" pc="268439424" symbol="initialize"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="20" lineNum="34" parent="globals/TimeinHRView" pc="268439516" symbol="initialize"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="20" lineNum="35" parent="globals/TimeinHRView" pc="268439533" symbol="initialize"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="20" lineNum="36" parent="globals/TimeinHRView" pc="268439558" symbol="initialize"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="20" lineNum="37" parent="globals/TimeinHRView" pc="268439581" symbol="initialize"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="20" lineNum="38" parent="globals/TimeinHRView" pc="268439588" symbol="initialize"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="20" lineNum="40" parent="globals/TimeinHRView" pc="268439604" symbol="initialize"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="20" lineNum="43" parent="globals/TimeinHRView" pc="268439623" symbol="initialize"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="20" lineNum="44" parent="globals/TimeinHRView" pc="268439649" symbol="initialize"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="20" lineNum="45" parent="globals/TimeinHRView" pc="268439681" symbol="initialize"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="20" lineNum="46" parent="globals/TimeinHRView" pc="268439713" symbol="initialize"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="21" lineNum="146" parent="globals/TimeinHRView" pc="268439806" symbol="onUpdate"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="21" lineNum="148" parent="globals/TimeinHRView" pc="268439808" symbol="onUpdate"/>
+        <entry filename="C:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\TimeinHRView.mc" id="21" lineNum="149" parent="globals/TimeinHRView" pc="268439832" symbol="onUpdate"/>
+        <entry filename="c:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\gen\\006-B4062-00\\source\\Rez.mcgen" id="22" lineNum="67" parent="globals/Rez/Layouts" pc="268439847" symbol="BottomRightLayout"/>
+        <entry filename="c:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\gen\\006-B4062-00\\source\\Rez.mcgen" id="22" lineNum="68" parent="globals/Rez/Layouts" pc="268439859" symbol="BottomRightLayout"/>
+        <entry filename="c:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\gen\\006-B4062-00\\source\\Rez.mcgen" id="22" lineNum="70" parent="globals/Rez/Layouts" pc="268439887" symbol="BottomRightLayout"/>
+        <entry filename="c:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\gen\\006-B4062-00\\source\\Rez.mcgen" id="22" lineNum="72" parent="globals/Rez/Layouts" pc="268439999" symbol="BottomRightLayout"/>
+        <entry filename="c:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\gen\\006-B4062-00\\source\\Rez.mcgen" id="22" lineNum="74" parent="globals/Rez/Layouts" pc="268440111" symbol="BottomRightLayout"/>
+        <entry filename="c:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\gen\\006-B4062-00\\source\\Rez.mcgen" id="23" lineNum="47" parent="globals/Rez/Layouts" pc="268440148" symbol="TopRightLayout"/>
+        <entry filename="c:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\gen\\006-B4062-00\\source\\Rez.mcgen" id="23" lineNum="48" parent="globals/Rez/Layouts" pc="268440160" symbol="TopRightLayout"/>
+        <entry filename="c:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\gen\\006-B4062-00\\source\\Rez.mcgen" id="23" lineNum="50" parent="globals/Rez/Layouts" pc="268440188" symbol="TopRightLayout"/>
+        <entry filename="c:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\gen\\006-B4062-00\\source\\Rez.mcgen" id="23" lineNum="52" parent="globals/Rez/Layouts" pc="268440300" symbol="TopRightLayout"/>
+        <entry filename="c:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\gen\\006-B4062-00\\source\\Rez.mcgen" id="23" lineNum="54" parent="globals/Rez/Layouts" pc="268440412" symbol="TopRightLayout"/>
+        <entry filename="c:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\gen\\006-B4062-00\\source\\Rez.mcgen" id="24" lineNum="57" parent="globals/Rez/Layouts" pc="268440449" symbol="BottomLeftLayout"/>
+        <entry filename="c:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\gen\\006-B4062-00\\source\\Rez.mcgen" id="24" lineNum="58" parent="globals/Rez/Layouts" pc="268440461" symbol="BottomLeftLayout"/>
+        <entry filename="c:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\gen\\006-B4062-00\\source\\Rez.mcgen" id="24" lineNum="60" parent="globals/Rez/Layouts" pc="268440489" symbol="BottomLeftLayout"/>
+        <entry filename="c:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\gen\\006-B4062-00\\source\\Rez.mcgen" id="24" lineNum="62" parent="globals/Rez/Layouts" pc="268440601" symbol="BottomLeftLayout"/>
+        <entry filename="c:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\gen\\006-B4062-00\\source\\Rez.mcgen" id="24" lineNum="64" parent="globals/Rez/Layouts" pc="268440713" symbol="BottomLeftLayout"/>
+        <entry filename="c:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\gen\\006-B4062-00\\source\\Rez.mcgen" id="25" lineNum="37" parent="globals/Rez/Layouts" pc="268440750" symbol="TopLeftLayout"/>
+        <entry filename="c:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\gen\\006-B4062-00\\source\\Rez.mcgen" id="25" lineNum="38" parent="globals/Rez/Layouts" pc="268440762" symbol="TopLeftLayout"/>
+        <entry filename="c:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\gen\\006-B4062-00\\source\\Rez.mcgen" id="25" lineNum="40" parent="globals/Rez/Layouts" pc="268440790" symbol="TopLeftLayout"/>
+        <entry filename="c:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\gen\\006-B4062-00\\source\\Rez.mcgen" id="25" lineNum="42" parent="globals/Rez/Layouts" pc="268440902" symbol="TopLeftLayout"/>
+        <entry filename="c:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\gen\\006-B4062-00\\source\\Rez.mcgen" id="25" lineNum="44" parent="globals/Rez/Layouts" pc="268441014" symbol="TopLeftLayout"/>
+        <entry filename="c:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\gen\\006-B4062-00\\source\\Rez.mcgen" id="26" lineNum="23" parent="globals/Rez/Layouts" pc="268441051" symbol="MainLayout"/>
+        <entry filename="c:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\gen\\006-B4062-00\\source\\Rez.mcgen" id="26" lineNum="24" parent="globals/Rez/Layouts" pc="268441063" symbol="MainLayout"/>
+        <entry filename="c:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\gen\\006-B4062-00\\source\\Rez.mcgen" id="26" lineNum="26" parent="globals/Rez/Layouts" pc="268441076" symbol="MainLayout"/>
+        <entry filename="c:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\gen\\006-B4062-00\\source\\Rez.mcgen" id="26" lineNum="28" parent="globals/Rez/Layouts" pc="268441089" symbol="MainLayout"/>
+        <entry filename="c:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\gen\\006-B4062-00\\source\\Rez.mcgen" id="26" lineNum="30" parent="globals/Rez/Layouts" pc="268441117" symbol="MainLayout"/>
+        <entry filename="c:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\gen\\006-B4062-00\\source\\Rez.mcgen" id="26" lineNum="32" parent="globals/Rez/Layouts" pc="268441252" symbol="MainLayout"/>
+        <entry filename="c:\\Users\\Sergio\\Desktop\\Garmin\\Garmin-Time-in-HR\\source\\gen\\006-B4062-00\\source\\Rez.mcgen" id="26" lineNum="34" parent="globals/Rez/Layouts" pc="268441387" symbol="MainLayout"/>
+    </pcToLineNum>
+    <symbolTable>
+        <entry id="8388639" module="true" symbol="Graphics"/>
+        <entry id="10" object="true" symbol="TimeinHRView"/>
+        <entry id="8388632" method="true" symbol="&lt;init&gt;"/>
+        <entry id="7" module="true" symbol="globals/Rez/Menus"/>
+        <entry field="true" id="8389149" symbol="restingHeartRate"/>
+        <entry id="31" method="true" symbol="MainLayout"/>
+        <entry field="true" id="22" symbol="percentHRR"/>
+        <entry field="true" id="19" symbol="mValue"/>
+        <entry field="true" id="34" symbol="garmin_verdana_font"/>
+        <entry id="8388647" module="true" symbol="UserProfile"/>
+        <entry field="true" id="8388611" module="true" symbol="Toybox"/>
+        <entry field="true" id="20" symbol="mZoneColors"/>
+        <entry field="true" id="13" symbol="cornerRadius"/>
+        <entry field="true" id="38" symbol="AppName"/>
+        <entry id="8" module="true" symbol="globals/Rez/Strings"/>
+        <entry field="true" id="35" symbol="id_system_font"/>
+        <entry id="8388772" module="true" object="true" symbol="Fonts"/>
+        <entry id="8388631" module="true" symbol="Activity"/>
+        <entry field="true" id="25" symbol="timeInZoneFraction"/>
+        <entry id="8388648" module="true" symbol="WatchUi"/>
+        <entry field="true" id="8389138" symbol="label"/>
+        <entry id="17" method="true" symbol="interpolate"/>
+        <entry id="2" module="true" symbol="globals/Rez"/>
+        <entry id="8389124" method="true" symbol="onUpdate"/>
+        <entry field="true" id="8389065" symbol="locY"/>
+        <entry field="true" id="8389064" symbol="locX"/>
+        <entry id="8388771" module="true" object="true" symbol="Drawables"/>
+        <entry id="8389348" symbol="font"/>
+        <entry id="12" module="true" symbol="Menus"/>
+        <entry id="8389275" method="true" symbol="getApp"/>
+        <entry id="6" module="true" symbol="globals/Rez/Layouts"/>
+        <entry id="8389122" method="true" symbol="onLayout"/>
+        <entry field="true" id="8389063" symbol="identifier"/>
+        <entry id="8389349" symbol="justification"/>
+        <entry id="23" method="true" symbol="secondsToTimeString"/>
+        <entry id="8389137" method="true" symbol="compute"/>
+        <entry field="true" id="21" symbol="penWidth"/>
+        <entry field="true" id="15" symbol="currentZoneDecimal"/>
+        <entry id="8389131" method="true" symbol="setColor"/>
+        <entry field="true" id="27" symbol="userHeartRateZones"/>
+        <entry id="5" module="true" symbol="globals/Rez/JsonData"/>
+        <entry id="3" module="true" symbol="globals/Rez/Drawables"/>
+        <entry id="32" method="true" symbol="TopLeftLayout"/>
+        <entry id="8388645" module="true" symbol="Time"/>
+        <entry id="8388769" module="true" object="true" symbol="Rez"/>
+        <entry id="29" method="true" symbol="BottomLeftLayout"/>
+        <entry id="30" method="true" symbol="BottomRightLayout"/>
+        <entry id="8388640" module="true" symbol="Lang"/>
+        <entry id="8390088" module="true" object="true" symbol="JsonData"/>
+        <entry field="true" id="8389130" symbol="mColor"/>
+        <entry id="8389068" method="true" symbol="draw"/>
+        <entry field="true" id="14" symbol="currentZone"/>
+        <entry field="true" id="28" symbol="LauncherIcon"/>
+        <entry id="8388610" symbol="statics"/>
+        <entry field="true" id="36" symbol="tahoma_font"/>
+        <entry id="8389350" module="true" symbol="globals"/>
+        <entry id="8388770" module="true" object="true" symbol="Strings"/>
+        <entry id="8390146" module="true" object="true" symbol="Background"/>
+        <entry id="26" method="true" symbol="updateHeartRateZonesTime"/>
+        <entry id="8388702" method="true" symbol="initialize"/>
+        <entry id="16" method="true" symbol="drawBarsOnScreen"/>
+        <entry id="8389279" method="true" symbol="onStart"/>
+        <entry id="8388641" module="true" symbol="Math"/>
+        <entry field="true" id="8388747" symbol="currentHeartRate"/>
+        <entry id="8389280" method="true" symbol="getInitialView"/>
+        <entry field="true" id="37" symbol="verdana_font"/>
+        <entry id="8389281" method="true" symbol="onStop"/>
+        <entry field="true" id="8389128" symbol="mFont"/>
+        <entry id="8389347" symbol="color"/>
+        <entry field="true" id="8388732" symbol="elapsedTime"/>
+        <entry id="11" module="true" symbol="Layouts"/>
+        <entry id="18" method="true" symbol="interpolateColor"/>
+        <entry id="9" object="true" symbol="TimeinHRApp"/>
+        <entry field="true" id="24" symbol="timeInHeartRateZones"/>
+        <entry id="4" module="true" symbol="globals/Rez/Fonts"/>
+        <entry id="8388635" module="true" symbol="Application"/>
+        <entry id="33" method="true" symbol="TopRightLayout"/>
+    </symbolTable>
+    <localVars>
+        <entry arg="true" endPc="268435597" name="color" stackId="1" startPc="268435585"/>
+        <entry endPc="268435655" name="dictionary" stackId="1" startPc="268435602"/>
+        <entry arg="true" endPc="268435696" name="dc" stackId="1" startPc="268435657"/>
+        <entry arg="true" endPc="268436109" name="totalSeconds" stackId="1" startPc="268435971"/>
+        <entry endPc="268436109" name="hours" stackId="2" startPc="268435975"/>
+        <entry endPc="268436109" name="minutes" stackId="3" startPc="268435975"/>
+        <entry endPc="268436109" name="seconds" stackId="4" startPc="268435975"/>
+        <entry endPc="268436109" name="timeString" stackId="5" startPc="268435975"/>
+        <entry arg="true" endPc="268436147" name="dc" stackId="1" startPc="268436110"/>
+        <entry endPc="268436146" name="obscurityFlags" stackId="2" startPc="268436114"/>
+        <entry arg="true" endPc="268436404" name="color1" stackId="1" startPc="268436148"/>
+        <entry arg="true" endPc="268436404" name="color2" stackId="2" startPc="268436148"/>
+        <entry arg="true" endPc="268436404" name="ratio" stackId="3" startPc="268436148"/>
+        <entry endPc="268436404" name="alpha" stackId="4" startPc="268436152"/>
+        <entry endPc="268436404" name="red" stackId="5" startPc="268436152"/>
+        <entry endPc="268436404" name="green" stackId="6" startPc="268436152"/>
+        <entry endPc="268436404" name="blue" stackId="7" startPc="268436152"/>
+        <entry arg="true" endPc="268436767" name="value" stackId="1" startPc="268436405"/>
+        <entry endPc="268436766" name="blue" stackId="2" startPc="268436409"/>
+        <entry endPc="268436766" name="green" stackId="3" startPc="268436409"/>
+        <entry endPc="268436766" name="yellow" stackId="4" startPc="268436409"/>
+        <entry endPc="268436766" name="orange" stackId="5" startPc="268436409"/>
+        <entry endPc="268436766" name="red" stackId="6" startPc="268436409"/>
+        <entry arg="true" endPc="268436784" name="info" stackId="1" startPc="268436768"/>
+        <entry arg="true" endPc="268437942" name="info" stackId="1" startPc="268436785"/>
+        <entry endPc="268437915" name="maxHR" stackId="2" startPc="268436866"/>
+        <entry endPc="268437915" name="elapsedMilliSeconds" stackId="3" startPc="268436866"/>
+        <entry endPc="268437915" name="elapsedSeconds" stackId="4" startPc="268436866"/>
+        <entry endPc="268437915" name="timeInCurrentZone" stackId="5" startPc="268436866"/>
+        <entry endPc="268437915" name="fraction" stackId="6" startPc="268436866"/>
+        <entry endPc="268437915" name="i" stackId="7" startPc="268437822"/>
+        <entry endPc="268437902" name="timeInZoneI" stackId="8" startPc="268437836"/>
+        <entry endPc="268437902" name="fractionI" stackId="9" startPc="268437836"/>
+        <entry arg="true" endPc="268439388" name="dc" stackId="1" startPc="268437943"/>
+        <entry endPc="268439387" name="screenWidth" stackId="2" startPc="268437947"/>
+        <entry endPc="268439387" name="screenHeight" stackId="3" startPc="268437947"/>
+        <entry endPc="268439387" name="minimumBarWidth" stackId="4" startPc="268437947"/>
+        <entry endPc="268439387" name="barVerticalSpacing" stackId="5" startPc="268437947"/>
+        <entry endPc="268439387" name="barHeight" stackId="6" startPc="268437947"/>
+        <entry endPc="268439387" name="fontHeight" stackId="7" startPc="268437947"/>
+        <entry endPc="268438677" name="indexBar" stackId="8" startPc="268438149"/>
+        <entry endPc="268438664" name="barX" stackId="9" startPc="268438149"/>
+        <entry endPc="268438664" name="indexZone" stackId="10" startPc="268438149"/>
+        <entry endPc="268438664" name="barY" stackId="11" startPc="268438149"/>
+        <entry endPc="268438664" name="barColor" stackId="12" startPc="268438149"/>
+        <entry endPc="268438664" name="barWidth" stackId="13" startPc="268438149"/>
+        <entry endPc="268438664" name="labelX" stackId="14" startPc="268438149"/>
+        <entry endPc="268438664" name="labelY" stackId="15" startPc="268438149"/>
+        <entry endPc="268438664" name="labelText" stackId="16" startPc="268438149"/>
+        <entry endPc="268438887" name="triangleSize" stackId="17" startPc="268438695"/>
+        <entry endPc="268438887" name="triangleX" stackId="18" startPc="268438695"/>
+        <entry endPc="268438887" name="triangleY" stackId="19" startPc="268438695"/>
+        <entry endPc="268439387" name="maxY" stackId="20" startPc="268437947"/>
+        <entry endPc="268439387" name="textY" stackId="21" startPc="268437947"/>
+        <entry endPc="268439387" name="textX" stackId="22" startPc="268437947"/>
+        <entry endPc="268439387" name="barColor" stackId="23" startPc="268437947"/>
+        <entry endPc="268439387" name="barWidth" stackId="24" startPc="268437947"/>
+        <entry endPc="268439804" name="currentSport" stackId="1" startPc="268439393"/>
+        <entry endPc="268439804" name="restingHR" stackId="2" startPc="268439393"/>
+        <entry arg="true" endPc="268439846" name="dc" stackId="1" startPc="268439806"/>
+        <entry arg="true" endPc="268440147" name="dc" stackId="1" startPc="268439847"/>
+        <entry endPc="268440147" name="rez_cmp_local_custom_drawable_17448700316930471291" stackId="2" startPc="268439859"/>
+        <entry endPc="268440147" name="rez_cmp_local_text_label" stackId="3" startPc="268439859"/>
+        <entry endPc="268440147" name="rez_cmp_local_text_value" stackId="4" startPc="268439859"/>
+        <entry arg="true" endPc="268440448" name="dc" stackId="1" startPc="268440148"/>
+        <entry endPc="268440448" name="rez_cmp_local_custom_drawable_10767848349671453216" stackId="2" startPc="268440160"/>
+        <entry endPc="268440448" name="rez_cmp_local_text_label" stackId="3" startPc="268440160"/>
+        <entry endPc="268440448" name="rez_cmp_local_text_value" stackId="4" startPc="268440160"/>
+        <entry arg="true" endPc="268440749" name="dc" stackId="1" startPc="268440449"/>
+        <entry endPc="268440749" name="rez_cmp_local_custom_drawable_13646830228555338968" stackId="2" startPc="268440461"/>
+        <entry endPc="268440749" name="rez_cmp_local_text_label" stackId="3" startPc="268440461"/>
+        <entry endPc="268440749" name="rez_cmp_local_text_value" stackId="4" startPc="268440461"/>
+        <entry arg="true" endPc="268441050" name="dc" stackId="1" startPc="268440750"/>
+        <entry endPc="268441050" name="rez_cmp_local_custom_drawable_14020110164094283655" stackId="2" startPc="268440762"/>
+        <entry endPc="268441050" name="rez_cmp_local_text_label" stackId="3" startPc="268440762"/>
+        <entry endPc="268441050" name="rez_cmp_local_text_value" stackId="4" startPc="268440762"/>
+        <entry arg="true" endPc="268441423" name="dc" stackId="1" startPc="268441051"/>
+        <entry endPc="268441423" name="rez_cmp_local_var_dc_getHeight" stackId="2" startPc="268441063"/>
+        <entry endPc="268441423" name="rez_cmp_local_var_dc_getWidth" stackId="3" startPc="268441063"/>
+        <entry endPc="268441423" name="rez_cmp_local_custom_drawable_27451221912578891658" stackId="4" startPc="268441063"/>
+        <entry endPc="268441423" name="rez_cmp_local_text_label" stackId="5" startPc="268441063"/>
+        <entry endPc="268441423" name="rez_cmp_local_text_value" stackId="6" startPc="268441063"/>
+    </localVars>
+    <annotations>
+        <annotationEntry annotation="initialized" class="Drawables" module="globals/Rez" symbol="LauncherIcon"/>
+        <annotationEntry annotation="initialized" class="Fonts" module="globals/Rez" symbol="tahoma_font"/>
+        <annotationEntry annotation="initialized" class="Fonts" module="globals/Rez" symbol="garmin_verdana_font"/>
+        <annotationEntry annotation="initialized" class="Fonts" module="globals/Rez" symbol="id_system_font"/>
+        <annotationEntry annotation="initialized" class="Fonts" module="globals/Rez" symbol="verdana_font"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="AppName"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="label"/>
+    </annotations>
+    <dataEntryOffsetMappings>
+        <dataEntry label="globals" offset="87" parentId="" symbolId="globals" type="module"/>
+        <dataEntry label="globals/TimeinHRApp" offset="166" parentId="globals" symbolId="TimeinHRApp" type="class"/>
+        <dataEntry label="globals/Background" offset="237" parentId="globals" symbolId="Background" type="class"/>
+        <dataEntry label="globals/Rez" offset="308" parentId="globals" symbolId="Rez" type="module"/>
+        <dataEntry label="globals/TimeinHRView" offset="387" parentId="globals" symbolId="TimeinHRView" type="class"/>
+        <dataEntry label="globals/Rez/Drawables" offset="602" parentId="Rez" symbolId="Drawables" type="module"/>
+        <dataEntry label="globals/Rez/Layouts" offset="641" parentId="Rez" symbolId="Layouts" type="module"/>
+        <dataEntry label="globals/Rez/Menus" offset="712" parentId="Rez" symbolId="Menus" type="module"/>
+        <dataEntry label="globals/Rez/Fonts" offset="743" parentId="Rez" symbolId="Fonts" type="module"/>
+        <dataEntry label="globals/Rez/Strings" offset="806" parentId="Rez" symbolId="Strings" type="module"/>
+        <dataEntry label="globals/Rez/JsonData" offset="853" parentId="Rez" symbolId="JsonData" type="module"/>
+    </dataEntryOffsetMappings>
+    <functions>
+        <functionEntry accessMode="public" endPc="268435475" name="&lt;init&gt;" parent="TimeinHRApp" startPc="268435457">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onStart" parent="TimeinHRApp">
+            <param id="state"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435518" name="getInitialView" parent="TimeinHRApp" startPc="268435476">
+            <documentation>
+                <![CDATA[<div class="description"> Return the initial view of your application here<br/></div>]]>
+            </documentation>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435539" name="initialize" parent="TimeinHRApp" startPc="268435519">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onStop" parent="TimeinHRApp">
+            <param id="state"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435565" name="getApp" startPc="268435540">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435584" name="&lt;init&gt;" parent="Background" startPc="268435566">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435597" name="setColor" parent="Background" startPc="268435585">
+            <param id="color"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435656" name="initialize" parent="Background" startPc="268435598">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435696" name="draw" parent="Background" startPc="268435657">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435720" name="&lt;init&gt;" parent="Rez" startPc="268435697">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435970" name="&lt;init&gt;" parent="TimeinHRView" startPc="268435721">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436109" name="secondsToTimeString" parent="TimeinHRView" startPc="268435971">
+            <param id="totalSeconds"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436147" name="onLayout" parent="TimeinHRView" startPc="268436110">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436404" name="interpolate" parent="TimeinHRView" startPc="268436148">
+            <param id="color1"/>
+            <param id="color2"/>
+            <param id="ratio"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436767" name="interpolateColor" parent="TimeinHRView" startPc="268436405">
+            <param id="value"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436784" name="compute" parent="TimeinHRView" startPc="268436768">
+            <param id="info"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268437942" name="updateHeartRateZonesTime" parent="TimeinHRView" startPc="268436785">
+            <param id="info"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439388" name="drawBarsOnScreen" parent="TimeinHRView" startPc="268437943">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439805" name="initialize" parent="TimeinHRView" startPc="268439389">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439846" name="onUpdate" parent="TimeinHRView" startPc="268439806">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="Drawables">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="Layouts">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="Menus">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="Fonts">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="Strings">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="JsonData">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268440147" name="BottomRightLayout" parent="Layouts" startPc="268439847">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268440448" name="TopRightLayout" parent="Layouts" startPc="268440148">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268440749" name="BottomLeftLayout" parent="Layouts" startPc="268440449">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268441050" name="TopLeftLayout" parent="Layouts" startPc="268440750">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268441423" name="MainLayout" parent="Layouts" startPc="268441051">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+    </functions>
+</debugInfo>
