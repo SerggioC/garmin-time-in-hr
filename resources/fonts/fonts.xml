@@ -1,8 +1,11 @@
 <resources>
     <fonts>
-        <font id="id_system_font" filename="system_font.fnt"/>
         <font id="garmin_verdana_font" filename="garmin_verdana_font.fnt" antialias="true" filter="Z: 0.123456789"/>
         <font id="tahoma_font" filename="tahoma.fnt" antialias="true"/>
         <font id="verdana_font" filename="verdana.fnt" antialias="true"/>
+        <font id="noto_regular2" filename="noto_regular2.fnt" antialias="true"/>
+        <font id="mplus1" filename="mplus1.fnt" antialias="true"/>
+        <font id="mplus1_medium" filename="mplus1_medium.fnt" antialias="true"/>
+        <font id="mplus1_medium_20" filename="mplus1_medium_20.fnt" antialias="true"/>
     </fonts>
 </resources>

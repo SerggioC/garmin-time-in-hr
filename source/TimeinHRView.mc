@@ -21,8 +21,11 @@ class TimeinHRView extends WatchUi.DataField {
   hidden var timeInZoneFraction as Array<Lang.Float>;
   hidden var currentZoneDecimal as Float = 0.0;
   hidden var currentZone as Number = 0;
-  hidden var mFont = WatchUi.loadResource(Rez.Fonts.garmin_verdana_font);
-  //hidden var mFont = Graphics.FONT_SYSTEM_LARGE;
+  hidden var mFont = WatchUi.loadResource(Rez.Fonts.mplus1_medium);
+  hidden var fontHeight = Graphics.getFontHeight(mFont);
+  hidden var smallFont = WatchUi.loadResource(Rez.Fonts.mplus1_medium_20);
+  //hidden var smallFont = Graphics.FONT_SYSTEM_SMALL;
+  hidden var smallFontHeight = Graphics.getFontHeight(smallFont);
   hidden var currentHeartRate as Number = 0;
   hidden var restingHeartRate as Float = 0.0;
   hidden var percentHRR as Float = 0.0;
@@ -150,7 +153,6 @@ class TimeinHRView extends WatchUi.DataField {
   }
 
   hidden var cornerRadius as Number = 2;
-  hidden var penWidth as Number = 4;
 
   function drawBarsOnScreen(dc as Dc) as Void {
     // Create the heart rate zone bars
@@ -163,8 +165,8 @@ class TimeinHRView extends WatchUi.DataField {
     var minimumBarWidth = 8;
     var barVerticalSpacing = 0;
     var barHeight = screenHeight.toFloat() / (timeInHeartRateZones.size().toFloat());
-    var fontHeight = Graphics.getFontHeight(mFont);
-    penWidth = 4;
+
+
     for (var indexBar = timeInHeartRateZones.size() - 1; indexBar > 0; indexBar--) {
       var barX = 0;
       var indexZone = timeInHeartRateZones.size() - indexBar;
@@ -195,7 +197,7 @@ class TimeinHRView extends WatchUi.DataField {
 
       // draw a black rectangle around the current zone
       if (currentZone == indexZone) {
-        dc.setPenWidth(penWidth);
+        dc.setPenWidth(3);
         dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_TRANSPARENT);
         dc.drawRoundedRectangle(0, (indexBar - 1) * barHeight, screenWidth, barHeight, cornerRadius);
       }
@@ -216,39 +218,41 @@ class TimeinHRView extends WatchUi.DataField {
 
     var maxY = screenHeight - barHeight;
     // draw horizonta line after z5
-    penWidth = 2;
+    var penWidth = 2;
     dc.setPenWidth(penWidth);
     dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_TRANSPARENT);
     dc.drawLine(0, maxY, screenWidth, maxY);
     // draw vertical centered line after z5
     dc.drawLine(screenWidth / 2, maxY, screenWidth / 2, screenHeight);
 
+
+    // text with current heart rate zone 
     var textY = maxY + (barHeight - fontHeight) / 2;
-    var textX = ((screenWidth / 2) - dc.getTextWidthInPixels(currentZoneDecimal.format("%.2f"), mFont)) / 2;
-    dc.drawText(textX, textY, mFont, currentZoneDecimal.format("%.2f"), Graphics.TEXT_JUSTIFY_LEFT);
+    var zoneDecimal = currentZoneDecimal.format("%.2f");
+    var textX = ((screenWidth / 2) - dc.getTextWidthInPixels(zoneDecimal, mFont)) / 2;
+    dc.drawText(textX, textY, mFont, zoneDecimal, Graphics.TEXT_JUSTIFY_LEFT);
     
+
     // bar with %HRR
     var barColor = mZoneColors[currentZone];
     var barWidth = percentHRR * (screenWidth / 2);
     dc.setColor(barColor, Graphics.COLOR_WHITE);
-
+    var hr = "♥" + currentHeartRate;
     dc.fillRectangle(screenWidth / 2 + penWidth / 2, maxY + penWidth / 2, barWidth - penWidth / 2, barHeight);
-    textX = screenWidth / 2 + ((screenWidth / 2) - dc.getTextWidthInPixels(currentHeartRate.toString(), mFont)) / 2;
+    textX = screenWidth / 2 + ((screenWidth / 2) - dc.getTextWidthInPixels(hr, mFont)) / 2;
     dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_TRANSPARENT);
-    dc.drawText(textX, textY, mFont, currentHeartRate.toString(), Graphics.TEXT_JUSTIFY_LEFT);
-
+    dc.drawText(textX, textY, mFont, hr, Graphics.TEXT_JUSTIFY_LEFT);
   }
 
   function secondsToTimeString(totalSeconds as Number) as String {
     var hours = totalSeconds / 3600;
     var minutes = (totalSeconds / 60) % 60;
     var seconds = totalSeconds % 60;
-    var timeString = format("$1$:$2$:$3$", [
+    return format("$1$:$2$:$3$", [
       hours.format("%01d"),
       minutes.format("%02d"),
       seconds.format("%02d"),
     ]);
-    return timeString;
   }
 
 // Function to interpolate between colors
@@ -277,15 +281,15 @@ function interpolateColor(value as Float) {
   }
 }
 
-// Function to interpolate between two colors
-function interpolate(color1, color2, ratio) as Number {
-  var alpha = Math.round(color1 >> 24 + (color2 >> 24 - color1 >> 24) * ratio);
-  var red = Math.round((color1 >> 16 & 0xFF) + ((color2 >> 16 & 0xFF) - (color1 >> 16 & 0xFF)) * ratio);
-  var green = Math.round((color1 >> 8 & 0xFF) + ((color2 >> 8 & 0xFF) - (color1 >> 8 & 0xFF)) * ratio);
-  var blue = Math.round((color1 & 0xFF) + ((color2 & 0xFF) - (color1 & 0xFF)) * ratio);
+  // Function to interpolate between two colors
+  function interpolate(color1, color2, ratio) as Number {
+    var alpha = Math.round(color1 >> 24 + (color2 >> 24 - color1 >> 24) * ratio);
+    var red = Math.round((color1 >> 16 & 0xFF) + ((color2 >> 16 & 0xFF) - (color1 >> 16 & 0xFF)) * ratio);
+    var green = Math.round((color1 >> 8 & 0xFF) + ((color2 >> 8 & 0xFF) - (color1 >> 8 & 0xFF)) * ratio);
+    var blue = Math.round((color1 & 0xFF) + ((color2 & 0xFF) - (color1 & 0xFF)) * ratio);
 
-  return Graphics.createColor(alpha, red, green, blue);
-}
+    return Graphics.createColor(alpha, red, green, blue);
+  }
 
 
 }
