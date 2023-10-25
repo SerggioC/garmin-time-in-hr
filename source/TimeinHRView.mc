@@ -21,7 +21,7 @@ class TimeinHRView extends WatchUi.DataField {
   hidden var timeInZoneFraction as Array<Lang.Float>;
   hidden var currentZoneDecimal as Float = 0.0;
   hidden var currentZone as Number = 0;
-  hidden var mFont = WatchUi.loadResource(Rez.Fonts.mplus1_medium);
+  hidden var mFont = WatchUi.loadResource(Rez.Fonts.mplus1_medium_36);
   hidden var fontHeight = Graphics.getFontHeight(mFont);
   hidden var smallFont = WatchUi.loadResource(Rez.Fonts.mplus1_medium_20);
   //hidden var smallFont = Graphics.FONT_SYSTEM_SMALL;
@@ -29,6 +29,7 @@ class TimeinHRView extends WatchUi.DataField {
   hidden var currentHeartRate as Number = 0;
   hidden var restingHeartRate as Float = 0.0;
   hidden var percentHRR as Float = 0.0;
+  hidden var tap = false as Boolean;
 
   function initialize() {
     DataField.initialize();
@@ -56,6 +57,11 @@ class TimeinHRView extends WatchUi.DataField {
     // Use the generic, centered layout
     // View.setLayout(Rez.Layouts.MainLayout(dc));
     drawBarsOnScreen(dc);
+  }
+
+  function onTap() as Void {
+    tap = !tap;
+    System.println("onTap " + tap);
   }
 
   // The given info object contains all the current workout information.
@@ -237,7 +243,12 @@ class TimeinHRView extends WatchUi.DataField {
     var barColor = mZoneColors[currentZone];
     var barWidth = percentHRR * (screenWidth / 2);
     dc.setColor(barColor, Graphics.COLOR_WHITE);
-    var hr = "♥" + currentHeartRate;
+    var hr;
+    if (tap) {
+      hr = (percentHRR * 100).format("%2d") + "%";
+    } else {
+      hr = "♥" + currentHeartRate;
+    }
     dc.fillRectangle(screenWidth / 2 + penWidth / 2, maxY + penWidth / 2, barWidth - penWidth / 2, barHeight);
     textX = screenWidth / 2 + ((screenWidth / 2) - dc.getTextWidthInPixels(hr, mFont)) / 2;
     dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_TRANSPARENT);

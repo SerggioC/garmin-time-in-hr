@@ -69,9 +69,29 @@ class TimeinHRView extends WatchUi.DataField{
         %tmp.46 = getv function %tmp.45 :loadResource;
         %tmp.48 = getv ? :Rez;
         %tmp.49 = getv %tmp.48 :Fonts;
-        %tmp.50 = getv %tmp.49 :garmin_verdana_font;
+        %tmp.50 = getv %tmp.49 :mplus1_medium;
         %tmp.51 = invoke %tmp.45 %tmp.46(%tmp.50);
         putv self :mFont %tmp.51;
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 25 13 ]
+        %tmp.52 = getm $.Toybox.Graphics;
+        %tmp.53 = getv function %tmp.52 :getFontHeight;
+        %tmp.55 = getv ? :mFont;
+        %tmp.56 = invoke %tmp.52 %tmp.53(%tmp.55);
+        putv self :fontHeight %tmp.56;
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 26 13 ]
+        %tmp.57 = getm $.Toybox.WatchUi;
+        %tmp.58 = getv function %tmp.57 :loadResource;
+        %tmp.60 = getv ? :Rez;
+        %tmp.61 = getv %tmp.60 :Fonts;
+        %tmp.62 = getv %tmp.61 :mplus1_medium_20;
+        %tmp.63 = invoke %tmp.57 %tmp.58(%tmp.62);
+        putv self :smallFont %tmp.63;
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 28 13 ]
+        %tmp.64 = getm $.Toybox.Graphics;
+        %tmp.65 = getv function %tmp.64 :getFontHeight;
+        %tmp.67 = getv ? :smallFont;
+        %tmp.68 = invoke %tmp.64 %tmp.65(%tmp.67);
+        putv self :smallFontHeight %tmp.68;
     }
     [ @file = "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc"; @line = 9; ]
     static
@@ -101,26 +121,35 @@ class TimeinHRView extends WatchUi.DataField{
     [ @file = "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc"; @line = 24; @position = 13; ]
     protected
     var mFont;
+    [ @file = "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc"; @line = 25; @position = 13; ]
+    protected
+    var fontHeight;
     [ @file = "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc"; @line = 26; @position = 13; ]
     protected
-    var currentHeartRate as Number = 0;
-    [ @file = "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc"; @line = 27; @position = 13; ]
-    protected
-    var restingHeartRate as Float = 0.0;
+    var smallFont;
     [ @file = "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc"; @line = 28; @position = 13; ]
     protected
+    var smallFontHeight;
+    [ @file = "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc"; @line = 29; @position = 13; ]
+    protected
+    var currentHeartRate as Number = 0;
+    [ @file = "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc"; @line = 30; @position = 13; ]
+    protected
+    var restingHeartRate as Float = 0.0;
+    [ @file = "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc"; @line = 31; @position = 13; ]
+    protected
     var percentHRR as Float = 0.0;
-    [ @file = "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc"; @line = 30; ]
+    [ @file = "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc"; @line = 33; ]
     function initialize() as Void {
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_30_24_start:
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 31 4 ]
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_33_24_start:
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 34 4 ]
         %tmp.2 = getv ? :DataField;
         %tmp.3 = getv function %tmp.2 :initialize;
         invoke %tmp.2 %tmp.3();
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 32 4 ]
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 35 4 ]
         %tmp.4 = 0.0f;
         putv self :mValue %tmp.4;
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 33 4 ]
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 36 4 ]
         %tmp.5 = newa 6;
         %tmp.6 = 0;
         %tmp.7 = dup %tmp.5;
@@ -141,23 +170,23 @@ C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_30_24_sta
         %tmp.22 = dup %tmp.20;
         %tmp.23 = aputv %tmp.22 5 %tmp.21;
         putv self :timeInHeartRateZones %tmp.23;
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 34 4 ]
-        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_30_24_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_30_24_stop" ]
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 37 4 ]
+        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_33_24_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_33_24_stop" ]
         %currentSport.1 = local;
         %tmp.24 = getm $.Toybox.UserProfile;
         %tmp.25 = getv function %tmp.24 :getCurrentSport;
         %tmp.26 = invoke %tmp.24 %tmp.25();
         %tmp.27 = as %tmp.26 UserProfile.SportHrZone;
         lputv %currentSport.1 %tmp.27;
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 35 4 ]
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 38 4 ]
         %tmp.28 = getm $.Toybox.UserProfile;
         %tmp.29 = getv function %tmp.28 :getHeartRateZones;
         %tmp.31 = lgetv %currentSport.1;
         %tmp.32 = invoke %tmp.28 %tmp.29(%tmp.31);
         %tmp.33 = as %tmp.32 Lang.Array<Lang.Number>;
         putv self :userHeartRateZones %tmp.33;
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 36 4 ]
-        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_30_24_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_30_24_stop" ]
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 39 4 ]
+        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_33_24_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_33_24_stop" ]
         %restingHR.2 = local;
         %tmp.34 = getm $.Toybox.UserProfile;
         %tmp.35 = getv function %tmp.34 :getProfile;
@@ -165,51 +194,51 @@ C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_30_24_sta
         %tmp.37 = getv %tmp.36 :restingHeartRate;
         %tmp.38 = as %tmp.37 Number;
         lputv %restingHR.2 %tmp.38;
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 37 4 ]
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_37_4_if_stmt:
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 40 4 ]
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_40_4_if_stmt:
         %tmp.40 = lgetv %restingHR.2;
         %tmp.41 = null;
         %tmp.42 = eq %tmp.40 %tmp.41;
-        bf %tmp.42 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_37_4_if_false;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_37_4_if_true:
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_37_27_start:
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 38 6 ]
+        bf %tmp.42 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_40_4_if_false;
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_40_4_if_true:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_40_27_start:
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 41 6 ]
         %tmp.43 = 0.0;
         putv self :restingHeartRate %tmp.43;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_37_27_stop:
-        goto @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_37_4_if_end;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_37_4_if_false:
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_39_11_start:
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 40 6 ]
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_40_27_stop:
+        goto @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_40_4_if_end;
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_40_4_if_false:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_42_11_start:
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 43 6 ]
         %tmp.44 = lgetv %restingHR.2;
         %tmp.45 = as %tmp.44 { (!Null) };
         %tmp.46 = getv function %tmp.45 :toFloat;
         %tmp.47 = invoke %tmp.45 %tmp.46();
         putv self :restingHeartRate %tmp.47;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_39_11_stop:
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_37_4_if_end:
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 43 4 ]
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_42_11_stop:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_40_4_if_end:
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 46 4 ]
         %tmp.49 = getv ? :System;
         %tmp.50 = getv function %tmp.49 :println;
         %tmp.51 = "Current sport: ";
         %tmp.53 = lgetv %currentSport.1;
         %tmp.54 = add %tmp.51 %tmp.53;
         invoke %tmp.49 %tmp.50(%tmp.54);
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 44 4 ]
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 47 4 ]
         %tmp.56 = getv ? :System;
         %tmp.57 = getv function %tmp.56 :println;
         %tmp.58 = "Current zones: ";
         %tmp.60 = getv ? :userHeartRateZones;
         %tmp.61 = add %tmp.58 %tmp.60;
         invoke %tmp.56 %tmp.57(%tmp.61);
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 45 4 ]
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 48 4 ]
         %tmp.63 = getv ? :System;
         %tmp.64 = getv function %tmp.63 :println;
         %tmp.65 = "Resting Heart Rate: ";
         %tmp.67 = getv ? :restingHeartRate;
         %tmp.68 = add %tmp.65 %tmp.67;
         invoke %tmp.63 %tmp.64(%tmp.68);
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 46 4 ]
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 49 4 ]
         %tmp.69 = newa 6;
         %tmp.70 = 0.0;
         %tmp.71 = dup %tmp.69;
@@ -230,61 +259,61 @@ C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_37_4_if_e
         %tmp.86 = dup %tmp.84;
         %tmp.87 = aputv %tmp.86 5 %tmp.85;
         putv self :timeInZoneFraction %tmp.87;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_30_24_stop:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_33_24_stop:
     }
-    [ @file = "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc"; @line = 51; ]
+    [ @file = "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc"; @line = 54; ]
     function onLayout(dc as Dc) as Void {
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_51_38_start:
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 52 4 ]
-        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_51_38_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_51_38_stop" ]
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_54_38_start:
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 55 4 ]
+        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_54_38_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_54_38_stop" ]
         %obscurityFlags.1 = local;
         %tmp.2 = getv ? :DataField;
         %tmp.3 = getv function %tmp.2 :getObscurityFlags;
         %tmp.4 = invoke %tmp.2 %tmp.3();
         lputv %obscurityFlags.1 %tmp.4;
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 55 4 ]
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 58 4 ]
         %tmp.5 = self;
         %tmp.6 = getv function %tmp.5 :drawBarsOnScreen;
         %tmp.8 = lgetv %dc;
         invoke %tmp.5 %tmp.6(%tmp.8);
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_51_38_stop:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_54_38_stop:
     }
-    [ @file = "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc"; @line = 62; ]
+    [ @file = "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc"; @line = 65; ]
     function compute(info as Activity.Info) as Void {
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_62_50_start:
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 64 4 ]
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_65_50_start:
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 67 4 ]
         %tmp.1 = self;
         %tmp.2 = getv function %tmp.1 :updateHeartRateZonesTime;
         %tmp.4 = lgetv %info;
         invoke %tmp.1 %tmp.2(%tmp.4);
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_62_50_stop:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_65_50_stop:
     }
-    [ @file = "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc"; @line = 68; ]
+    [ @file = "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc"; @line = 71; ]
     function updateHeartRateZonesTime(info as Activity.Info) as Void {
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_68_67_start:
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 69 4 ]
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_69_4_if_stmt:
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_70_6_begin:
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_70_6_begin:
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_70_6_begin:
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_70_6_begin:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_71_67_start:
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 72 4 ]
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_72_4_if_stmt:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_73_6_begin:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_73_6_begin:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_73_6_begin:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_73_6_begin:
         %tmp.2 = lgetv %info;
         %tmp.4 = const :currentHeartRate;
         %tmp.5 = canhazplz %tmp.2 %tmp.4;
         %tmp.6 = dup %tmp.5;
-        bf %tmp.6 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_70_36_end;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_70_36_true:
+        bf %tmp.6 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_73_36_end;
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_73_36_true:
         %tmp.8 = lgetv %info;
         %tmp.9 = as %tmp.8 { (interface { var currentHeartRate; }) };
         %tmp.11 = const :elapsedTime;
         %tmp.12 = canhazplz %tmp.9 %tmp.11;
         %tmp.13 = and %tmp.5 %tmp.12;
         push %tmp.13;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_70_36_end:
-        %tmp.14 = phi [%tmp.6 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_70_6_begin] [%tmp.13 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_70_36_true] [%tmp.14 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_70_36_end];
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_73_36_end:
+        %tmp.14 = phi [%tmp.6 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_73_6_begin] [%tmp.13 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_73_36_true] [%tmp.14 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_73_36_end];
         %tmp.15 = dup %tmp.14;
-        bf %tmp.15 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_71_6_end;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_71_6_true:
+        bf %tmp.15 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_74_6_end;
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_74_6_true:
         %tmp.16 = lgetv %info;
         %tmp.17 = as %tmp.16 { (interface { var elapsedTime; }) && (interface { var currentHeartRate; }) };
         %tmp.18 = getv %tmp.17 :currentHeartRate;
@@ -292,11 +321,11 @@ C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_71_6_true
         %tmp.20 = ne %tmp.18 %tmp.19;
         %tmp.21 = and %tmp.14 %tmp.20;
         push %tmp.21;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_71_6_end:
-        %tmp.22 = phi [%tmp.15 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_70_6_begin] [%tmp.21 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_71_6_true] [%tmp.22 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_71_6_end];
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_74_6_end:
+        %tmp.22 = phi [%tmp.15 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_73_6_begin] [%tmp.21 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_74_6_true] [%tmp.22 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_74_6_end];
         %tmp.23 = dup %tmp.22;
-        bf %tmp.23 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_72_6_end;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_72_6_true:
+        bf %tmp.23 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_75_6_end;
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_75_6_true:
         %tmp.24 = lgetv %info;
         %tmp.25 = as %tmp.24 { (interface { var elapsedTime; }) && (interface { var currentHeartRate; }) };
         %tmp.26 = getv %tmp.25 :elapsedTime;
@@ -304,11 +333,11 @@ C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_72_6_true
         %tmp.28 = ne %tmp.26 %tmp.27;
         %tmp.29 = and %tmp.22 %tmp.28;
         push %tmp.29;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_72_6_end:
-        %tmp.30 = phi [%tmp.23 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_70_6_begin] [%tmp.29 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_72_6_true] [%tmp.30 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_72_6_end];
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_75_6_end:
+        %tmp.30 = phi [%tmp.23 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_73_6_begin] [%tmp.29 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_75_6_true] [%tmp.30 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_75_6_end];
         %tmp.31 = dup %tmp.30;
-        bf %tmp.31 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_72_34_end;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_72_34_true:
+        bf %tmp.31 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_75_34_end;
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_75_34_true:
         %tmp.32 = lgetv %info;
         %tmp.33 = as %tmp.32 { (interface { var elapsedTime; }) && (interface { var currentHeartRate; }) };
         %tmp.34 = getv %tmp.33 :elapsedTime;
@@ -316,19 +345,19 @@ C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_72_34_tru
         %tmp.36 = gt %tmp.34 %tmp.35;
         %tmp.37 = and %tmp.30 %tmp.36;
         push %tmp.37;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_72_34_end:
-        %tmp.38 = phi [%tmp.31 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_70_6_begin] [%tmp.37 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_72_34_true] [%tmp.38 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_72_34_end];
-        bf %tmp.38 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_69_4_if_false;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_69_4_if_true:
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_73_6_start:
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 74 6 ]
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_75_34_end:
+        %tmp.38 = phi [%tmp.31 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_73_6_begin] [%tmp.37 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_75_34_true] [%tmp.38 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_75_34_end];
+        bf %tmp.38 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_72_4_if_false;
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_72_4_if_true:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_76_6_start:
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 77 6 ]
         %tmp.39 = lgetv %info;
         %tmp.40 = as %tmp.39 { (interface { var elapsedTime; }) && (interface { var currentHeartRate; }) };
         %tmp.41 = getv %tmp.40 :currentHeartRate;
         %tmp.42 = as %tmp.41 Number;
         putv self :currentHeartRate %tmp.42;
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 76 6 ]
-        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_73_6_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_73_6_stop" ]
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 79 6 ]
+        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_76_6_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_76_6_stop" ]
         %maxHR.1 = local;
         %tmp.44 = getv ? :userHeartRateZones;
         %tmp.46 = getv ? :userHeartRateZones;
@@ -340,7 +369,7 @@ C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_73_6_star
         %tmp.52 = getv function %tmp.51 :toFloat;
         %tmp.53 = invoke %tmp.51 %tmp.52();
         lputv %maxHR.1 %tmp.53;
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 78 6 ]
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 81 6 ]
         %tmp.55 = getv ? :currentHeartRate;
         %tmp.56 = getv function %tmp.55 :toFloat;
         %tmp.57 = invoke %tmp.55 %tmp.56();
@@ -353,45 +382,45 @@ C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_73_6_star
         %tmp.67 = sub %tmp.64 %tmp.66;
         %tmp.68 = div %tmp.62 %tmp.67;
         putv self :percentHRR %tmp.68;
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 79 6 ]
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_79_6_if_stmt:
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 82 6 ]
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_82_6_if_stmt:
         %tmp.70 = getv ? :percentHRR;
         %tmp.71 = 0.0;
         %tmp.72 = lt %tmp.70 %tmp.71;
-        bf %tmp.72 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_79_6_if_false;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_79_6_if_true:
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_79_28_start:
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 80 8 ]
+        bf %tmp.72 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_82_6_if_false;
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_82_6_if_true:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_82_28_start:
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 83 8 ]
         %tmp.73 = 0.0;
         putv self :percentHRR %tmp.73;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_79_28_stop:
-        goto @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_79_6_if_end;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_79_6_if_false:
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 81 13 ]
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_81_13_if_stmt:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_82_28_stop:
+        goto @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_82_6_if_end;
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_82_6_if_false:
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 84 13 ]
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_84_13_if_stmt:
         %tmp.75 = getv ? :percentHRR;
         %tmp.76 = 1.0;
         %tmp.77 = gt %tmp.75 %tmp.76;
-        bf %tmp.77 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_81_13_if_end;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_81_13_if_true:
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_81_35_start:
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 82 8 ]
+        bf %tmp.77 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_84_13_if_end;
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_84_13_if_true:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_84_35_start:
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 85 8 ]
         %tmp.78 = 1.0;
         putv self :percentHRR %tmp.78;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_81_35_stop:
-        goto @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_81_13_if_end;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_81_13_if_end:
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_79_6_if_end:
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 85 6 ]
-        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_73_6_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_73_6_stop" ]
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_84_35_stop:
+        goto @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_84_13_if_end;
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_84_13_if_end:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_82_6_if_end:
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 88 6 ]
+        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_76_6_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_76_6_stop" ]
         %elapsedMilliSeconds.2 = local;
         %tmp.79 = lgetv %info;
         %tmp.80 = as %tmp.79 { (interface { var elapsedTime; }) && (interface { var currentHeartRate; }) };
         %tmp.81 = getv %tmp.80 :elapsedTime;
         %tmp.82 = as %tmp.81 Number;
         lputv %elapsedMilliSeconds.2 %tmp.82;
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 86 6 ]
-        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_73_6_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_73_6_stop" ]
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 89 6 ]
+        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_76_6_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_76_6_stop" ]
         %elapsedSeconds.3 = local;
         %tmp.83 = lgetv %elapsedMilliSeconds.2;
         %tmp.84 = getv function %tmp.83 :toFloat;
@@ -400,30 +429,30 @@ C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_79_6_if_e
         %tmp.87 = div %tmp.85 %tmp.86;
         %tmp.88 = as %tmp.87 Float;
         lputv %elapsedSeconds.3 %tmp.88;
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 88 4 ]
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 91 4 ]
         %tmp.90 = getv ? :System;
         %tmp.91 = getv function %tmp.90 :println;
         %tmp.92 = "Current heart rate: ";
         %tmp.94 = getv ? :currentHeartRate;
         %tmp.95 = add %tmp.92 %tmp.94;
         invoke %tmp.90 %tmp.91(%tmp.95);
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 90 6 ]
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 93 6 ]
         %tmp.96 = 0;
         putv self :currentZone %tmp.96;
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 91 6 ]
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_91_6_if_stmt:
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 94 6 ]
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_94_6_if_stmt:
         %tmp.98 = getv ? :currentHeartRate;
         %tmp.100 = getv ? :userHeartRateZones;
         %tmp.101 = 0;
         %tmp.102 = agetv %tmp.100 %tmp.101;
         %tmp.103 = lt %tmp.98 %tmp.102;
-        bf %tmp.103 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_91_6_if_false;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_91_6_if_true:
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_91_52_start:
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 92 8 ]
+        bf %tmp.103 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_94_6_if_false;
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_94_6_if_true:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_94_52_start:
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 95 8 ]
         %tmp.104 = 0;
         putv self :currentZone %tmp.104;
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 93 8 ]
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 96 8 ]
         %tmp.106 = getv ? :currentHeartRate;
         %tmp.107 = getv function %tmp.106 :toFloat;
         %tmp.108 = invoke %tmp.106 %tmp.107();
@@ -432,21 +461,21 @@ C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_91_52_sta
         %tmp.112 = agetv %tmp.110 %tmp.111;
         %tmp.113 = div %tmp.108 %tmp.112;
         putv self :currentZoneDecimal %tmp.113;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_91_52_stop:
-        goto @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_91_6_if_end;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_91_6_if_false:
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_94_13_start:
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 95 8 ]
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_95_8_if_stmt:
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_95_12_begin:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_94_52_stop:
+        goto @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_94_6_if_end;
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_94_6_if_false:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_97_13_start:
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 98 8 ]
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_98_8_if_stmt:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_98_12_begin:
         %tmp.115 = getv ? :currentHeartRate;
         %tmp.117 = getv ? :userHeartRateZones;
         %tmp.118 = 0;
         %tmp.119 = agetv %tmp.117 %tmp.118;
         %tmp.120 = gte %tmp.115 %tmp.119;
         %tmp.121 = dup %tmp.120;
-        bf %tmp.121 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_95_57_end;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_95_57_true:
+        bf %tmp.121 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_98_57_end;
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_98_57_true:
         %tmp.123 = getv ? :currentHeartRate;
         %tmp.125 = getv ? :userHeartRateZones;
         %tmp.126 = 1;
@@ -454,28 +483,28 @@ C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_95_57_tru
         %tmp.128 = lt %tmp.123 %tmp.127;
         %tmp.129 = and %tmp.120 %tmp.128;
         push %tmp.129;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_95_57_end:
-        %tmp.130 = phi [%tmp.121 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_95_12_begin] [%tmp.129 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_95_57_true] [%tmp.130 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_95_57_end];
-        bf %tmp.130 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_95_8_if_false;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_95_8_if_true:
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_95_99_start:
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 96 10 ]
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_98_57_end:
+        %tmp.130 = phi [%tmp.121 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_98_12_begin] [%tmp.129 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_98_57_true] [%tmp.130 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_98_57_end];
+        bf %tmp.130 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_98_8_if_false;
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_98_8_if_true:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_98_99_start:
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 99 10 ]
         %tmp.131 = 1;
         putv self :currentZone %tmp.131;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_95_99_stop:
-        goto @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_95_8_if_end;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_95_8_if_false:
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 97 15 ]
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_97_15_if_stmt:
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_97_19_begin:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_98_99_stop:
+        goto @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_98_8_if_end;
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_98_8_if_false:
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 100 15 ]
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_100_15_if_stmt:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_100_19_begin:
         %tmp.133 = getv ? :currentHeartRate;
         %tmp.135 = getv ? :userHeartRateZones;
         %tmp.136 = 1;
         %tmp.137 = agetv %tmp.135 %tmp.136;
         %tmp.138 = gte %tmp.133 %tmp.137;
         %tmp.139 = dup %tmp.138;
-        bf %tmp.139 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_97_64_end;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_97_64_true:
+        bf %tmp.139 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_100_64_end;
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_100_64_true:
         %tmp.141 = getv ? :currentHeartRate;
         %tmp.143 = getv ? :userHeartRateZones;
         %tmp.144 = 2;
@@ -483,28 +512,28 @@ C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_97_64_tru
         %tmp.146 = lt %tmp.141 %tmp.145;
         %tmp.147 = and %tmp.138 %tmp.146;
         push %tmp.147;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_97_64_end:
-        %tmp.148 = phi [%tmp.139 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_97_19_begin] [%tmp.147 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_97_64_true] [%tmp.148 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_97_64_end];
-        bf %tmp.148 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_97_15_if_false;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_97_15_if_true:
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_97_106_start:
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 98 10 ]
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_100_64_end:
+        %tmp.148 = phi [%tmp.139 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_100_19_begin] [%tmp.147 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_100_64_true] [%tmp.148 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_100_64_end];
+        bf %tmp.148 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_100_15_if_false;
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_100_15_if_true:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_100_106_start:
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 101 10 ]
         %tmp.149 = 2;
         putv self :currentZone %tmp.149;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_97_106_stop:
-        goto @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_97_15_if_end;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_97_15_if_false:
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 99 15 ]
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_99_15_if_stmt:
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_99_19_begin:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_100_106_stop:
+        goto @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_100_15_if_end;
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_100_15_if_false:
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 102 15 ]
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_102_15_if_stmt:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_102_19_begin:
         %tmp.151 = getv ? :currentHeartRate;
         %tmp.153 = getv ? :userHeartRateZones;
         %tmp.154 = 2;
         %tmp.155 = agetv %tmp.153 %tmp.154;
         %tmp.156 = gte %tmp.151 %tmp.155;
         %tmp.157 = dup %tmp.156;
-        bf %tmp.157 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_99_64_end;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_99_64_true:
+        bf %tmp.157 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_102_64_end;
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_102_64_true:
         %tmp.159 = getv ? :currentHeartRate;
         %tmp.161 = getv ? :userHeartRateZones;
         %tmp.162 = 3;
@@ -512,28 +541,28 @@ C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_99_64_tru
         %tmp.164 = lt %tmp.159 %tmp.163;
         %tmp.165 = and %tmp.156 %tmp.164;
         push %tmp.165;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_99_64_end:
-        %tmp.166 = phi [%tmp.157 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_99_19_begin] [%tmp.165 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_99_64_true] [%tmp.166 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_99_64_end];
-        bf %tmp.166 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_99_15_if_false;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_99_15_if_true:
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_99_106_start:
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 100 10 ]
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_102_64_end:
+        %tmp.166 = phi [%tmp.157 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_102_19_begin] [%tmp.165 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_102_64_true] [%tmp.166 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_102_64_end];
+        bf %tmp.166 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_102_15_if_false;
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_102_15_if_true:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_102_106_start:
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 103 10 ]
         %tmp.167 = 3;
         putv self :currentZone %tmp.167;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_99_106_stop:
-        goto @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_99_15_if_end;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_99_15_if_false:
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 101 15 ]
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_101_15_if_stmt:
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_101_19_begin:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_102_106_stop:
+        goto @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_102_15_if_end;
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_102_15_if_false:
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 104 15 ]
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_104_15_if_stmt:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_104_19_begin:
         %tmp.169 = getv ? :currentHeartRate;
         %tmp.171 = getv ? :userHeartRateZones;
         %tmp.172 = 3;
         %tmp.173 = agetv %tmp.171 %tmp.172;
         %tmp.174 = gte %tmp.169 %tmp.173;
         %tmp.175 = dup %tmp.174;
-        bf %tmp.175 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_101_64_end;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_101_64_true:
+        bf %tmp.175 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_104_64_end;
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_104_64_true:
         %tmp.177 = getv ? :currentHeartRate;
         %tmp.179 = getv ? :userHeartRateZones;
         %tmp.180 = 4;
@@ -541,38 +570,38 @@ C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_101_64_tr
         %tmp.182 = lt %tmp.177 %tmp.181;
         %tmp.183 = and %tmp.174 %tmp.182;
         push %tmp.183;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_101_64_end:
-        %tmp.184 = phi [%tmp.175 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_101_19_begin] [%tmp.183 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_101_64_true] [%tmp.184 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_101_64_end];
-        bf %tmp.184 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_101_15_if_false;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_101_15_if_true:
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_101_106_start:
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 102 10 ]
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_104_64_end:
+        %tmp.184 = phi [%tmp.175 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_104_19_begin] [%tmp.183 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_104_64_true] [%tmp.184 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_104_64_end];
+        bf %tmp.184 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_104_15_if_false;
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_104_15_if_true:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_104_106_start:
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 105 10 ]
         %tmp.185 = 4;
         putv self :currentZone %tmp.185;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_101_106_stop:
-        goto @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_101_15_if_end;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_101_15_if_false:
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 103 15 ]
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_103_15_if_stmt:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_104_106_stop:
+        goto @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_104_15_if_end;
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_104_15_if_false:
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 106 15 ]
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_106_15_if_stmt:
         %tmp.187 = getv ? :currentHeartRate;
         %tmp.189 = getv ? :userHeartRateZones;
         %tmp.190 = 4;
         %tmp.191 = agetv %tmp.189 %tmp.190;
         %tmp.192 = gte %tmp.187 %tmp.191;
-        bf %tmp.192 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_103_15_if_end;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_103_15_if_true:
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_103_62_start:
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 104 10 ]
+        bf %tmp.192 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_106_15_if_end;
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_106_15_if_true:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_106_62_start:
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 107 10 ]
         %tmp.193 = 5;
         putv self :currentZone %tmp.193;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_103_62_stop:
-        goto @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_103_15_if_end;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_103_15_if_end:
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_101_15_if_end:
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_99_15_if_end:
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_97_15_if_end:
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_95_8_if_end:
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 106 8 ]
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_106_62_stop:
+        goto @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_106_15_if_end;
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_106_15_if_end:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_104_15_if_end:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_102_15_if_end:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_100_15_if_end:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_98_8_if_end:
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 109 8 ]
         %tmp.195 = getv ? :currentHeartRate;
         %tmp.197 = getv ? :userHeartRateZones;
         %tmp.199 = getv ? :currentZone;
@@ -595,29 +624,29 @@ C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_95_8_if_e
         %tmp.220 = invoke %tmp.218 %tmp.219();
         %tmp.221 = div %tmp.205 %tmp.220;
         putv self :currentZoneDecimal %tmp.221;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_94_13_stop:
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_91_6_if_end:
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 111 6 ]
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_111_6_if_stmt:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_97_13_stop:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_94_6_if_end:
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 114 6 ]
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_114_6_if_stmt:
         %tmp.223 = getv ? :currentZoneDecimal;
         %tmp.224 = 1.0;
         %tmp.225 = gt %tmp.223 %tmp.224;
-        bf %tmp.225 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_111_6_if_end;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_111_6_if_true:
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_111_36_start:
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 112 8 ]
+        bf %tmp.225 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_114_6_if_end;
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_114_6_if_true:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_114_36_start:
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 115 8 ]
         %tmp.226 = 1.0;
         putv self :currentZoneDecimal %tmp.226;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_111_36_stop:
-        goto @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_111_6_if_end;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_111_6_if_end:
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 114 6 ]
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_114_36_stop:
+        goto @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_114_6_if_end;
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_114_6_if_end:
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 117 6 ]
         %tmp.228 = getv ? :currentZone;
         %tmp.230 = getv ? :currentZoneDecimal;
         %tmp.231 = add %tmp.228 %tmp.230;
         putv self :currentZoneDecimal %tmp.231;
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 117 6 ]
-        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_73_6_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_73_6_stop" ]
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 120 6 ]
+        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_76_6_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_76_6_stop" ]
         %timeInCurrentZone.4 = local;
         %tmp.233 = getv ? :timeInHeartRateZones;
         %tmp.235 = getv ? :currentZone;
@@ -626,79 +655,79 @@ C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_111_6_if_
         %tmp.238 = add %tmp.236 %tmp.237;
         %tmp.239 = as %tmp.238 Number;
         lputv %timeInCurrentZone.4 %tmp.239;
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 118 6 ]
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 121 6 ]
         %tmp.240 = getv self :timeInHeartRateZones;
         %tmp.242 = lgetv %timeInCurrentZone.4;
         %tmp.244 = getv ? :currentZone;
         aputv %tmp.240 %tmp.244 %tmp.242;
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 119 6 ]
-        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_73_6_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_73_6_stop" ]
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 122 6 ]
+        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_76_6_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_76_6_stop" ]
         %fraction.5 = local;
         %tmp.245 = 0.0;
         lputv %fraction.5 %tmp.245;
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 120 6 ]
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_120_6_if_stmt:
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 123 6 ]
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_123_6_if_stmt:
         %tmp.247 = lgetv %elapsedSeconds.3;
         %tmp.248 = 0.0;
         %tmp.249 = gt %tmp.247 %tmp.248;
-        bf %tmp.249 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_120_6_if_end;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_120_6_if_true:
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_120_32_start:
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 121 8 ]
+        bf %tmp.249 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_123_6_if_end;
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_123_6_if_true:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_123_32_start:
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 124 8 ]
         %tmp.250 = lgetv %timeInCurrentZone.4;
         %tmp.251 = getv function %tmp.250 :toFloat;
         %tmp.252 = invoke %tmp.250 %tmp.251();
         %tmp.254 = lgetv %elapsedSeconds.3;
         %tmp.255 = div %tmp.252 %tmp.254;
         lputv %fraction.5 %tmp.255;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_120_32_stop:
-        goto @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_120_6_if_end;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_120_6_if_end:
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 123 6 ]
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_123_6_if_stmt:
-        %tmp.257 = lgetv %fraction.5;
-        %tmp.258 = 1.0;
-        %tmp.259 = gt %tmp.257 %tmp.258;
-        bf %tmp.259 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_123_6_if_end;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_123_6_if_true:
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_123_26_start:
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 124 8 ]
-        %tmp.260 = 1.0;
-        lputv %fraction.5 %tmp.260;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_123_26_stop:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_123_32_stop:
         goto @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_123_6_if_end;
 C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_123_6_if_end:
 [ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 126 6 ]
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_126_6_if_stmt:
+        %tmp.257 = lgetv %fraction.5;
+        %tmp.258 = 1.0;
+        %tmp.259 = gt %tmp.257 %tmp.258;
+        bf %tmp.259 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_126_6_if_end;
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_126_6_if_true:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_126_26_start:
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 127 8 ]
+        %tmp.260 = 1.0;
+        lputv %fraction.5 %tmp.260;
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_126_26_stop:
+        goto @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_126_6_if_end;
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_126_6_if_end:
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 129 6 ]
         %tmp.261 = getv self :timeInZoneFraction;
         %tmp.263 = lgetv %fraction.5;
         %tmp.265 = getv ? :currentZone;
         aputv %tmp.261 %tmp.265 %tmp.263;
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 128 6 ]
-        for @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_128_6_for_test @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_128_6_for_incr @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_128_6_for_end;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_128_6_for_init:
-        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_128_6_for_begin" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_128_6_for_end" ]
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 131 6 ]
+        for @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_131_6_for_test @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_131_6_for_incr @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_131_6_for_end;
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_131_6_for_init:
+        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_131_6_for_begin" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_131_6_for_end" ]
         %i.6 = local;
         %tmp.266 = 0;
         lputv %i.6 %tmp.266;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_128_6_for_test:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_131_6_for_test:
         %tmp.268 = lgetv %i.6;
         %tmp.270 = getv ? :userHeartRateZones;
         %tmp.271 = getv function %tmp.270 :size;
         %tmp.272 = invoke %tmp.270 %tmp.271();
         %tmp.273 = lt %tmp.268 %tmp.272;
-        bf %tmp.273 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_128_6_for_end;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_128_6_for_begin:
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_128_58_start:
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 129 8 ]
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_129_8_if_stmt:
+        bf %tmp.273 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_131_6_for_end;
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_131_6_for_begin:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_131_58_start:
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 132 8 ]
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_132_8_if_stmt:
         %tmp.275 = lgetv %i.6;
         %tmp.277 = getv ? :currentZone;
         %tmp.278 = ne %tmp.275 %tmp.277;
-        bf %tmp.278 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_129_8_if_end;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_129_8_if_true:
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_129_30_start:
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 130 10 ]
-        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_129_30_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_129_30_stop" ]
+        bf %tmp.278 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_132_8_if_end;
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_132_8_if_true:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_132_30_start:
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 133 10 ]
+        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_132_30_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_132_30_stop" ]
         %timeInZoneI.7 = local;
         %tmp.280 = getv ? :timeInHeartRateZones;
         %tmp.282 = lgetv %i.6;
@@ -707,98 +736,95 @@ C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_129_30_st
         %tmp.285 = getv function %tmp.284 :toFloat;
         %tmp.286 = invoke %tmp.284 %tmp.285();
         lputv %timeInZoneI.7 %tmp.286;
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 131 10 ]
-        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_129_30_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_129_30_stop" ]
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 134 10 ]
+        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_132_30_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_132_30_stop" ]
         %fractionI.8 = local;
         %tmp.287 = 0.0;
         lputv %fractionI.8 %tmp.287;
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 132 10 ]
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 135 10 ]
         %tmp.289 = lgetv %timeInZoneI.7;
         %tmp.291 = lgetv %elapsedSeconds.3;
         %tmp.292 = div %tmp.289 %tmp.291;
         lputv %fractionI.8 %tmp.292;
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 133 10 ]
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_133_10_if_stmt:
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 136 10 ]
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_136_10_if_stmt:
         %tmp.294 = lgetv %fractionI.8;
         %tmp.295 = 1.0;
         %tmp.296 = gt %tmp.294 %tmp.295;
-        bf %tmp.296 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_133_10_if_end;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_133_10_if_true:
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_133_31_start:
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 134 12 ]
+        bf %tmp.296 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_136_10_if_end;
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_136_10_if_true:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_136_31_start:
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 137 12 ]
         %tmp.297 = 1.0;
         lputv %fractionI.8 %tmp.297;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_133_31_stop:
-        goto @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_133_10_if_end;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_133_10_if_end:
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 136 10 ]
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_136_31_stop:
+        goto @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_136_10_if_end;
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_136_10_if_end:
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 139 10 ]
         %tmp.298 = getv self :timeInZoneFraction;
         %tmp.300 = lgetv %fractionI.8;
         %tmp.302 = lgetv %i.6;
         aputv %tmp.298 %tmp.302 %tmp.300;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_129_30_stop:
-        goto @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_129_8_if_end;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_129_8_if_end:
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_128_58_stop:
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_128_6_for_incr:
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 128 ]
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_132_30_stop:
+        goto @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_132_8_if_end;
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_132_8_if_end:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_131_58_stop:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_131_6_for_incr:
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 131 ]
         %tmp.305 = lgetv %i.6;
         %tmp.306 = add %tmp.305 1;
         lputv %i.6 %tmp.306;
-        goto @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_128_6_for_test;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_128_6_for_end:
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_73_6_stop:
-        goto @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_69_4_if_end;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_69_4_if_false:
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_139_11_start:
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 140 6 ]
+        goto @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_131_6_for_test;
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_131_6_for_end:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_76_6_stop:
+        goto @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_72_4_if_end;
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_72_4_if_false:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_142_11_start:
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 143 6 ]
         %tmp.308 = getv ? :System;
         %tmp.309 = getv function %tmp.308 :println;
         %tmp.310 = "No heart rate data";
         invoke %tmp.308 %tmp.309(%tmp.310);
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_139_11_stop:
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_69_4_if_end:
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_68_67_stop:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_142_11_stop:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_72_4_if_end:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_71_67_stop:
     }
-    [ @file = "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc"; @line = 146; ]
+    [ @file = "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc"; @line = 149; ]
     function onUpdate(dc as Dc) as Void {
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_146_38_start:
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 148 4 ]
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_149_38_start:
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 151 4 ]
         %tmp.2 = getv ? :View;
         %tmp.3 = getv function %tmp.2 :onUpdate;
         %tmp.5 = lgetv %dc;
         invoke %tmp.2 %tmp.3(%tmp.5);
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 149 4 ]
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 152 4 ]
         %tmp.6 = self;
         %tmp.7 = getv function %tmp.6 :drawBarsOnScreen;
         %tmp.9 = lgetv %dc;
         invoke %tmp.6 %tmp.7(%tmp.9);
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_146_38_stop:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_149_38_stop:
     }
-    [ @file = "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc"; @line = 152; @position = 13; ]
+    [ @file = "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc"; @line = 155; @position = 13; ]
     protected
     var cornerRadius as Number = 2;
-    [ @file = "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc"; @line = 153; @position = 13; ]
-    protected
-    var penWidth as Number = 4;
-    [ @file = "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc"; @line = 155; ]
+    [ @file = "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc"; @line = 157; ]
     function drawBarsOnScreen(dc as Dc) as Void {
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_155_46_start:
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 157 4 ]
-        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_155_46_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_155_46_stop" ]
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_157_46_start:
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 159 4 ]
+        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_157_46_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_157_46_stop" ]
         %screenWidth.1 = local;
         %tmp.1 = lgetv %dc;
         %tmp.2 = getv function %tmp.1 :getWidth;
         %tmp.3 = invoke %tmp.1 %tmp.2();
         lputv %screenWidth.1 %tmp.3;
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 158 4 ]
-        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_155_46_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_155_46_stop" ]
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 160 4 ]
+        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_157_46_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_157_46_stop" ]
         %screenHeight.2 = local;
         %tmp.4 = lgetv %dc;
         %tmp.5 = getv function %tmp.4 :getHeight;
         %tmp.6 = invoke %tmp.4 %tmp.5();
         lputv %screenHeight.2 %tmp.6;
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 160 4 ]
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 162 4 ]
         %tmp.7 = lgetv %dc;
         %tmp.8 = getv function %tmp.7 :setColor;
         %tmp.9 = getm $.Toybox.Graphics;
@@ -806,7 +832,7 @@ C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_155_46_st
         %tmp.11 = getm $.Toybox.Graphics;
         %tmp.12 = getv %tmp.11 :COLOR_WHITE;
         invoke %tmp.7 %tmp.8(%tmp.10, %tmp.12);
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 161 4 ]
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 163 4 ]
         %tmp.13 = lgetv %dc;
         %tmp.14 = getv function %tmp.13 :fillRectangle;
         %tmp.15 = 0;
@@ -814,18 +840,18 @@ C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_155_46_st
         %tmp.18 = lgetv %screenWidth.1;
         %tmp.20 = lgetv %screenHeight.2;
         invoke %tmp.13 %tmp.14(%tmp.15, %tmp.16, %tmp.18, %tmp.20);
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 163 4 ]
-        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_155_46_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_155_46_stop" ]
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 165 4 ]
+        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_157_46_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_157_46_stop" ]
         %minimumBarWidth.3 = local;
         %tmp.21 = 8;
         lputv %minimumBarWidth.3 %tmp.21;
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 164 4 ]
-        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_155_46_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_155_46_stop" ]
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 166 4 ]
+        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_157_46_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_157_46_stop" ]
         %barVerticalSpacing.4 = local;
         %tmp.22 = 0;
         lputv %barVerticalSpacing.4 %tmp.22;
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 165 4 ]
-        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_155_46_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_155_46_stop" ]
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 167 4 ]
+        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_157_46_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_157_46_stop" ]
         %barHeight.5 = local;
         %tmp.23 = lgetv %screenHeight.2;
         %tmp.24 = getv function %tmp.23 :toFloat;
@@ -837,518 +863,514 @@ C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_155_46_st
         %tmp.31 = invoke %tmp.29 %tmp.30();
         %tmp.32 = div %tmp.25 %tmp.31;
         lputv %barHeight.5 %tmp.32;
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 166 4 ]
-        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_155_46_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_155_46_stop" ]
-        %fontHeight.6 = local;
-        %tmp.33 = getm $.Toybox.Graphics;
-        %tmp.34 = getv function %tmp.33 :getFontHeight;
-        %tmp.36 = getv ? :mFont;
-        %tmp.37 = invoke %tmp.33 %tmp.34(%tmp.36);
-        lputv %fontHeight.6 %tmp.37;
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 167 4 ]
-        %tmp.38 = 4;
-        putv self :penWidth %tmp.38;
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 168 4 ]
-        for @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_168_4_for_test @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_168_4_for_incr @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_168_4_for_end;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_168_4_for_init:
-        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_168_4_for_begin" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_168_4_for_end" ]
-        %indexBar.7 = local;
-        %tmp.40 = getv ? :timeInHeartRateZones;
-        %tmp.41 = getv function %tmp.40 :size;
-        %tmp.42 = invoke %tmp.40 %tmp.41();
-        %tmp.43 = 1;
-        %tmp.44 = sub %tmp.42 %tmp.43;
-        lputv %indexBar.7 %tmp.44;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_168_4_for_test:
-        %tmp.46 = lgetv %indexBar.7;
-        %tmp.47 = 0;
-        %tmp.48 = gt %tmp.46 %tmp.47;
-        bf %tmp.48 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_168_4_for_end;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_168_4_for_begin:
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_168_83_start:
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 169 6 ]
-        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_168_83_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_168_83_stop" ]
-        %barX.8 = local;
-        %tmp.49 = 0;
-        lputv %barX.8 %tmp.49;
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 170 6 ]
-        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_168_83_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_168_83_stop" ]
-        %indexZone.9 = local;
-        %tmp.51 = getv ? :timeInHeartRateZones;
-        %tmp.52 = getv function %tmp.51 :size;
-        %tmp.53 = invoke %tmp.51 %tmp.52();
-        %tmp.55 = lgetv %indexBar.7;
-        %tmp.56 = sub %tmp.53 %tmp.55;
-        lputv %indexZone.9 %tmp.56;
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 170 4 ]
+        for @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_170_4_for_test @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_170_4_for_incr @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_170_4_for_end;
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_170_4_for_init:
+        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_170_4_for_begin" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_170_4_for_end" ]
+        %indexBar.6 = local;
+        %tmp.34 = getv ? :timeInHeartRateZones;
+        %tmp.35 = getv function %tmp.34 :size;
+        %tmp.36 = invoke %tmp.34 %tmp.35();
+        %tmp.37 = 1;
+        %tmp.38 = sub %tmp.36 %tmp.37;
+        lputv %indexBar.6 %tmp.38;
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_170_4_for_test:
+        %tmp.40 = lgetv %indexBar.6;
+        %tmp.41 = 0;
+        %tmp.42 = gt %tmp.40 %tmp.41;
+        bf %tmp.42 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_170_4_for_end;
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_170_4_for_begin:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_170_83_start:
 [ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 171 6 ]
-        %tmp.58 = getv ? :System;
-        %tmp.59 = getv function %tmp.58 :println;
-        %tmp.60 = "indexBar ";
-        %tmp.62 = lgetv %indexBar.7;
-        %tmp.63 = add %tmp.60 %tmp.62;
-        %tmp.64 = " index ";
-        %tmp.65 = add %tmp.63 %tmp.64;
-        %tmp.67 = lgetv %indexZone.9;
-        %tmp.68 = add %tmp.65 %tmp.67;
-        invoke %tmp.58 %tmp.59(%tmp.68);
+        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_170_83_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_170_83_stop" ]
+        %barX.7 = local;
+        %tmp.43 = 0;
+        lputv %barX.7 %tmp.43;
 [ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 172 6 ]
-        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_168_83_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_168_83_stop" ]
-        %barY.10 = local;
-        %tmp.70 = lgetv %indexBar.7;
-        %tmp.71 = 1;
-        %tmp.72 = sub %tmp.70 %tmp.71;
-        %tmp.74 = lgetv %barHeight.5;
-        %tmp.75 = mul %tmp.72 %tmp.74;
-        %tmp.77 = lgetv %barVerticalSpacing.4;
-        %tmp.78 = add %tmp.75 %tmp.77;
-        lputv %barY.10 %tmp.78;
+        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_170_83_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_170_83_stop" ]
+        %indexZone.8 = local;
+        %tmp.45 = getv ? :timeInHeartRateZones;
+        %tmp.46 = getv function %tmp.45 :size;
+        %tmp.47 = invoke %tmp.45 %tmp.46();
+        %tmp.49 = lgetv %indexBar.6;
+        %tmp.50 = sub %tmp.47 %tmp.49;
+        lputv %indexZone.8 %tmp.50;
 [ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 173 6 ]
-        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_168_83_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_168_83_stop" ]
-        %barColor.11 = local;
-        %tmp.80 = getv ? :mZoneColors;
-        %tmp.82 = lgetv %indexZone.9;
-        %tmp.83 = agetv %tmp.80 %tmp.82;
-        lputv %barColor.11 %tmp.83;
+        %tmp.52 = getv ? :System;
+        %tmp.53 = getv function %tmp.52 :println;
+        %tmp.54 = "indexBar ";
+        %tmp.56 = lgetv %indexBar.6;
+        %tmp.57 = add %tmp.54 %tmp.56;
+        %tmp.58 = " index ";
+        %tmp.59 = add %tmp.57 %tmp.58;
+        %tmp.61 = lgetv %indexZone.8;
+        %tmp.62 = add %tmp.59 %tmp.61;
+        invoke %tmp.52 %tmp.53(%tmp.62);
 [ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 174 6 ]
-        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_168_83_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_168_83_stop" ]
-        %barWidth.12 = local;
-        %tmp.85 = lgetv %minimumBarWidth.3;
-        %tmp.87 = getv ? :timeInZoneFraction;
-        %tmp.89 = lgetv %indexZone.9;
-        %tmp.90 = agetv %tmp.87 %tmp.89;
-        %tmp.92 = lgetv %screenWidth.1;
-        %tmp.94 = lgetv %minimumBarWidth.3;
-        %tmp.95 = sub %tmp.92 %tmp.94;
-        %tmp.96 = mul %tmp.90 %tmp.95;
-        %tmp.97 = add %tmp.85 %tmp.96;
-        lputv %barWidth.12 %tmp.97;
+        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_170_83_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_170_83_stop" ]
+        %barY.9 = local;
+        %tmp.64 = lgetv %indexBar.6;
+        %tmp.65 = 1;
+        %tmp.66 = sub %tmp.64 %tmp.65;
+        %tmp.68 = lgetv %barHeight.5;
+        %tmp.69 = mul %tmp.66 %tmp.68;
+        %tmp.71 = lgetv %barVerticalSpacing.4;
+        %tmp.72 = add %tmp.69 %tmp.71;
+        lputv %barY.9 %tmp.72;
 [ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 175 6 ]
-        %tmp.98 = lgetv %dc;
-        %tmp.99 = getv function %tmp.98 :setColor;
-        %tmp.101 = lgetv %barColor.11;
-        %tmp.102 = getm $.Toybox.Graphics;
-        %tmp.103 = getv %tmp.102 :COLOR_WHITE;
-        invoke %tmp.98 %tmp.99(%tmp.101, %tmp.103);
+        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_170_83_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_170_83_stop" ]
+        %barColor.10 = local;
+        %tmp.74 = getv ? :mZoneColors;
+        %tmp.76 = lgetv %indexZone.8;
+        %tmp.77 = agetv %tmp.74 %tmp.76;
+        lputv %barColor.10 %tmp.77;
 [ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 176 6 ]
-        %tmp.104 = lgetv %dc;
-        %tmp.105 = getv function %tmp.104 :fillRoundedRectangle;
-        %tmp.107 = lgetv %barX.8;
-        %tmp.109 = lgetv %barY.10;
-        %tmp.111 = lgetv %barWidth.12;
-        %tmp.113 = lgetv %barHeight.5;
-        %tmp.115 = getv ? :cornerRadius;
-        invoke %tmp.104 %tmp.105(%tmp.107, %tmp.109, %tmp.111, %tmp.113, %tmp.115);
+        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_170_83_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_170_83_stop" ]
+        %barWidth.11 = local;
+        %tmp.79 = lgetv %minimumBarWidth.3;
+        %tmp.81 = getv ? :timeInZoneFraction;
+        %tmp.83 = lgetv %indexZone.8;
+        %tmp.84 = agetv %tmp.81 %tmp.83;
+        %tmp.86 = lgetv %screenWidth.1;
+        %tmp.88 = lgetv %minimumBarWidth.3;
+        %tmp.89 = sub %tmp.86 %tmp.88;
+        %tmp.90 = mul %tmp.84 %tmp.89;
+        %tmp.91 = add %tmp.79 %tmp.90;
+        lputv %barWidth.11 %tmp.91;
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 177 6 ]
+        %tmp.92 = lgetv %dc;
+        %tmp.93 = getv function %tmp.92 :setColor;
+        %tmp.95 = lgetv %barColor.10;
+        %tmp.96 = getm $.Toybox.Graphics;
+        %tmp.97 = getv %tmp.96 :COLOR_WHITE;
+        invoke %tmp.92 %tmp.93(%tmp.95, %tmp.97);
 [ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 178 6 ]
-        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_168_83_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_168_83_stop" ]
-        %labelX.13 = local;
-        %tmp.117 = lgetv %barX.8;
-        %tmp.119 = lgetv %minimumBarWidth.3;
-        %tmp.120 = add %tmp.117 %tmp.119;
-        %tmp.121 = 30;
-        %tmp.122 = add %tmp.120 %tmp.121;
-        lputv %labelX.13 %tmp.122;
+        %tmp.98 = lgetv %dc;
+        %tmp.99 = getv function %tmp.98 :fillRoundedRectangle;
+        %tmp.101 = lgetv %barX.7;
+        %tmp.103 = lgetv %barY.9;
+        %tmp.105 = lgetv %barWidth.11;
+        %tmp.107 = lgetv %barHeight.5;
+        %tmp.109 = getv ? :cornerRadius;
+        invoke %tmp.98 %tmp.99(%tmp.101, %tmp.103, %tmp.105, %tmp.107, %tmp.109);
 [ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 180 6 ]
-        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_168_83_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_168_83_stop" ]
-        %labelY.14 = local;
-        %tmp.124 = lgetv %barY.10;
-        %tmp.126 = lgetv %barHeight.5;
-        %tmp.128 = lgetv %fontHeight.6;
-        %tmp.129 = sub %tmp.126 %tmp.128;
-        %tmp.130 = 2;
-        %tmp.131 = div %tmp.129 %tmp.130;
-        %tmp.132 = add %tmp.124 %tmp.131;
-        %tmp.133 = 2;
-        %tmp.134 = sub %tmp.132 %tmp.133;
-        lputv %labelY.14 %tmp.134;
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 181 6 ]
-        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_168_83_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_168_83_stop" ]
-        %labelText.15 = local;
-        %tmp.135 = "Z";
-        %tmp.137 = lgetv %indexZone.9;
-        %tmp.138 = add %tmp.135 %tmp.137;
-        lputv %labelText.15 %tmp.138;
+        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_170_83_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_170_83_stop" ]
+        %labelX.12 = local;
+        %tmp.111 = lgetv %barX.7;
+        %tmp.113 = lgetv %minimumBarWidth.3;
+        %tmp.114 = add %tmp.111 %tmp.113;
+        %tmp.115 = 30;
+        %tmp.116 = add %tmp.114 %tmp.115;
+        lputv %labelX.12 %tmp.116;
 [ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 182 6 ]
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_182_6_if_stmt:
-        %tmp.140 = getv ? :timeInHeartRateZones;
-        %tmp.142 = lgetv %indexZone.9;
-        %tmp.143 = agetv %tmp.140 %tmp.142;
-        %tmp.144 = 0;
-        %tmp.145 = gt %tmp.143 %tmp.144;
-        bf %tmp.145 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_182_6_if_end;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_182_6_if_true:
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_182_47_start:
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 183 8 ]
-        %tmp.146 = lgetv %labelText.15;
-        %tmp.147 = " ";
-        %tmp.148 = self;
-        %tmp.149 = getv function %tmp.148 :secondsToTimeString;
-        %tmp.151 = getv ? :timeInHeartRateZones;
-        %tmp.153 = lgetv %indexZone.9;
-        %tmp.154 = agetv %tmp.151 %tmp.153;
-        %tmp.155 = invoke %tmp.148 %tmp.149(%tmp.154);
-        %tmp.156 = add %tmp.147 %tmp.155;
-        %tmp.157 = add %tmp.146 %tmp.156;
-        lputv %labelText.15 %tmp.157;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_182_47_stop:
-        goto @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_182_6_if_end;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_182_6_if_end:
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 185 6 ]
-        %tmp.158 = lgetv %dc;
-        %tmp.159 = getv function %tmp.158 :setColor;
-        %tmp.160 = getm $.Toybox.Graphics;
-        %tmp.161 = getv %tmp.160 :COLOR_BLACK;
-        %tmp.162 = getm $.Toybox.Graphics;
-        %tmp.163 = getv %tmp.162 :COLOR_TRANSPARENT;
-        invoke %tmp.158 %tmp.159(%tmp.161, %tmp.163);
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 186 6 ]
-        %tmp.164 = lgetv %dc;
-        %tmp.165 = getv function %tmp.164 :drawText;
-        %tmp.167 = lgetv %labelX.13;
-        %tmp.169 = lgetv %labelY.14;
-        %tmp.171 = getv ? :mFont;
-        %tmp.173 = lgetv %labelText.15;
-        %tmp.174 = getm $.Toybox.Graphics;
-        %tmp.175 = getv %tmp.174 :TEXT_JUSTIFY_LEFT;
-        invoke %tmp.164 %tmp.165(%tmp.167, %tmp.169, %tmp.171, %tmp.173, %tmp.175);
+        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_170_83_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_170_83_stop" ]
+        %labelY.13 = local;
+        %tmp.118 = lgetv %barY.9;
+        %tmp.120 = lgetv %barHeight.5;
+        %tmp.122 = getv ? :fontHeight;
+        %tmp.123 = sub %tmp.120 %tmp.122;
+        %tmp.124 = 2;
+        %tmp.125 = div %tmp.123 %tmp.124;
+        %tmp.126 = add %tmp.118 %tmp.125;
+        %tmp.127 = 2;
+        %tmp.128 = sub %tmp.126 %tmp.127;
+        lputv %labelY.13 %tmp.128;
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 183 6 ]
+        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_170_83_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_170_83_stop" ]
+        %labelText.14 = local;
+        %tmp.129 = "Z";
+        %tmp.131 = lgetv %indexZone.8;
+        %tmp.132 = add %tmp.129 %tmp.131;
+        lputv %labelText.14 %tmp.132;
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 184 6 ]
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_184_6_if_stmt:
+        %tmp.134 = getv ? :timeInHeartRateZones;
+        %tmp.136 = lgetv %indexZone.8;
+        %tmp.137 = agetv %tmp.134 %tmp.136;
+        %tmp.138 = 0;
+        %tmp.139 = gt %tmp.137 %tmp.138;
+        bf %tmp.139 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_184_6_if_end;
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_184_6_if_true:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_184_47_start:
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 185 8 ]
+        %tmp.140 = lgetv %labelText.14;
+        %tmp.141 = " ";
+        %tmp.142 = self;
+        %tmp.143 = getv function %tmp.142 :secondsToTimeString;
+        %tmp.145 = getv ? :timeInHeartRateZones;
+        %tmp.147 = lgetv %indexZone.8;
+        %tmp.148 = agetv %tmp.145 %tmp.147;
+        %tmp.149 = invoke %tmp.142 %tmp.143(%tmp.148);
+        %tmp.150 = add %tmp.141 %tmp.149;
+        %tmp.151 = add %tmp.140 %tmp.150;
+        lputv %labelText.14 %tmp.151;
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_184_47_stop:
+        goto @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_184_6_if_end;
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_184_6_if_end:
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 187 6 ]
+        %tmp.152 = lgetv %dc;
+        %tmp.153 = getv function %tmp.152 :setColor;
+        %tmp.154 = getm $.Toybox.Graphics;
+        %tmp.155 = getv %tmp.154 :COLOR_BLACK;
+        %tmp.156 = getm $.Toybox.Graphics;
+        %tmp.157 = getv %tmp.156 :COLOR_TRANSPARENT;
+        invoke %tmp.152 %tmp.153(%tmp.155, %tmp.157);
 [ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 188 6 ]
-        %tmp.177 = getv ? :System;
-        %tmp.178 = getv function %tmp.177 :println;
-        %tmp.179 = " Time in zone ";
-        %tmp.181 = lgetv %indexZone.9;
-        %tmp.182 = add %tmp.179 %tmp.181;
-        %tmp.183 = ": ";
-        %tmp.184 = add %tmp.182 %tmp.183;
-        %tmp.186 = getv ? :timeInHeartRateZones;
-        %tmp.188 = lgetv %indexZone.9;
-        %tmp.189 = agetv %tmp.186 %tmp.188;
-        %tmp.190 = add %tmp.184 %tmp.189;
-        %tmp.191 = " currentZone: ";
-        %tmp.192 = add %tmp.190 %tmp.191;
-        %tmp.194 = getv ? :currentZone;
-        %tmp.195 = add %tmp.192 %tmp.194;
-        %tmp.196 = " currentZoneDecimal: ";
-        %tmp.197 = add %tmp.195 %tmp.196;
-        %tmp.199 = getv ? :currentZoneDecimal;
-        %tmp.200 = add %tmp.197 %tmp.199;
-        %tmp.201 = " TimeFraction: ";
-        %tmp.202 = add %tmp.200 %tmp.201;
-        %tmp.204 = getv ? :timeInZoneFraction;
-        %tmp.206 = lgetv %indexZone.9;
-        %tmp.207 = agetv %tmp.204 %tmp.206;
-        %tmp.208 = add %tmp.202 %tmp.207;
-        %tmp.209 = " userHeartRateZones: ";
-        %tmp.210 = add %tmp.208 %tmp.209;
-        %tmp.212 = getv ? :userHeartRateZones;
-        %tmp.213 = add %tmp.210 %tmp.212;
-        invoke %tmp.177 %tmp.178(%tmp.213);
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 197 6 ]
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_197_6_if_stmt:
-        %tmp.215 = getv ? :currentZone;
-        %tmp.217 = lgetv %indexZone.9;
-        %tmp.218 = eq %tmp.215 %tmp.217;
-        bf %tmp.218 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_197_6_if_end;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_197_6_if_true:
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_197_36_start:
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 198 8 ]
-        %tmp.219 = lgetv %dc;
-        %tmp.220 = getv function %tmp.219 :setPenWidth;
-        %tmp.222 = getv ? :penWidth;
-        invoke %tmp.219 %tmp.220(%tmp.222);
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 199 8 ]
-        %tmp.223 = lgetv %dc;
-        %tmp.224 = getv function %tmp.223 :setColor;
-        %tmp.225 = getm $.Toybox.Graphics;
-        %tmp.226 = getv %tmp.225 :COLOR_BLACK;
-        %tmp.227 = getm $.Toybox.Graphics;
-        %tmp.228 = getv %tmp.227 :COLOR_TRANSPARENT;
-        invoke %tmp.223 %tmp.224(%tmp.226, %tmp.228);
+        %tmp.158 = lgetv %dc;
+        %tmp.159 = getv function %tmp.158 :drawText;
+        %tmp.161 = lgetv %labelX.12;
+        %tmp.163 = lgetv %labelY.13;
+        %tmp.165 = getv ? :mFont;
+        %tmp.167 = lgetv %labelText.14;
+        %tmp.168 = getm $.Toybox.Graphics;
+        %tmp.169 = getv %tmp.168 :TEXT_JUSTIFY_LEFT;
+        invoke %tmp.158 %tmp.159(%tmp.161, %tmp.163, %tmp.165, %tmp.167, %tmp.169);
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 190 6 ]
+        %tmp.171 = getv ? :System;
+        %tmp.172 = getv function %tmp.171 :println;
+        %tmp.173 = " Time in zone ";
+        %tmp.175 = lgetv %indexZone.8;
+        %tmp.176 = add %tmp.173 %tmp.175;
+        %tmp.177 = ": ";
+        %tmp.178 = add %tmp.176 %tmp.177;
+        %tmp.180 = getv ? :timeInHeartRateZones;
+        %tmp.182 = lgetv %indexZone.8;
+        %tmp.183 = agetv %tmp.180 %tmp.182;
+        %tmp.184 = add %tmp.178 %tmp.183;
+        %tmp.185 = " currentZone: ";
+        %tmp.186 = add %tmp.184 %tmp.185;
+        %tmp.188 = getv ? :currentZone;
+        %tmp.189 = add %tmp.186 %tmp.188;
+        %tmp.190 = " currentZoneDecimal: ";
+        %tmp.191 = add %tmp.189 %tmp.190;
+        %tmp.193 = getv ? :currentZoneDecimal;
+        %tmp.194 = add %tmp.191 %tmp.193;
+        %tmp.195 = " TimeFraction: ";
+        %tmp.196 = add %tmp.194 %tmp.195;
+        %tmp.198 = getv ? :timeInZoneFraction;
+        %tmp.200 = lgetv %indexZone.8;
+        %tmp.201 = agetv %tmp.198 %tmp.200;
+        %tmp.202 = add %tmp.196 %tmp.201;
+        %tmp.203 = " userHeartRateZones: ";
+        %tmp.204 = add %tmp.202 %tmp.203;
+        %tmp.206 = getv ? :userHeartRateZones;
+        %tmp.207 = add %tmp.204 %tmp.206;
+        invoke %tmp.171 %tmp.172(%tmp.207);
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 199 6 ]
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_199_6_if_stmt:
+        %tmp.209 = getv ? :currentZone;
+        %tmp.211 = lgetv %indexZone.8;
+        %tmp.212 = eq %tmp.209 %tmp.211;
+        bf %tmp.212 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_199_6_if_end;
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_199_6_if_true:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_199_36_start:
 [ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 200 8 ]
-        %tmp.229 = lgetv %dc;
-        %tmp.230 = getv function %tmp.229 :drawRoundedRectangle;
-        %tmp.231 = 0;
-        %tmp.233 = lgetv %indexBar.7;
-        %tmp.234 = 1;
-        %tmp.235 = sub %tmp.233 %tmp.234;
-        %tmp.237 = lgetv %barHeight.5;
-        %tmp.238 = mul %tmp.235 %tmp.237;
-        %tmp.240 = lgetv %screenWidth.1;
-        %tmp.242 = lgetv %barHeight.5;
-        %tmp.244 = getv ? :cornerRadius;
-        invoke %tmp.229 %tmp.230(%tmp.231, %tmp.238, %tmp.240, %tmp.242, %tmp.244);
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_197_36_stop:
-        goto @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_197_6_if_end;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_197_6_if_end:
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_168_83_stop:
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_168_4_for_incr:
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 168 ]
-        %tmp.247 = lgetv %indexBar.7;
-        %tmp.248 = sub %tmp.247 1;
-        lputv %indexBar.7 %tmp.248;
-        goto @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_168_4_for_test;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_168_4_for_end:
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 205 4 ]
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_205_4_if_stmt:
-        %tmp.250 = getv ? :currentZoneDecimal;
-        %tmp.251 = 0.9;
-        %tmp.252 = gt %tmp.250 %tmp.251;
-        bf %tmp.252 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_205_4_if_end;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_205_4_if_true:
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_205_34_start:
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 206 6 ]
-        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_205_34_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_205_34_stop" ]
-        %triangleSize.16 = local;
-        %tmp.254 = lgetv %barHeight.5;
-        %tmp.255 = 4;
-        %tmp.256 = div %tmp.254 %tmp.255;
-        lputv %triangleSize.16 %tmp.256;
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 207 6 ]
-        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_205_34_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_205_34_stop" ]
-        %triangleX.17 = local;
-        %tmp.258 = lgetv %minimumBarWidth.3;
-        lputv %triangleX.17 %tmp.258;
+        %tmp.213 = lgetv %dc;
+        %tmp.214 = getv function %tmp.213 :setPenWidth;
+        %tmp.215 = 3;
+        invoke %tmp.213 %tmp.214(%tmp.215);
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 201 8 ]
+        %tmp.216 = lgetv %dc;
+        %tmp.217 = getv function %tmp.216 :setColor;
+        %tmp.218 = getm $.Toybox.Graphics;
+        %tmp.219 = getv %tmp.218 :COLOR_BLACK;
+        %tmp.220 = getm $.Toybox.Graphics;
+        %tmp.221 = getv %tmp.220 :COLOR_TRANSPARENT;
+        invoke %tmp.216 %tmp.217(%tmp.219, %tmp.221);
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 202 8 ]
+        %tmp.222 = lgetv %dc;
+        %tmp.223 = getv function %tmp.222 :drawRoundedRectangle;
+        %tmp.224 = 0;
+        %tmp.226 = lgetv %indexBar.6;
+        %tmp.227 = 1;
+        %tmp.228 = sub %tmp.226 %tmp.227;
+        %tmp.230 = lgetv %barHeight.5;
+        %tmp.231 = mul %tmp.228 %tmp.230;
+        %tmp.233 = lgetv %screenWidth.1;
+        %tmp.235 = lgetv %barHeight.5;
+        %tmp.237 = getv ? :cornerRadius;
+        invoke %tmp.222 %tmp.223(%tmp.224, %tmp.231, %tmp.233, %tmp.235, %tmp.237);
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_199_36_stop:
+        goto @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_199_6_if_end;
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_199_6_if_end:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_170_83_stop:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_170_4_for_incr:
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 170 ]
+        %tmp.240 = lgetv %indexBar.6;
+        %tmp.241 = sub %tmp.240 1;
+        lputv %indexBar.6 %tmp.241;
+        goto @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_170_4_for_test;
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_170_4_for_end:
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 207 4 ]
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_207_4_if_stmt:
+        %tmp.243 = getv ? :currentZoneDecimal;
+        %tmp.244 = 0.9;
+        %tmp.245 = gt %tmp.243 %tmp.244;
+        bf %tmp.245 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_207_4_if_end;
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_207_4_if_true:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_207_34_start:
 [ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 208 6 ]
-        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_205_34_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_205_34_stop" ]
-        %triangleY.18 = local;
-        %tmp.260 = lgetv %screenHeight.2;
-        %tmp.261 = 1;
-        %tmp.263 = getv ? :currentZoneDecimal;
-        %tmp.264 = 6;
-        %tmp.265 = div %tmp.263 %tmp.264;
-        %tmp.266 = sub %tmp.261 %tmp.265;
-        %tmp.267 = mul %tmp.260 %tmp.266;
-        lputv %triangleY.18 %tmp.267;
+        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_207_34_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_207_34_stop" ]
+        %triangleSize.15 = local;
+        %tmp.247 = lgetv %barHeight.5;
+        %tmp.248 = 4;
+        %tmp.249 = div %tmp.247 %tmp.248;
+        lputv %triangleSize.15 %tmp.249;
 [ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 209 6 ]
-        %tmp.268 = lgetv %dc;
-        %tmp.269 = getv function %tmp.268 :setColor;
-        %tmp.270 = getm $.Toybox.Graphics;
-        %tmp.271 = getv %tmp.270 :COLOR_BLACK;
-        %tmp.272 = getm $.Toybox.Graphics;
-        %tmp.273 = getv %tmp.272 :COLOR_BLACK;
-        invoke %tmp.268 %tmp.269(%tmp.271, %tmp.273);
+        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_207_34_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_207_34_stop" ]
+        %triangleX.16 = local;
+        %tmp.251 = lgetv %minimumBarWidth.3;
+        lputv %triangleX.16 %tmp.251;
 [ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 210 6 ]
-        %tmp.274 = lgetv %dc;
-        %tmp.275 = getv function %tmp.274 :fillPolygon;
-        %tmp.276 = newa 3;
-        %tmp.277 = newa 2;
-        %tmp.279 = lgetv %triangleX.17;
-        %tmp.280 = dup %tmp.277;
-        %tmp.281 = aputv %tmp.280 0 %tmp.279;
-        %tmp.283 = lgetv %triangleY.18;
-        %tmp.285 = lgetv %triangleSize.16;
-        %tmp.286 = sub %tmp.283 %tmp.285;
-        %tmp.287 = dup %tmp.281;
-        %tmp.288 = aputv %tmp.287 1 %tmp.286;
-        %tmp.289 = dup %tmp.276;
+        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_207_34_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_207_34_stop" ]
+        %triangleY.17 = local;
+        %tmp.253 = lgetv %screenHeight.2;
+        %tmp.254 = 1;
+        %tmp.256 = getv ? :currentZoneDecimal;
+        %tmp.257 = 6;
+        %tmp.258 = div %tmp.256 %tmp.257;
+        %tmp.259 = sub %tmp.254 %tmp.258;
+        %tmp.260 = mul %tmp.253 %tmp.259;
+        lputv %triangleY.17 %tmp.260;
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 211 6 ]
+        %tmp.261 = lgetv %dc;
+        %tmp.262 = getv function %tmp.261 :setColor;
+        %tmp.263 = getm $.Toybox.Graphics;
+        %tmp.264 = getv %tmp.263 :COLOR_BLACK;
+        %tmp.265 = getm $.Toybox.Graphics;
+        %tmp.266 = getv %tmp.265 :COLOR_BLACK;
+        invoke %tmp.261 %tmp.262(%tmp.264, %tmp.266);
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 212 6 ]
+        %tmp.267 = lgetv %dc;
+        %tmp.268 = getv function %tmp.267 :fillPolygon;
+        %tmp.269 = newa 3;
+        %tmp.270 = newa 2;
+        %tmp.272 = lgetv %triangleX.16;
+        %tmp.273 = dup %tmp.270;
+        %tmp.274 = aputv %tmp.273 0 %tmp.272;
+        %tmp.276 = lgetv %triangleY.17;
+        %tmp.278 = lgetv %triangleSize.15;
+        %tmp.279 = sub %tmp.276 %tmp.278;
+        %tmp.280 = dup %tmp.274;
+        %tmp.281 = aputv %tmp.280 1 %tmp.279;
+        %tmp.282 = dup %tmp.269;
+        %tmp.283 = aputv %tmp.282 0 %tmp.281;
+        %tmp.284 = newa 2;
+        %tmp.286 = lgetv %triangleX.16;
+        %tmp.287 = 25;
+        %tmp.288 = add %tmp.286 %tmp.287;
+        %tmp.289 = dup %tmp.284;
         %tmp.290 = aputv %tmp.289 0 %tmp.288;
-        %tmp.291 = newa 2;
-        %tmp.293 = lgetv %triangleX.17;
-        %tmp.294 = 25;
-        %tmp.295 = add %tmp.293 %tmp.294;
-        %tmp.296 = dup %tmp.291;
-        %tmp.297 = aputv %tmp.296 0 %tmp.295;
-        %tmp.299 = lgetv %triangleY.18;
+        %tmp.292 = lgetv %triangleY.17;
+        %tmp.293 = dup %tmp.290;
+        %tmp.294 = aputv %tmp.293 1 %tmp.292;
+        %tmp.295 = dup %tmp.283;
+        %tmp.296 = aputv %tmp.295 1 %tmp.294;
+        %tmp.297 = newa 2;
+        %tmp.299 = lgetv %triangleX.16;
         %tmp.300 = dup %tmp.297;
-        %tmp.301 = aputv %tmp.300 1 %tmp.299;
-        %tmp.302 = dup %tmp.290;
-        %tmp.303 = aputv %tmp.302 1 %tmp.301;
-        %tmp.304 = newa 2;
-        %tmp.306 = lgetv %triangleX.17;
-        %tmp.307 = dup %tmp.304;
-        %tmp.308 = aputv %tmp.307 0 %tmp.306;
-        %tmp.310 = lgetv %triangleY.18;
-        %tmp.312 = lgetv %triangleSize.16;
-        %tmp.313 = add %tmp.310 %tmp.312;
-        %tmp.314 = dup %tmp.308;
-        %tmp.315 = aputv %tmp.314 1 %tmp.313;
-        %tmp.316 = dup %tmp.303;
-        %tmp.317 = aputv %tmp.316 2 %tmp.315;
-        invoke %tmp.274 %tmp.275(%tmp.317);
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_205_34_stop:
-        goto @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_205_4_if_end;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_205_4_if_end:
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 217 4 ]
-        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_155_46_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_155_46_stop" ]
-        %maxY.19 = local;
-        %tmp.319 = lgetv %screenHeight.2;
-        %tmp.321 = lgetv %barHeight.5;
-        %tmp.322 = sub %tmp.319 %tmp.321;
-        lputv %maxY.19 %tmp.322;
+        %tmp.301 = aputv %tmp.300 0 %tmp.299;
+        %tmp.303 = lgetv %triangleY.17;
+        %tmp.305 = lgetv %triangleSize.15;
+        %tmp.306 = add %tmp.303 %tmp.305;
+        %tmp.307 = dup %tmp.301;
+        %tmp.308 = aputv %tmp.307 1 %tmp.306;
+        %tmp.309 = dup %tmp.296;
+        %tmp.310 = aputv %tmp.309 2 %tmp.308;
+        invoke %tmp.267 %tmp.268(%tmp.310);
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_207_34_stop:
+        goto @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_207_4_if_end;
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_207_4_if_end:
 [ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 219 4 ]
-        %tmp.323 = 2;
-        putv self :penWidth %tmp.323;
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 220 4 ]
-        %tmp.324 = lgetv %dc;
-        %tmp.325 = getv function %tmp.324 :setPenWidth;
-        %tmp.327 = getv ? :penWidth;
-        invoke %tmp.324 %tmp.325(%tmp.327);
+        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_157_46_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_157_46_stop" ]
+        %maxY.18 = local;
+        %tmp.312 = lgetv %screenHeight.2;
+        %tmp.314 = lgetv %barHeight.5;
+        %tmp.315 = sub %tmp.312 %tmp.314;
+        lputv %maxY.18 %tmp.315;
 [ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 221 4 ]
-        %tmp.328 = lgetv %dc;
-        %tmp.329 = getv function %tmp.328 :setColor;
-        %tmp.330 = getm $.Toybox.Graphics;
-        %tmp.331 = getv %tmp.330 :COLOR_BLACK;
-        %tmp.332 = getm $.Toybox.Graphics;
-        %tmp.333 = getv %tmp.332 :COLOR_TRANSPARENT;
-        invoke %tmp.328 %tmp.329(%tmp.331, %tmp.333);
+        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_157_46_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_157_46_stop" ]
+        %penWidth.19 = local;
+        %tmp.316 = 2;
+        lputv %penWidth.19 %tmp.316;
 [ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 222 4 ]
-        %tmp.334 = lgetv %dc;
-        %tmp.335 = getv function %tmp.334 :drawLine;
-        %tmp.336 = 0;
-        %tmp.338 = lgetv %maxY.19;
-        %tmp.340 = lgetv %screenWidth.1;
-        %tmp.342 = lgetv %maxY.19;
-        invoke %tmp.334 %tmp.335(%tmp.336, %tmp.338, %tmp.340, %tmp.342);
+        %tmp.317 = lgetv %dc;
+        %tmp.318 = getv function %tmp.317 :setPenWidth;
+        %tmp.320 = lgetv %penWidth.19;
+        invoke %tmp.317 %tmp.318(%tmp.320);
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 223 4 ]
+        %tmp.321 = lgetv %dc;
+        %tmp.322 = getv function %tmp.321 :setColor;
+        %tmp.323 = getm $.Toybox.Graphics;
+        %tmp.324 = getv %tmp.323 :COLOR_BLACK;
+        %tmp.325 = getm $.Toybox.Graphics;
+        %tmp.326 = getv %tmp.325 :COLOR_TRANSPARENT;
+        invoke %tmp.321 %tmp.322(%tmp.324, %tmp.326);
 [ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 224 4 ]
-        %tmp.343 = lgetv %dc;
-        %tmp.344 = getv function %tmp.343 :drawLine;
-        %tmp.346 = lgetv %screenWidth.1;
-        %tmp.347 = 2;
-        %tmp.348 = div %tmp.346 %tmp.347;
-        %tmp.350 = lgetv %maxY.19;
-        %tmp.352 = lgetv %screenWidth.1;
-        %tmp.353 = 2;
-        %tmp.354 = div %tmp.352 %tmp.353;
-        %tmp.356 = lgetv %screenHeight.2;
-        invoke %tmp.343 %tmp.344(%tmp.348, %tmp.350, %tmp.354, %tmp.356);
+        %tmp.327 = lgetv %dc;
+        %tmp.328 = getv function %tmp.327 :drawLine;
+        %tmp.329 = 0;
+        %tmp.331 = lgetv %maxY.18;
+        %tmp.333 = lgetv %screenWidth.1;
+        %tmp.335 = lgetv %maxY.18;
+        invoke %tmp.327 %tmp.328(%tmp.329, %tmp.331, %tmp.333, %tmp.335);
 [ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 226 4 ]
-        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_155_46_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_155_46_stop" ]
+        %tmp.336 = lgetv %dc;
+        %tmp.337 = getv function %tmp.336 :drawLine;
+        %tmp.339 = lgetv %screenWidth.1;
+        %tmp.340 = 2;
+        %tmp.341 = div %tmp.339 %tmp.340;
+        %tmp.343 = lgetv %maxY.18;
+        %tmp.345 = lgetv %screenWidth.1;
+        %tmp.346 = 2;
+        %tmp.347 = div %tmp.345 %tmp.346;
+        %tmp.349 = lgetv %screenHeight.2;
+        invoke %tmp.336 %tmp.337(%tmp.341, %tmp.343, %tmp.347, %tmp.349);
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 230 4 ]
+        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_157_46_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_157_46_stop" ]
         %textY.20 = local;
-        %tmp.358 = lgetv %maxY.19;
-        %tmp.360 = lgetv %barHeight.5;
-        %tmp.362 = lgetv %fontHeight.6;
-        %tmp.363 = sub %tmp.360 %tmp.362;
-        %tmp.364 = 2;
-        %tmp.365 = div %tmp.363 %tmp.364;
-        %tmp.366 = add %tmp.358 %tmp.365;
-        lputv %textY.20 %tmp.366;
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 227 4 ]
-        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_155_46_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_155_46_stop" ]
-        %textX.21 = local;
-        %tmp.368 = lgetv %screenWidth.1;
-        %tmp.369 = 2;
-        %tmp.370 = div %tmp.368 %tmp.369;
-        %tmp.371 = lgetv %dc;
-        %tmp.372 = getv function %tmp.371 :getTextWidthInPixels;
-        %tmp.374 = getv ? :currentZoneDecimal;
-        %tmp.375 = getv function %tmp.374 :format;
-        %tmp.376 = "%.2f";
-        %tmp.377 = invoke %tmp.374 %tmp.375(%tmp.376);
-        %tmp.379 = getv ? :mFont;
-        %tmp.380 = invoke %tmp.371 %tmp.372(%tmp.377, %tmp.379);
-        %tmp.381 = sub %tmp.370 %tmp.380;
-        %tmp.382 = 2;
-        %tmp.383 = div %tmp.381 %tmp.382;
-        lputv %textX.21 %tmp.383;
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 228 4 ]
-        %tmp.384 = lgetv %dc;
-        %tmp.385 = getv function %tmp.384 :drawText;
-        %tmp.387 = lgetv %textX.21;
-        %tmp.389 = lgetv %textY.20;
-        %tmp.391 = getv ? :mFont;
-        %tmp.393 = getv ? :currentZoneDecimal;
-        %tmp.394 = getv function %tmp.393 :format;
-        %tmp.395 = "%.2f";
-        %tmp.396 = invoke %tmp.393 %tmp.394(%tmp.395);
-        %tmp.397 = getm $.Toybox.Graphics;
-        %tmp.398 = getv %tmp.397 :TEXT_JUSTIFY_LEFT;
-        invoke %tmp.384 %tmp.385(%tmp.387, %tmp.389, %tmp.391, %tmp.396, %tmp.398);
+        %tmp.351 = lgetv %maxY.18;
+        %tmp.353 = lgetv %barHeight.5;
+        %tmp.355 = getv ? :fontHeight;
+        %tmp.356 = sub %tmp.353 %tmp.355;
+        %tmp.357 = 2;
+        %tmp.358 = div %tmp.356 %tmp.357;
+        %tmp.359 = add %tmp.351 %tmp.358;
+        lputv %textY.20 %tmp.359;
 [ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 231 4 ]
-        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_155_46_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_155_46_stop" ]
-        %barColor.22 = local;
-        %tmp.400 = getv ? :mZoneColors;
-        %tmp.402 = getv ? :currentZone;
-        %tmp.403 = agetv %tmp.400 %tmp.402;
-        lputv %barColor.22 %tmp.403;
+        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_157_46_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_157_46_stop" ]
+        %zoneDecimal.21 = local;
+        %tmp.361 = getv ? :currentZoneDecimal;
+        %tmp.362 = getv function %tmp.361 :format;
+        %tmp.363 = "%.2f";
+        %tmp.364 = invoke %tmp.361 %tmp.362(%tmp.363);
+        lputv %zoneDecimal.21 %tmp.364;
 [ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 232 4 ]
-        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_155_46_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_155_46_stop" ]
-        %barWidth.23 = local;
-        %tmp.405 = getv ? :percentHRR;
-        %tmp.407 = lgetv %screenWidth.1;
-        %tmp.408 = 2;
-        %tmp.409 = div %tmp.407 %tmp.408;
-        %tmp.410 = mul %tmp.405 %tmp.409;
-        lputv %barWidth.23 %tmp.410;
+        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_157_46_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_157_46_stop" ]
+        %textX.22 = local;
+        %tmp.366 = lgetv %screenWidth.1;
+        %tmp.367 = 2;
+        %tmp.368 = div %tmp.366 %tmp.367;
+        %tmp.369 = lgetv %dc;
+        %tmp.370 = getv function %tmp.369 :getTextWidthInPixels;
+        %tmp.372 = lgetv %zoneDecimal.21;
+        %tmp.374 = getv ? :mFont;
+        %tmp.375 = invoke %tmp.369 %tmp.370(%tmp.372, %tmp.374);
+        %tmp.376 = sub %tmp.368 %tmp.375;
+        %tmp.377 = 2;
+        %tmp.378 = div %tmp.376 %tmp.377;
+        lputv %textX.22 %tmp.378;
 [ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 233 4 ]
-        %tmp.411 = lgetv %dc;
-        %tmp.412 = getv function %tmp.411 :setColor;
-        %tmp.414 = lgetv %barColor.22;
-        %tmp.415 = getm $.Toybox.Graphics;
-        %tmp.416 = getv %tmp.415 :COLOR_WHITE;
-        invoke %tmp.411 %tmp.412(%tmp.414, %tmp.416);
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 235 4 ]
-        %tmp.417 = lgetv %dc;
-        %tmp.418 = getv function %tmp.417 :fillRectangle;
-        %tmp.420 = lgetv %screenWidth.1;
+        %tmp.379 = lgetv %dc;
+        %tmp.380 = getv function %tmp.379 :drawText;
+        %tmp.382 = lgetv %textX.22;
+        %tmp.384 = lgetv %textY.20;
+        %tmp.386 = getv ? :mFont;
+        %tmp.388 = lgetv %zoneDecimal.21;
+        %tmp.389 = getm $.Toybox.Graphics;
+        %tmp.390 = getv %tmp.389 :TEXT_JUSTIFY_LEFT;
+        invoke %tmp.379 %tmp.380(%tmp.382, %tmp.384, %tmp.386, %tmp.388, %tmp.390);
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 237 4 ]
+        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_157_46_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_157_46_stop" ]
+        %barColor.23 = local;
+        %tmp.392 = getv ? :mZoneColors;
+        %tmp.394 = getv ? :currentZone;
+        %tmp.395 = agetv %tmp.392 %tmp.394;
+        lputv %barColor.23 %tmp.395;
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 238 4 ]
+        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_157_46_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_157_46_stop" ]
+        %barWidth.24 = local;
+        %tmp.397 = getv ? :percentHRR;
+        %tmp.399 = lgetv %screenWidth.1;
+        %tmp.400 = 2;
+        %tmp.401 = div %tmp.399 %tmp.400;
+        %tmp.402 = mul %tmp.397 %tmp.401;
+        lputv %barWidth.24 %tmp.402;
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 239 4 ]
+        %tmp.403 = lgetv %dc;
+        %tmp.404 = getv function %tmp.403 :setColor;
+        %tmp.406 = lgetv %barColor.23;
+        %tmp.407 = getm $.Toybox.Graphics;
+        %tmp.408 = getv %tmp.407 :COLOR_WHITE;
+        invoke %tmp.403 %tmp.404(%tmp.406, %tmp.408);
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 240 4 ]
+        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_157_46_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_157_46_stop" ]
+        %hr.25 = local;
+        %tmp.409 = "♥";
+        %tmp.411 = getv ? :currentHeartRate;
+        %tmp.412 = add %tmp.409 %tmp.411;
+        lputv %hr.25 %tmp.412;
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 241 4 ]
+        %tmp.413 = lgetv %dc;
+        %tmp.414 = getv function %tmp.413 :fillRectangle;
+        %tmp.416 = lgetv %screenWidth.1;
+        %tmp.417 = 2;
+        %tmp.418 = div %tmp.416 %tmp.417;
+        %tmp.420 = lgetv %penWidth.19;
         %tmp.421 = 2;
         %tmp.422 = div %tmp.420 %tmp.421;
-        %tmp.424 = getv ? :penWidth;
-        %tmp.425 = 2;
-        %tmp.426 = div %tmp.424 %tmp.425;
-        %tmp.427 = add %tmp.422 %tmp.426;
-        %tmp.429 = lgetv %maxY.19;
-        %tmp.431 = getv ? :penWidth;
-        %tmp.432 = 2;
-        %tmp.433 = div %tmp.431 %tmp.432;
-        %tmp.434 = add %tmp.429 %tmp.433;
-        %tmp.436 = lgetv %barWidth.23;
-        %tmp.438 = getv ? :penWidth;
-        %tmp.439 = 2;
-        %tmp.440 = div %tmp.438 %tmp.439;
-        %tmp.441 = sub %tmp.436 %tmp.440;
-        %tmp.443 = lgetv %barHeight.5;
-        invoke %tmp.417 %tmp.418(%tmp.427, %tmp.434, %tmp.441, %tmp.443);
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 236 4 ]
+        %tmp.423 = add %tmp.418 %tmp.422;
+        %tmp.425 = lgetv %maxY.18;
+        %tmp.427 = lgetv %penWidth.19;
+        %tmp.428 = 2;
+        %tmp.429 = div %tmp.427 %tmp.428;
+        %tmp.430 = add %tmp.425 %tmp.429;
+        %tmp.432 = lgetv %barWidth.24;
+        %tmp.434 = lgetv %penWidth.19;
+        %tmp.435 = 2;
+        %tmp.436 = div %tmp.434 %tmp.435;
+        %tmp.437 = sub %tmp.432 %tmp.436;
+        %tmp.439 = lgetv %barHeight.5;
+        invoke %tmp.413 %tmp.414(%tmp.423, %tmp.430, %tmp.437, %tmp.439);
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 242 4 ]
+        %tmp.441 = lgetv %screenWidth.1;
+        %tmp.442 = 2;
+        %tmp.443 = div %tmp.441 %tmp.442;
         %tmp.445 = lgetv %screenWidth.1;
         %tmp.446 = 2;
         %tmp.447 = div %tmp.445 %tmp.446;
-        %tmp.449 = lgetv %screenWidth.1;
-        %tmp.450 = 2;
-        %tmp.451 = div %tmp.449 %tmp.450;
-        %tmp.452 = lgetv %dc;
-        %tmp.453 = getv function %tmp.452 :getTextWidthInPixels;
-        %tmp.455 = getv ? :currentHeartRate;
-        %tmp.456 = getv function %tmp.455 :toString;
-        %tmp.457 = invoke %tmp.455 %tmp.456();
-        %tmp.459 = getv ? :mFont;
-        %tmp.460 = invoke %tmp.452 %tmp.453(%tmp.457, %tmp.459);
-        %tmp.461 = sub %tmp.451 %tmp.460;
-        %tmp.462 = 2;
-        %tmp.463 = div %tmp.461 %tmp.462;
-        %tmp.464 = add %tmp.447 %tmp.463;
-        lputv %textX.21 %tmp.464;
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 237 4 ]
-        %tmp.465 = lgetv %dc;
-        %tmp.466 = getv function %tmp.465 :setColor;
-        %tmp.467 = getm $.Toybox.Graphics;
-        %tmp.468 = getv %tmp.467 :COLOR_BLACK;
-        %tmp.469 = getm $.Toybox.Graphics;
-        %tmp.470 = getv %tmp.469 :COLOR_TRANSPARENT;
-        invoke %tmp.465 %tmp.466(%tmp.468, %tmp.470);
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 238 4 ]
-        %tmp.471 = lgetv %dc;
-        %tmp.472 = getv function %tmp.471 :drawText;
-        %tmp.474 = lgetv %textX.21;
-        %tmp.476 = lgetv %textY.20;
-        %tmp.478 = getv ? :mFont;
-        %tmp.480 = getv ? :currentHeartRate;
-        %tmp.481 = getv function %tmp.480 :toString;
-        %tmp.482 = invoke %tmp.480 %tmp.481();
-        %tmp.483 = getm $.Toybox.Graphics;
-        %tmp.484 = getv %tmp.483 :TEXT_JUSTIFY_LEFT;
-        invoke %tmp.471 %tmp.472(%tmp.474, %tmp.476, %tmp.478, %tmp.482, %tmp.484);
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_155_46_stop:
-    }
-    [ @file = "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc"; @line = 242; ]
-    function secondsToTimeString(totalSeconds as Number) as String {
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_242_65_start:
+        %tmp.448 = lgetv %dc;
+        %tmp.449 = getv function %tmp.448 :getTextWidthInPixels;
+        %tmp.451 = lgetv %hr.25;
+        %tmp.453 = getv ? :mFont;
+        %tmp.454 = invoke %tmp.448 %tmp.449(%tmp.451, %tmp.453);
+        %tmp.455 = sub %tmp.447 %tmp.454;
+        %tmp.456 = 2;
+        %tmp.457 = div %tmp.455 %tmp.456;
+        %tmp.458 = add %tmp.443 %tmp.457;
+        lputv %textX.22 %tmp.458;
 [ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 243 4 ]
-        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_242_65_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_242_65_stop" ]
+        %tmp.459 = lgetv %dc;
+        %tmp.460 = getv function %tmp.459 :setColor;
+        %tmp.461 = getm $.Toybox.Graphics;
+        %tmp.462 = getv %tmp.461 :COLOR_BLACK;
+        %tmp.463 = getm $.Toybox.Graphics;
+        %tmp.464 = getv %tmp.463 :COLOR_TRANSPARENT;
+        invoke %tmp.459 %tmp.460(%tmp.462, %tmp.464);
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 244 4 ]
+        %tmp.465 = lgetv %dc;
+        %tmp.466 = getv function %tmp.465 :drawText;
+        %tmp.468 = lgetv %textX.22;
+        %tmp.470 = lgetv %textY.20;
+        %tmp.472 = getv ? :mFont;
+        %tmp.474 = lgetv %hr.25;
+        %tmp.475 = getm $.Toybox.Graphics;
+        %tmp.476 = getv %tmp.475 :TEXT_JUSTIFY_LEFT;
+        invoke %tmp.465 %tmp.466(%tmp.468, %tmp.470, %tmp.472, %tmp.474, %tmp.476);
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_157_46_stop:
+    }
+    [ @file = "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc"; @line = 247; ]
+    function secondsToTimeString(totalSeconds as Number) as String {
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_247_65_start:
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 248 4 ]
+        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_247_65_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_247_65_stop" ]
         %hours.1 = local;
         %tmp.2 = lgetv %totalSeconds;
         %tmp.3 = 3600;
         %tmp.4 = div %tmp.2 %tmp.3;
         lputv %hours.1 %tmp.4;
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 244 4 ]
-        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_242_65_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_242_65_stop" ]
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 249 4 ]
+        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_247_65_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_247_65_stop" ]
         %minutes.2 = local;
         %tmp.6 = lgetv %totalSeconds;
         %tmp.7 = 60;
@@ -1356,16 +1378,14 @@ C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_242_65_st
         %tmp.9 = 60;
         %tmp.10 = mod %tmp.8 %tmp.9;
         lputv %minutes.2 %tmp.10;
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 245 4 ]
-        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_242_65_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_242_65_stop" ]
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 250 4 ]
+        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_247_65_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_247_65_stop" ]
         %seconds.3 = local;
         %tmp.12 = lgetv %totalSeconds;
         %tmp.13 = 60;
         %tmp.14 = mod %tmp.12 %tmp.13;
         lputv %seconds.3 %tmp.14;
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 246 4 ]
-        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_242_65_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_242_65_stop" ]
-        %timeString.4 = local;
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 251 4 ]
         %tmp.15 = self;
         %tmp.16 = getv function %tmp.15 :format;
         %tmp.17 = "$1$:$2$:$3$";
@@ -1389,17 +1409,14 @@ C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_242_65_st
         %tmp.35 = dup %tmp.30;
         %tmp.36 = aputv %tmp.35 2 %tmp.34;
         %tmp.37 = invoke %tmp.15 %tmp.16(%tmp.17, %tmp.36);
-        lputv %timeString.4 %tmp.37;
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 251 4 ]
-        %tmp.39 = lgetv %timeString.4;
-        ret %tmp.39;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_242_65_stop:
+        ret %tmp.37;
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_247_65_stop:
     }
-    [ @file = "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc"; @line = 255; ]
+    [ @file = "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc"; @line = 259; ]
     function interpolateColor(value as Float) {
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_255_42_start:
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 260 2 ]
-        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_255_42_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_255_42_stop" ]
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_259_42_start:
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 264 2 ]
+        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_259_42_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_259_42_stop" ]
         %blue.1 = local;
         %tmp.1 = getm $.Toybox.Graphics;
         %tmp.2 = getv function %tmp.1 :createColor;
@@ -1409,8 +1426,8 @@ C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_255_42_st
         %tmp.6 = 255;
         %tmp.7 = invoke %tmp.1 %tmp.2(%tmp.3, %tmp.4, %tmp.5, %tmp.6);
         lputv %blue.1 %tmp.7;
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 261 2 ]
-        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_255_42_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_255_42_stop" ]
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 265 2 ]
+        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_259_42_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_259_42_stop" ]
         %green.2 = local;
         %tmp.8 = getm $.Toybox.Graphics;
         %tmp.9 = getv function %tmp.8 :createColor;
@@ -1420,8 +1437,8 @@ C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_255_42_st
         %tmp.13 = 0;
         %tmp.14 = invoke %tmp.8 %tmp.9(%tmp.10, %tmp.11, %tmp.12, %tmp.13);
         lputv %green.2 %tmp.14;
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 262 2 ]
-        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_255_42_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_255_42_stop" ]
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 266 2 ]
+        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_259_42_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_259_42_stop" ]
         %yellow.3 = local;
         %tmp.15 = getm $.Toybox.Graphics;
         %tmp.16 = getv function %tmp.15 :createColor;
@@ -1431,8 +1448,8 @@ C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_255_42_st
         %tmp.20 = 0;
         %tmp.21 = invoke %tmp.15 %tmp.16(%tmp.17, %tmp.18, %tmp.19, %tmp.20);
         lputv %yellow.3 %tmp.21;
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 263 2 ]
-        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_255_42_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_255_42_stop" ]
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 267 2 ]
+        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_259_42_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_259_42_stop" ]
         %orange.4 = local;
         %tmp.22 = getm $.Toybox.Graphics;
         %tmp.23 = getv function %tmp.22 :createColor;
@@ -1442,8 +1459,8 @@ C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_255_42_st
         %tmp.27 = 0;
         %tmp.28 = invoke %tmp.22 %tmp.23(%tmp.24, %tmp.25, %tmp.26, %tmp.27);
         lputv %orange.4 %tmp.28;
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 264 2 ]
-        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_255_42_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_255_42_stop" ]
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 268 2 ]
+        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_259_42_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_259_42_stop" ]
         %red.5 = local;
         %tmp.29 = getm $.Toybox.Graphics;
         %tmp.30 = getv function %tmp.29 :createColor;
@@ -1453,15 +1470,15 @@ C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_255_42_st
         %tmp.34 = 0;
         %tmp.35 = invoke %tmp.29 %tmp.30(%tmp.31, %tmp.32, %tmp.33, %tmp.34);
         lputv %red.5 %tmp.35;
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 267 2 ]
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_267_2_if_stmt:
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 271 2 ]
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_271_2_if_stmt:
         %tmp.37 = lgetv %value;
         %tmp.38 = 0.2;
         %tmp.39 = lte %tmp.37 %tmp.38;
-        bf %tmp.39 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_267_2_if_false;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_267_2_if_true:
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_267_20_start:
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 268 4 ]
+        bf %tmp.39 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_271_2_if_false;
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_271_2_if_true:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_271_20_start:
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 272 4 ]
         %tmp.40 = self;
         %tmp.41 = getv function %tmp.40 :interpolate;
         %tmp.43 = lgetv %blue.1;
@@ -1471,18 +1488,18 @@ C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_267_20_st
         %tmp.49 = div %tmp.47 %tmp.48;
         %tmp.50 = invoke %tmp.40 %tmp.41(%tmp.43, %tmp.45, %tmp.49);
         ret %tmp.50;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_267_20_stop:
-        goto @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_267_2_if_end;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_267_2_if_false:
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 269 9 ]
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_269_9_if_stmt:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_271_20_stop:
+        goto @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_271_2_if_end;
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_271_2_if_false:
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 273 9 ]
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_273_9_if_stmt:
         %tmp.52 = lgetv %value;
         %tmp.53 = 0.4;
         %tmp.54 = lte %tmp.52 %tmp.53;
-        bf %tmp.54 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_269_9_if_false;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_269_9_if_true:
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_269_27_start:
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 270 4 ]
+        bf %tmp.54 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_273_9_if_false;
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_273_9_if_true:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_273_27_start:
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 274 4 ]
         %tmp.55 = self;
         %tmp.56 = getv function %tmp.55 :interpolate;
         %tmp.58 = lgetv %green.2;
@@ -1494,18 +1511,18 @@ C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_269_27_st
         %tmp.66 = div %tmp.64 %tmp.65;
         %tmp.67 = invoke %tmp.55 %tmp.56(%tmp.58, %tmp.60, %tmp.66);
         ret %tmp.67;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_269_27_stop:
-        goto @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_269_9_if_end;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_269_9_if_false:
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 271 9 ]
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_271_9_if_stmt:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_273_27_stop:
+        goto @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_273_9_if_end;
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_273_9_if_false:
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 275 9 ]
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_275_9_if_stmt:
         %tmp.69 = lgetv %value;
         %tmp.70 = 0.6;
         %tmp.71 = lte %tmp.69 %tmp.70;
-        bf %tmp.71 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_271_9_if_false;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_271_9_if_true:
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_271_27_start:
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 272 4 ]
+        bf %tmp.71 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_275_9_if_false;
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_275_9_if_true:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_275_27_start:
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 276 4 ]
         %tmp.72 = self;
         %tmp.73 = getv function %tmp.72 :interpolate;
         %tmp.75 = lgetv %yellow.3;
@@ -1517,18 +1534,18 @@ C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_271_27_st
         %tmp.83 = div %tmp.81 %tmp.82;
         %tmp.84 = invoke %tmp.72 %tmp.73(%tmp.75, %tmp.77, %tmp.83);
         ret %tmp.84;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_271_27_stop:
-        goto @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_271_9_if_end;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_271_9_if_false:
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 273 9 ]
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_273_9_if_stmt:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_275_27_stop:
+        goto @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_275_9_if_end;
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_275_9_if_false:
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 277 9 ]
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_277_9_if_stmt:
         %tmp.86 = lgetv %value;
         %tmp.87 = 0.8;
         %tmp.88 = lte %tmp.86 %tmp.87;
-        bf %tmp.88 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_273_9_if_false;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_273_9_if_true:
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_273_27_start:
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 274 4 ]
+        bf %tmp.88 @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_277_9_if_false;
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_277_9_if_true:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_277_27_start:
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 278 4 ]
         %tmp.89 = self;
         %tmp.90 = getv function %tmp.89 :interpolate;
         %tmp.92 = lgetv %orange.4;
@@ -1540,25 +1557,25 @@ C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_273_27_st
         %tmp.100 = div %tmp.98 %tmp.99;
         %tmp.101 = invoke %tmp.89 %tmp.90(%tmp.92, %tmp.94, %tmp.100);
         ret %tmp.101;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_273_27_stop:
-        goto @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_273_9_if_end;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_273_9_if_false:
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_275_9_start:
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 276 4 ]
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_277_27_stop:
+        goto @C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_277_9_if_end;
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_277_9_if_false:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_279_9_start:
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 280 4 ]
         %tmp.103 = lgetv %red.5;
         ret %tmp.103;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_275_9_stop:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_279_9_stop:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_277_9_if_end:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_275_9_if_end:
 C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_273_9_if_end:
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_271_9_if_end:
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_269_9_if_end:
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_267_2_if_end:
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_255_42_stop:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_271_2_if_end:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_259_42_stop:
     }
-    [ @file = "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc"; @line = 281; ]
+    [ @file = "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc"; @line = 285; ]
     function interpolate(color1, color2, ratio) as Number {
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_281_54_start:
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 282 2 ]
-        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_281_54_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_281_54_stop" ]
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_285_56_start:
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 286 4 ]
+        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_285_56_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_285_56_stop" ]
         %alpha.1 = local;
         %tmp.1 = getm $.Toybox.Math;
         %tmp.2 = getv function %tmp.1 :round;
@@ -1577,8 +1594,8 @@ C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_281_54_st
         %tmp.19 = add %tmp.6 %tmp.18;
         %tmp.20 = invoke %tmp.1 %tmp.2(%tmp.19);
         lputv %alpha.1 %tmp.20;
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 283 2 ]
-        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_281_54_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_281_54_stop" ]
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 287 4 ]
+        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_285_56_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_285_56_stop" ]
         %red.2 = local;
         %tmp.21 = getm $.Toybox.Math;
         %tmp.22 = getv function %tmp.21 :round;
@@ -1603,8 +1620,8 @@ C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_281_54_st
         %tmp.45 = add %tmp.28 %tmp.44;
         %tmp.46 = invoke %tmp.21 %tmp.22(%tmp.45);
         lputv %red.2 %tmp.46;
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 284 2 ]
-        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_281_54_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_281_54_stop" ]
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 288 4 ]
+        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_285_56_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_285_56_stop" ]
         %green.3 = local;
         %tmp.47 = getm $.Toybox.Math;
         %tmp.48 = getv function %tmp.47 :round;
@@ -1629,8 +1646,8 @@ C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_281_54_st
         %tmp.71 = add %tmp.54 %tmp.70;
         %tmp.72 = invoke %tmp.47 %tmp.48(%tmp.71);
         lputv %green.3 %tmp.72;
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 285 2 ]
-        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_281_54_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_281_54_stop" ]
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 289 4 ]
+        [ "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_285_56_start" "C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_285_56_stop" ]
         %blue.4 = local;
         %tmp.73 = getm $.Toybox.Math;
         %tmp.74 = getv function %tmp.73 :round;
@@ -1649,7 +1666,7 @@ C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_281_54_st
         %tmp.91 = add %tmp.78 %tmp.90;
         %tmp.92 = invoke %tmp.73 %tmp.74(%tmp.91);
         lputv %blue.4 %tmp.92;
-[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 287 2 ]
+[ "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc" 291 4 ]
         %tmp.93 = getm $.Toybox.Graphics;
         %tmp.94 = getv function %tmp.93 :createColor;
         %tmp.96 = lgetv %alpha.1;
@@ -1658,7 +1675,7 @@ C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_281_54_st
         %tmp.102 = lgetv %blue.4;
         %tmp.103 = invoke %tmp.93 %tmp.94(%tmp.96, %tmp.98, %tmp.100, %tmp.102);
         ret %tmp.103;
-C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_281_54_stop:
+C_Users_Sergio_Desktop_Garmin_Garmin_Time_in_HR_source_TimeinHRView_mc_285_56_stop:
     }
 }
 [ @file = "C:\Users\Sergio\Desktop\Garmin\Garmin-Time-in-HR\source\TimeinHRView.mc"; @line = 1; ]

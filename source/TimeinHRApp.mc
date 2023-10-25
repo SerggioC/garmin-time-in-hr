@@ -18,7 +18,9 @@ class TimeinHRApp extends Application.AppBase {
 
     //! Return the initial view of your application here
     function getInitialView() as Array<Views or InputDelegates>? {
-        return [ new TimeinHRView() ] as Array<Views or InputDelegates>;
+        var initialView = new TimeinHRView();
+        var inputDelegate = new TimeinHRInputDelegate(initialView);
+        return [initialView, inputDelegate] as Array<Views or InputDelegates>;
     }
 
 }

@@ -6,6 +6,7 @@
         <font id="noto_regular2" filename="noto_regular2.fnt" antialias="true"/>
         <font id="mplus1" filename="mplus1.fnt" antialias="true"/>
         <font id="mplus1_medium" filename="mplus1_medium.fnt" antialias="true"/>
+        <font id="mplus1_medium_36" filename="mplus1_medium_36.fnt" antialias="true"/>
         <font id="mplus1_medium_20" filename="mplus1_medium_20.fnt" antialias="true"/>
     </fonts>
 </resources>
