@@ -9,12 +9,17 @@ class TimeinHRInputDelegate extends Ui.BehaviorDelegate {
     //! Initialize a TimeinHRInputDelegate
     //! @param view The view that this delegate is tied to.
     function initialize(view) {
+        BehaviorDelegate.initialize();
         relatedView = view;
+        System.println("TimeinHRInputDelegate.initialize");
     }
 
     //! Use the basic InputeDelegate to detect the enter key for the fenix 3
     //! and Forerunner 920.
     function onKey(evt) {
+        // log the event
+        System.println("onKey: " + evt.getKey() + " Type: " + evt.getType());
+
         if (evt.getKey() == Ui.KEY_MENU) {
             relatedView.onTap();
         }
@@ -22,7 +27,14 @@ class TimeinHRInputDelegate extends Ui.BehaviorDelegate {
     }
 
     // Used to detect the start of the round on a vivoactive
-    function onTap(evt) {
+    function onTap(clickEvent as Ui.ClickEvent) {
+        System.println("onTap. Type: " + clickEvent.getType());
+        relatedView.onTap();
+        return true;
+    }
+
+    function onMenu() {
+        System.println("onMenu");
         relatedView.onTap();
         return true;
     }
@@ -33,10 +45,14 @@ class TimeinHRInputDelegate extends Ui.BehaviorDelegate {
     //!     - Forerunner 920: the enter key is pressed
     //! @returns True if the event is handled
     function onEnter() {
+        System.println("onEnter");
+        relatedView.onTap();
         return false;
     }
 
     function onBack() {
+        System.println("onBack");
+        relatedView.onTap();
         return false;
     }
 

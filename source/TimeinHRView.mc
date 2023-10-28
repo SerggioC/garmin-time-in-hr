@@ -10,13 +10,21 @@ class TimeinHRView extends WatchUi.DataField {
   hidden var mValue as Numeric;
   hidden var timeInHeartRateZones as Array;
   hidden var userHeartRateZones as Lang.Array<Lang.Number> = [0, 0, 0, 0, 0, 0];
-  hidden var mZoneColors as Lang.Array<Lang.Number> = [
-    Graphics.COLOR_BLUE,
+  hidden var mZoneColors1 as Lang.Array<Lang.Number> = [
+    Graphics.COLOR_LT_GRAY,
+    Graphics.COLOR_LT_GRAY,
     Graphics.COLOR_BLUE,
     Graphics.COLOR_GREEN,
     Graphics.COLOR_YELLOW,
-    Graphics.COLOR_ORANGE,
-    Graphics.COLOR_RED,
+    Graphics.COLOR_DK_RED,
+  ];
+  hidden var mZoneColors as Lang.Array<Lang.Number> = [
+    0xC7F8FF, // light blue
+    0xC7F8FF, // light blue
+    Graphics.COLOR_BLUE, 
+    Graphics.COLOR_GREEN,
+    0xFFD33A, // orange
+    0xFF2100, // red
   ];
   hidden var timeInZoneFraction as Array<Lang.Float>;
   hidden var currentZoneDecimal as Float = 0.0;
@@ -43,11 +51,18 @@ class TimeinHRView extends WatchUi.DataField {
     } else {
       restingHeartRate = restingHR.toFloat();
     }
-
-    System.println("Current sport: " + currentSport);
-    System.println("Current zones: " + userHeartRateZones);
-    System.println("Resting Heart Rate: " + restingHeartRate);
     timeInZoneFraction = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0];
+    var hasColors = WatchUi.loadResource(Rez.Strings.hasColors);
+    if (!hasColors.equals("true")) {
+      mZoneColors = [
+        Graphics.COLOR_TRANSPARENT,
+        Graphics.COLOR_TRANSPARENT,
+        Graphics.COLOR_TRANSPARENT,
+        Graphics.COLOR_TRANSPARENT,
+        Graphics.COLOR_TRANSPARENT,
+        Graphics.COLOR_TRANSPARENT,
+        ];
+    }
   }
 
   // Set your layout here. Anytime the size of obscurity of
@@ -93,8 +108,6 @@ class TimeinHRView extends WatchUi.DataField {
 
       var elapsedMilliSeconds = info.elapsedTime as Number;
       var elapsedSeconds = (elapsedMilliSeconds.toFloat() / 1000) as Float;
-
-    System.println("Current heart rate: " + currentHeartRate);
 
       currentZone = 0;
       if (currentHeartRate < userHeartRateZones[0]) {
@@ -176,7 +189,6 @@ class TimeinHRView extends WatchUi.DataField {
     for (var indexBar = timeInHeartRateZones.size() - 1; indexBar > 0; indexBar--) {
       var barX = 0;
       var indexZone = timeInHeartRateZones.size() - indexBar;
-      System.println("indexBar " + indexBar + " index " + indexZone);
       var barY = (indexBar - 1) * barHeight + barVerticalSpacing; // indexBar - 1 to position at top of screen for zone 5
       var barColor = mZoneColors[indexZone];
       var barWidth = minimumBarWidth + timeInZoneFraction[indexZone] * (screenWidth - minimumBarWidth);
@@ -193,13 +205,13 @@ class TimeinHRView extends WatchUi.DataField {
       dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_TRANSPARENT);
       dc.drawText(labelX, labelY, mFont, labelText, Graphics.TEXT_JUSTIFY_LEFT);
 
-      System.println(
-          " Time in zone " + indexZone + ": " + timeInHeartRateZones[indexZone] +
-          " currentZone: " + currentZone +
-          " currentZoneDecimal: " + currentZoneDecimal +
-          " TimeFraction: " + timeInZoneFraction[indexZone] +
-          " userHeartRateZones: " + userHeartRateZones
-      );
+      // System.println(
+      //     " Time in zone " + indexZone + ": " + timeInHeartRateZones[indexZone] +
+      //     " currentZone: " + currentZone +
+      //     " currentZoneDecimal: " + currentZoneDecimal +
+      //     " TimeFraction: " + timeInZoneFraction[indexZone] +
+      //     " userHeartRateZones: " + userHeartRateZones
+      // );
 
       // draw a black rectangle around the current zone
       if (currentZone == indexZone) {
@@ -209,7 +221,7 @@ class TimeinHRView extends WatchUi.DataField {
       }
     }
 
-    // draw a triangle pointing right in the Z1 to Z5 area
+    // draw a triangle pointing right in the Z1 to Z5 area indicating the zone the user is in
     if (currentZoneDecimal > 0.9) {
       var triangleSize = barHeight / 4;
       var triangleX = minimumBarWidth;
@@ -223,36 +235,50 @@ class TimeinHRView extends WatchUi.DataField {
     }
 
     var maxY = screenHeight - barHeight;
-    // draw horizonta line after z5
     var penWidth = 2;
-    dc.setPenWidth(penWidth);
-    dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_TRANSPARENT);
-    dc.drawLine(0, maxY, screenWidth, maxY);
-    // draw vertical centered line after z5
-    dc.drawLine(screenWidth / 2, maxY, screenWidth / 2, screenHeight);
-
-
-    // text with current heart rate zone 
-    var textY = maxY + (barHeight - fontHeight) / 2;
-    var zoneDecimal = currentZoneDecimal.format("%.2f");
-    var textX = ((screenWidth / 2) - dc.getTextWidthInPixels(zoneDecimal, mFont)) / 2;
-    dc.drawText(textX, textY, mFont, zoneDecimal, Graphics.TEXT_JUSTIFY_LEFT);
     
-
     // bar with %HRR
     var barColor = mZoneColors[currentZone];
     var barWidth = percentHRR * (screenWidth / 2);
     dc.setColor(barColor, Graphics.COLOR_WHITE);
+    dc.fillRectangle(screenWidth / 2 + penWidth / 2, maxY + penWidth / 2, barWidth - penWidth / 2, barHeight);
+
+    // draw horizontal line after z5
+    dc.setPenWidth(penWidth);
+    dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_TRANSPARENT);
+    dc.drawLine(0, maxY, screenWidth, maxY);
+
+    // draw vertical centered line after z5
+    dc.drawLine(screenWidth / 2, maxY, screenWidth / 2, screenHeight);
+
+
+    // text with current heart rate zone on the left side of the screen
+    var textX = (screenWidth / 2 - dc.getTextWidthInPixels("Zone", smallFont)) / 2;
+    dc.drawText(textX, maxY, smallFont, "Zone", Graphics.TEXT_JUSTIFY_LEFT);
+    var zoneDecimal = currentZoneDecimal.format("%.2f");
+    textX = ((screenWidth / 2) - dc.getTextWidthInPixels(zoneDecimal, mFont)) / 2;
+    var textY = maxY + (smallFontHeight / 2) + (barHeight - smallFontHeight / 2 - fontHeight) / 2;
+    dc.drawText(textX, textY, mFont, zoneDecimal, Graphics.TEXT_JUSTIFY_LEFT);
+   
     var hr;
+    var hrText;
     if (tap) {
       hr = (percentHRR * 100).format("%2d") + "%";
+      hrText = "%HRR";
     } else {
       hr = "♥" + currentHeartRate;
+      hrText = "Heart Rate";
     }
-    dc.fillRectangle(screenWidth / 2 + penWidth / 2, maxY + penWidth / 2, barWidth - penWidth / 2, barHeight);
+    // Draw HR text title on the right side of the screen
+    textX = screenWidth / 2 + ((screenWidth / 2) - dc.getTextWidthInPixels(hrText, smallFont)) / 2;
+    dc.drawText(textX, maxY, smallFont, hrText, Graphics.TEXT_JUSTIFY_LEFT);
+
+    // Draw HR value on the right side of the screen
     textX = screenWidth / 2 + ((screenWidth / 2) - dc.getTextWidthInPixels(hr, mFont)) / 2;
-    dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_TRANSPARENT);
     dc.drawText(textX, textY, mFont, hr, Graphics.TEXT_JUSTIFY_LEFT);
+
+
+
   }
 
   function secondsToTimeString(totalSeconds as Number) as String {
