@@ -9,9 +9,9 @@ import Toybox.Attention;
 
 class TimeinHRView extends WatchUi.DataField {
 
-  private var timeInHeartRateZones as Array;
-  private var userHeartRateZones as Lang.Array<Lang.Number> = [0, 0, 0, 0, 0, 0];
-  private var mZoneColors as Lang.Array<Lang.Number> = [
+  hidden var timeInHeartRateZones as Array;
+  hidden var userHeartRateZones as Lang.Array<Lang.Number> = [0, 0, 0, 0, 0, 0];
+  hidden var mZoneColors as Lang.Array<Lang.Number> = [
     0x86F6FF, // light blue
     0x86F6FF, // light blue
     Graphics.COLOR_BLUE, 
@@ -19,20 +19,20 @@ class TimeinHRView extends WatchUi.DataField {
     0xFFD33A, // orange
     0xFF2100, // red
   ];
-  private var timeInZoneFraction as Array<Lang.Float>;
-  private var currentZoneDecimal as Float = 0.0;
-  private var currentZone as Number = 0;
-  private var mFont = WatchUi.loadResource(Rez.Fonts.mplus1_medium_36);
-  private var fontHeight = Graphics.getFontHeight(mFont);
-  private var smallFont = WatchUi.loadResource(Rez.Fonts.mplus1_medium_20);
-  //private var smallFont = Graphics.FONT_SYSTEM_SMALL;
-  private var smallFontHeight = Graphics.getFontHeight(smallFont);
-  private var currentHeartRate as Number = 0;
-  private var averageHeartRate as Number = 0;
-  private var restingHeartRate as Float = 0.0;
-  private var percentHRR as Float = 0.0;
-  private var tap = false as Boolean;
-  private var cornerRadius as Number = 2;
+  hidden var timeInZoneFraction as Array<Lang.Float>;
+  hidden var currentZoneDecimal as Float = 0.0;
+  hidden var currentZone as Number = 0;
+  hidden var mFont = WatchUi.loadResource(Rez.Fonts.mplus1_medium_36);
+  hidden var fontHeight = Graphics.getFontHeight(mFont);
+  hidden var smallFont = WatchUi.loadResource(Rez.Fonts.mplus1_medium_20);
+  //hidden var smallFont = Graphics.FONT_SYSTEM_SMALL;
+  hidden var smallFontHeight = Graphics.getFontHeight(smallFont);
+  hidden var currentHeartRate as Number = 0;
+  hidden var averageHeartRate as Number = 0;
+  hidden var restingHeartRate as Float = 0.0;
+  hidden var percentHRR as Float = 0.0;
+  hidden var tap = false as Boolean;
+  hidden var cornerRadius as Number = 2;
 
   function initialize() {
     DataField.initialize();
@@ -104,9 +104,14 @@ class TimeinHRView extends WatchUi.DataField {
   // Increase the time spent in the current heart rate zone and calculate the fraction of time in each zone
   function updateHeartRateZonesTime(info as Activity.Info) as Void {
     currentZone = 0;
-    if (info has :currentHeartRate && info.currentHeartRate != null) {
-      currentHeartRate = info.currentHeartRate as Number;
-      averageHeartRate = info.averageHeartRate as Number;
+    if (info has :currentHeartRate) { 
+      var current = info.currentHeartRate as Number;
+
+      if (current == null) {
+        currentHeartRate = 0;
+      } else {
+        currentHeartRate = current;
+      }
 
       var maxHR = userHeartRateZones[userHeartRateZones.size() - 1].toFloat();
 
@@ -141,6 +146,15 @@ class TimeinHRView extends WatchUi.DataField {
         currentZoneDecimal = 1.0;
       }
       currentZoneDecimal = currentZone + currentZoneDecimal;
+    }
+
+    if (info has :averageHeartRate) {
+      var average = info.averageHeartRate as Number;
+      if (average == null) {
+        averageHeartRate = 0;
+      } else {
+        averageHeartRate = average;
+      }
     }
 
     if (info has :elapsedTime && info.elapsedTime != null && info.elapsedTime > 1000 && 
@@ -225,14 +239,6 @@ class TimeinHRView extends WatchUi.DataField {
       dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_TRANSPARENT);
       dc.drawText(labelX, labelY, mFont, labelText, Graphics.TEXT_JUSTIFY_LEFT);
 
-      // System.println(
-      //     " Time in zone " + indexZone + ": " + timeInHeartRateZones[indexZone] +
-      //     " currentZone: " + currentZone +
-      //     " currentZoneDecimal: " + currentZoneDecimal +
-      //     " TimeFraction: " + timeInZoneFraction[indexZone] +
-      //     " userHeartRateZones: " + userHeartRateZones
-      // );
-
       // draw a black rectangle around the current zone
       if (currentZone == indexZone) {
         dc.setPenWidth(3);
@@ -277,7 +283,11 @@ class TimeinHRView extends WatchUi.DataField {
     var textX = (screenWidth / 2 - dc.getTextWidthInPixels(leftText, smallFont)) / 2;
     dc.drawText(textX, maxY, smallFont, leftText, Graphics.TEXT_JUSTIFY_LEFT);
     // var zoneDecimal = currentZoneDecimal.format("%.2f");
-    leftText = averageHeartRate.toString();
+    if (averageHeartRate == 0) {
+      leftText = "--";
+    } else {
+      leftText = averageHeartRate.toString();
+    }
     textX = ((screenWidth / 2) - dc.getTextWidthInPixels(leftText, mFont)) / 2;
     var textY = maxY + (smallFontHeight / 2) + (barHeight - smallFontHeight / 2 - fontHeight) / 2;
     dc.drawText(textX, textY, mFont, leftText, Graphics.TEXT_JUSTIFY_LEFT);
@@ -290,6 +300,9 @@ class TimeinHRView extends WatchUi.DataField {
     } else {
       hr = "♥" + currentHeartRate;
       hrText = "Heart Rate";
+    }
+    if (currentHeartRate == 0) {
+      hr = "--";
     }
     // Draw HR text title on the right side of the screen
     textX = screenWidth / 2 + ((screenWidth / 2) - dc.getTextWidthInPixels(hrText, smallFont)) / 2;
