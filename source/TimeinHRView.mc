@@ -5,43 +5,38 @@ import Toybox.WatchUi;
 using Toybox.UserProfile;
 import Toybox.Time;
 import Toybox.Math;
+import Toybox.Attention;
 
 class TimeinHRView extends WatchUi.DataField {
-  hidden var mValue as Numeric;
-  hidden var timeInHeartRateZones as Array;
-  hidden var userHeartRateZones as Lang.Array<Lang.Number> = [0, 0, 0, 0, 0, 0];
-  hidden var mZoneColors1 as Lang.Array<Lang.Number> = [
-    Graphics.COLOR_LT_GRAY,
-    Graphics.COLOR_LT_GRAY,
-    Graphics.COLOR_BLUE,
-    Graphics.COLOR_GREEN,
-    Graphics.COLOR_YELLOW,
-    Graphics.COLOR_DK_RED,
-  ];
-  hidden var mZoneColors as Lang.Array<Lang.Number> = [
-    0xC7F8FF, // light blue
-    0xC7F8FF, // light blue
+
+  private var timeInHeartRateZones as Array;
+  private var userHeartRateZones as Lang.Array<Lang.Number> = [0, 0, 0, 0, 0, 0];
+  private var mZoneColors as Lang.Array<Lang.Number> = [
+    0x86F6FF, // light blue
+    0x86F6FF, // light blue
     Graphics.COLOR_BLUE, 
     Graphics.COLOR_GREEN,
     0xFFD33A, // orange
     0xFF2100, // red
   ];
-  hidden var timeInZoneFraction as Array<Lang.Float>;
-  hidden var currentZoneDecimal as Float = 0.0;
-  hidden var currentZone as Number = 0;
-  hidden var mFont = WatchUi.loadResource(Rez.Fonts.mplus1_medium_36);
-  hidden var fontHeight = Graphics.getFontHeight(mFont);
-  hidden var smallFont = WatchUi.loadResource(Rez.Fonts.mplus1_medium_20);
-  //hidden var smallFont = Graphics.FONT_SYSTEM_SMALL;
-  hidden var smallFontHeight = Graphics.getFontHeight(smallFont);
-  hidden var currentHeartRate as Number = 0;
-  hidden var restingHeartRate as Float = 0.0;
-  hidden var percentHRR as Float = 0.0;
-  hidden var tap = false as Boolean;
+  private var timeInZoneFraction as Array<Lang.Float>;
+  private var currentZoneDecimal as Float = 0.0;
+  private var currentZone as Number = 0;
+  private var mFont = WatchUi.loadResource(Rez.Fonts.mplus1_medium_36);
+  private var fontHeight = Graphics.getFontHeight(mFont);
+  private var smallFont = WatchUi.loadResource(Rez.Fonts.mplus1_medium_20);
+  //private var smallFont = Graphics.FONT_SYSTEM_SMALL;
+  private var smallFontHeight = Graphics.getFontHeight(smallFont);
+  private var currentHeartRate as Number = 0;
+  private var averageHeartRate as Number = 0;
+  private var restingHeartRate as Float = 0.0;
+  private var percentHRR as Float = 0.0;
+  private var tap = false as Boolean;
+  private var cornerRadius as Number = 2;
 
   function initialize() {
     DataField.initialize();
-    mValue = 0.0f;
+    
     timeInHeartRateZones = [0, 0, 0, 0, 0, 0];
     var currentSport = UserProfile.getCurrentSport() as UserProfile.SportHrZone;
     userHeartRateZones = UserProfile.getHeartRateZones(currentSport) as Lang.Array<Lang.Number>;
@@ -63,12 +58,27 @@ class TimeinHRView extends WatchUi.DataField {
         Graphics.COLOR_TRANSPARENT,
         ];
     }
+
+    // var timer = new Timer.Timer();
+		// timer.start(method(:onTimer), 1000, true);
+
   }
+
+  // function onTimer() as Void {
+  //   var info = Activity.getActivityInfo();
+  //   if (info == null) {
+  //     System.println("OnTimer. No activity info");
+  //     return;
+  //   } else {
+  //     updateHeartRateZonesTime(info);
+  //     WatchUi.requestUpdate();
+  //   }
+  // }
 
   // Set your layout here. Anytime the size of obscurity of
   // the draw context is changed this will be called.
   function onLayout(dc as Dc) as Void {
-    var obscurityFlags = DataField.getObscurityFlags();
+    // var obscurityFlags = View.getObscurityFlags();
     // Use the generic, centered layout
     // View.setLayout(Rez.Layouts.MainLayout(dc));
     drawBarsOnScreen(dc);
@@ -76,6 +86,9 @@ class TimeinHRView extends WatchUi.DataField {
 
   function onTap() as Void {
     tap = !tap;
+    if (Attention has :playTone) {
+      Attention.playTone(Attention.TONE_KEY);
+    }
     System.println("onTap " + tap);
   }
 
@@ -88,14 +101,12 @@ class TimeinHRView extends WatchUi.DataField {
     updateHeartRateZonesTime(info);
   }
 
-  // Increase the time spent in the current heart rate zone
+  // Increase the time spent in the current heart rate zone and calculate the fraction of time in each zone
   function updateHeartRateZonesTime(info as Activity.Info) as Void {
-    if (
-      info has :currentHeartRate && info has :elapsedTime &&
-      info.currentHeartRate != null &&
-      info.elapsedTime != null && info.elapsedTime > 1000
-    ) {
+    currentZone = 0;
+    if (info has :currentHeartRate && info.currentHeartRate != null) {
       currentHeartRate = info.currentHeartRate as Number;
+      averageHeartRate = info.averageHeartRate as Number;
 
       var maxHR = userHeartRateZones[userHeartRateZones.size() - 1].toFloat();
 
@@ -106,10 +117,6 @@ class TimeinHRView extends WatchUi.DataField {
         percentHRR = 1.0;
       }
 
-      var elapsedMilliSeconds = info.elapsedTime as Number;
-      var elapsedSeconds = (elapsedMilliSeconds.toFloat() / 1000) as Float;
-
-      currentZone = 0;
       if (currentHeartRate < userHeartRateZones[0]) {
         currentZone = 0;
         currentZoneDecimal = currentHeartRate.toFloat() / userHeartRateZones[0];
@@ -134,6 +141,13 @@ class TimeinHRView extends WatchUi.DataField {
         currentZoneDecimal = 1.0;
       }
       currentZoneDecimal = currentZone + currentZoneDecimal;
+    }
+
+    if (info has :elapsedTime && info.elapsedTime != null && info.elapsedTime > 1000 && 
+        info has :timerState && info.timerState == Activity.TIMER_STATE_ON) {
+
+      var elapsedMilliSeconds = info.elapsedTime as Number;
+      var elapsedSeconds = (elapsedMilliSeconds.toFloat() / 1000) as Float;
 
       // Update the time in the current zone and calculate fraction of time in each zone
       var timeInCurrentZone = (timeInHeartRateZones[currentZone] + 1) as Number;
@@ -158,20 +172,26 @@ class TimeinHRView extends WatchUi.DataField {
           timeInZoneFraction[i] = fractionI;
         }
       }
-    } else {
-      System.println("No heart rate data");
     }
   }
 
   // Display the value you computed here. This will be called
   // once a second when the data field is visible.
   function onUpdate(dc as Dc) as Void {
-    // Call parent's onUpdate(dc) to redraw the layout
-    View.onUpdate(dc);
-    drawBarsOnScreen(dc);
+    // in your view, always check if KiezelPay wants to display something
+    // if ((kpay as KPayApp.KPay.Core).shouldShowDialog()) {
+    //  // if (false) {
+    //   System.println("KiezelPay app locked!");
+    //   // in case KiezelPay wants to display something, allow it to draw it's dialog
+    //   (kpay as KPayApp.KPay.Core).drawDialog(dc);
+    // } else {
+    //   System.println("KiezelPay app not locked");
+      // Call the parent onUpdate function to redraw the layout
+      View.onUpdate(dc);
+      drawBarsOnScreen(dc);
+    // }
   }
 
-  hidden var cornerRadius as Number = 2;
 
   function drawBarsOnScreen(dc as Dc) as Void {
     // Create the heart rate zone bars
@@ -253,12 +273,14 @@ class TimeinHRView extends WatchUi.DataField {
 
 
     // text with current heart rate zone on the left side of the screen
-    var textX = (screenWidth / 2 - dc.getTextWidthInPixels("Zone", smallFont)) / 2;
-    dc.drawText(textX, maxY, smallFont, "Zone", Graphics.TEXT_JUSTIFY_LEFT);
-    var zoneDecimal = currentZoneDecimal.format("%.2f");
-    textX = ((screenWidth / 2) - dc.getTextWidthInPixels(zoneDecimal, mFont)) / 2;
+    var leftText = "Average HR";
+    var textX = (screenWidth / 2 - dc.getTextWidthInPixels(leftText, smallFont)) / 2;
+    dc.drawText(textX, maxY, smallFont, leftText, Graphics.TEXT_JUSTIFY_LEFT);
+    // var zoneDecimal = currentZoneDecimal.format("%.2f");
+    leftText = averageHeartRate.toString();
+    textX = ((screenWidth / 2) - dc.getTextWidthInPixels(leftText, mFont)) / 2;
     var textY = maxY + (smallFontHeight / 2) + (barHeight - smallFontHeight / 2 - fontHeight) / 2;
-    dc.drawText(textX, textY, mFont, zoneDecimal, Graphics.TEXT_JUSTIFY_LEFT);
+    dc.drawText(textX, textY, mFont, leftText, Graphics.TEXT_JUSTIFY_LEFT);
    
     var hr;
     var hrText;
@@ -276,9 +298,6 @@ class TimeinHRView extends WatchUi.DataField {
     // Draw HR value on the right side of the screen
     textX = screenWidth / 2 + ((screenWidth / 2) - dc.getTextWidthInPixels(hr, mFont)) / 2;
     dc.drawText(textX, textY, mFont, hr, Graphics.TEXT_JUSTIFY_LEFT);
-
-
-
   }
 
   function secondsToTimeString(totalSeconds as Number) as String {

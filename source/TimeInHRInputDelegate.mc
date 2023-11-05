@@ -4,13 +4,13 @@ using Toybox.WatchUi as Ui;
 //! page events as well as adding an onEnter() event.
 class TimeinHRInputDelegate extends Ui.BehaviorDelegate {
 
-    var relatedView;
+    private var mainView;
 
     //! Initialize a TimeinHRInputDelegate
     //! @param view The view that this delegate is tied to.
     function initialize(view) {
         BehaviorDelegate.initialize();
-        relatedView = view;
+        mainView = view;
         System.println("TimeinHRInputDelegate.initialize");
     }
 
@@ -21,7 +21,7 @@ class TimeinHRInputDelegate extends Ui.BehaviorDelegate {
         System.println("onKey: " + evt.getKey() + " Type: " + evt.getType());
 
         if (evt.getKey() == Ui.KEY_MENU) {
-            relatedView.onTap();
+            mainView.onTap();
         }
         return true;
     }
@@ -29,13 +29,12 @@ class TimeinHRInputDelegate extends Ui.BehaviorDelegate {
     // Used to detect the start of the round on a vivoactive
     function onTap(clickEvent as Ui.ClickEvent) {
         System.println("onTap. Type: " + clickEvent.getType());
-        relatedView.onTap();
+        mainView.onTap();
         return true;
     }
 
     function onMenu() {
         System.println("onMenu");
-        relatedView.onTap();
         return true;
     }
 
@@ -46,14 +45,12 @@ class TimeinHRInputDelegate extends Ui.BehaviorDelegate {
     //! @returns True if the event is handled
     function onEnter() {
         System.println("onEnter");
-        relatedView.onTap();
-        return false;
+        return true;
     }
 
     function onBack() {
         System.println("onBack");
-        relatedView.onTap();
-        return false;
+        return true;
     }
 
 }
