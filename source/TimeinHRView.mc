@@ -11,19 +11,20 @@ class TimeinHRView extends WatchUi.DataField {
 
   hidden var timeInHeartRateZones as Array;
   hidden var userHeartRateZones as Lang.Array<Lang.Number> = [0, 0, 0, 0, 0, 0];
+  hidden var userHeartRateRanges as Lang.Array<String> = ["", "", "", "", "", "", ""];
   hidden var mZoneColors as Lang.Array<Lang.Number> = [
     0x86F6FF, // light blue
     0x86F6FF, // light blue
     Graphics.COLOR_BLUE, 
     Graphics.COLOR_GREEN,
     0xFFD33A, // orange
-    0xFF2100, // red
+    0xFA4747, // red
   ];
   hidden var timeInZoneFraction as Array<Lang.Float>;
   hidden var currentZoneDecimal as Float = 0.0;
   hidden var currentZone as Number = 0;
-  hidden var mFont = WatchUi.loadResource(Rez.Fonts.mplus1_medium_36);
-  hidden var fontHeight = Graphics.getFontHeight(mFont);
+  hidden var bigFont = WatchUi.loadResource(Rez.Fonts.mplus1_medium_36);
+  hidden var bigFontHeight = Graphics.getFontHeight(bigFont);
   hidden var smallFont = WatchUi.loadResource(Rez.Fonts.mplus1_medium_20);
   //hidden var smallFont = Graphics.FONT_SYSTEM_SMALL;
   hidden var smallFontHeight = Graphics.getFontHeight(smallFont);
@@ -32,7 +33,7 @@ class TimeinHRView extends WatchUi.DataField {
   hidden var restingHeartRate as Float = 0.0;
   hidden var percentHRR as Float = 0.0;
   hidden var tap = false as Boolean;
-  hidden var cornerRadius as Number = 2;
+  hidden var cornerRadius as Number = 6;
 
   function initialize() {
     DataField.initialize();
@@ -40,6 +41,14 @@ class TimeinHRView extends WatchUi.DataField {
     timeInHeartRateZones = [0, 0, 0, 0, 0, 0];
     var currentSport = UserProfile.getCurrentSport() as UserProfile.SportHrZone;
     userHeartRateZones = UserProfile.getHeartRateZones(currentSport) as Lang.Array<Lang.Number>;
+
+    var arraySize = userHeartRateZones.size();
+    for (var i = 0; i < arraySize - 1; i++) {
+      userHeartRateRanges[i] = userHeartRateZones[i] + " - " + (userHeartRateZones[i + 1] - 1);
+    }
+    userHeartRateRanges[arraySize - 1] = userHeartRateZones[arraySize - 1].toString() + " - " + "Max";
+
+
     var restingHR = UserProfile.getProfile().restingHeartRate as Number; 
     if (restingHR == null) {
       restingHeartRate = 0.0;
@@ -227,17 +236,34 @@ class TimeinHRView extends WatchUi.DataField {
       var barColor = mZoneColors[indexZone];
       var barWidth = minimumBarWidth + timeInZoneFraction[indexZone] * (screenWidth - minimumBarWidth);
       dc.setColor(barColor, Graphics.COLOR_WHITE);
-      dc.fillRoundedRectangle(barX, barY, barWidth, barHeight, cornerRadius);
+      dc.fillRectangle(barX, barY, barWidth, barHeight);
 
-      var labelX = barX + minimumBarWidth + 30;
+      var labelX = barX + minimumBarWidth + 25;
       
-      var labelY = barY + ((barHeight - fontHeight) / 2) - 2;
+//      var labelY = barY + ((barHeight - fontHeight) / 2) - 2;
+      var labelY = barY;
+
+      dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_TRANSPARENT);
+      var smallTextY = labelY - 4 + bigFontHeight + (barHeight - bigFontHeight - smallFontHeight) / 2;
+      dc.drawText(labelX, smallTextY, smallFont, userHeartRateRanges[indexZone - 1], Graphics.TEXT_JUSTIFY_LEFT);
+
       var labelText = "Z" + indexZone;
       if (timeInHeartRateZones[indexZone] > 0) {
+        var timePercent = timeInZoneFraction[indexZone];
         labelText += " " + secondsToTimeString(timeInHeartRateZones[indexZone]);
+
+        var dimentions = dc.getTextDimensions(userHeartRateRanges[indexZone - 1], smallFont);
+        var widthRange = dimentions[0];
+        
+        var percentTime = (timePercent * 100).format("%2d") + "%";
+        dimentions = dc.getTextDimensions(percentTime, smallFont);
+
+        var percentXPos = labelX + widthRange + (screenWidth - widthRange - dimentions[0]) / 2;
+        dc.drawText(percentXPos, smallTextY, smallFont, percentTime, Graphics.TEXT_JUSTIFY_LEFT);
       }
-      dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_TRANSPARENT);
-      dc.drawText(labelX, labelY, mFont, labelText, Graphics.TEXT_JUSTIFY_LEFT);
+      
+      dc.drawText(labelX, labelY, bigFont, labelText, Graphics.TEXT_JUSTIFY_LEFT);
+
 
       // draw a black rectangle around the current zone
       if (currentZone == indexZone) {
@@ -249,14 +275,23 @@ class TimeinHRView extends WatchUi.DataField {
 
     // draw a triangle pointing right in the Z1 to Z5 area indicating the zone the user is in
     if (currentZoneDecimal > 0.9) {
-      var triangleSize = barHeight / 4;
-      var triangleX = minimumBarWidth;
+      var triangleHeight = barHeight / 4.5;
+      var triangleX = 6;
+      var triangleWidth = triangleHeight * 1.4;
       var triangleY = screenHeight * (1 - (currentZoneDecimal / 6));
       dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_BLACK);
       dc.fillPolygon([
-        [triangleX, triangleY - triangleSize],      // Top vertex
-        [triangleX + 25, triangleY],                // Right vertex
-        [triangleX, triangleY + triangleSize],      // Bottom vertex
+        [triangleX, triangleY - triangleHeight],      // Top vertex
+        [triangleX + triangleWidth, triangleY],                // Right vertex
+        [triangleX, triangleY + triangleHeight],      // Bottom vertex
+      ]);
+      
+      // triangle pointing to the left with the same size as the abose triangle but aligned to the right side of the screen
+      triangleX = screenWidth - triangleX;
+      dc.fillPolygon([
+        [triangleX, triangleY - triangleHeight],      // Top vertex
+        [triangleX - triangleWidth, triangleY],                // Left vertex
+        [triangleX, triangleY + triangleHeight],      // Bottom vertex
       ]);
     }
 
@@ -288,9 +323,9 @@ class TimeinHRView extends WatchUi.DataField {
     } else {
       leftText = averageHeartRate.toString();
     }
-    textX = ((screenWidth / 2) - dc.getTextWidthInPixels(leftText, mFont)) / 2;
-    var textY = maxY + (smallFontHeight / 2) + (barHeight - smallFontHeight / 2 - fontHeight) / 2;
-    dc.drawText(textX, textY, mFont, leftText, Graphics.TEXT_JUSTIFY_LEFT);
+    textX = ((screenWidth / 2) - dc.getTextWidthInPixels(leftText, bigFont)) / 2;
+    var textY = maxY + (smallFontHeight / 2) + (barHeight - smallFontHeight / 2 - bigFontHeight) / 2;
+    dc.drawText(textX, textY, bigFont, leftText, Graphics.TEXT_JUSTIFY_LEFT);
    
     var hr;
     var hrText;
@@ -309,8 +344,8 @@ class TimeinHRView extends WatchUi.DataField {
     dc.drawText(textX, maxY, smallFont, hrText, Graphics.TEXT_JUSTIFY_LEFT);
 
     // Draw HR value on the right side of the screen
-    textX = screenWidth / 2 + ((screenWidth / 2) - dc.getTextWidthInPixels(hr, mFont)) / 2;
-    dc.drawText(textX, textY, mFont, hr, Graphics.TEXT_JUSTIFY_LEFT);
+    textX = screenWidth / 2 + ((screenWidth / 2) - dc.getTextWidthInPixels(hr, bigFont)) / 2;
+    dc.drawText(textX, textY, bigFont, hr, Graphics.TEXT_JUSTIFY_LEFT);
   }
 
   function secondsToTimeString(totalSeconds as Number) as String {
