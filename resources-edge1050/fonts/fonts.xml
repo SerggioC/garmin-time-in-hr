@@ -1,6 +1,6 @@
 <resources>
     <fonts>
-        <font id="big_font" filename="big_font.fnt" antialias="true"/>
         <font id="small_font" filename="small_font.fnt" antialias="true"/>
+        <font id="big_font" filename="big_font.fnt" antialias="true"/>
     </fonts>
 </resources>

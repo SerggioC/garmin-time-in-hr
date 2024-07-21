@@ -24,9 +24,9 @@ class TimeinHRView extends WatchUi.DataField {
   hidden var timeInZoneFraction as Array<Lang.Float>;
   hidden var currentZoneDecimal as Float = 0.0;
   hidden var currentZone as Number = 0;
-  hidden var bigFont = WatchUi.loadResource(Rez.Fonts.mplus1_medium_36);
+  hidden var bigFont = WatchUi.loadResource(Rez.Fonts.big_font);
   hidden var bigFontHeight = Graphics.getFontHeight(bigFont);
-  hidden var smallFont = WatchUi.loadResource(Rez.Fonts.mplus1_medium_20);
+  hidden var smallFont = WatchUi.loadResource(Rez.Fonts.small_font);
   //hidden var smallFont = Graphics.FONT_SYSTEM_SMALL;
   hidden var smallFontHeight = Graphics.getFontHeight(smallFont);
   hidden var currentHeartRate as Number = 0;
@@ -36,6 +36,8 @@ class TimeinHRView extends WatchUi.DataField {
   hidden var tap = false as Boolean;
   hidden var cornerRadius as Number = 6;
   hidden var currentMaxHR as Number = 0;
+  hidden var rectanglePenWidth = WatchUi.loadResource(Rez.Strings.rectanglePenWidth).toNumber();
+  hidden var penWidth = rectanglePenWidth - 2;
 
   function initialize() {
     DataField.initialize();
@@ -299,7 +301,7 @@ class TimeinHRView extends WatchUi.DataField {
 
       // draw a black rectangle around the current zone
       if (currentZone == indexZone) {
-        dc.setPenWidth(3);
+        dc.setPenWidth(rectanglePenWidth);
         dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_TRANSPARENT);
         dc.drawRoundedRectangle(0, (indexBar - 1) * barHeight, screenWidth, barHeight, cornerRadius);
       }
@@ -326,7 +328,6 @@ class TimeinHRView extends WatchUi.DataField {
     }
 
     var maxY = screenHeight - barHeight;
-    var penWidth = 2;
     
     // bar with %HRR
     var barColor = mZoneColors[currentZone];

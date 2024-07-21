@@ -1,4 +1,5 @@
 <strings>
     <string id="AppName">Time in HR Zones</string>
     <string id="hasColors">true</string>
+    <string id="rectanglePenWidth">4</string>
 </strings>

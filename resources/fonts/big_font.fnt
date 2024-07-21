@@ -1,6 +1,6 @@
 info face="M PLUS 1p Medium" size=36 bold=0 italic=0 charset="" unicode=1 stretchH=100 smooth=1 aa=1 padding=0,0,0,0 spacing=1,1 outline=0
 common lineHeight=36 base=28 scaleW=256 scaleH=256 pages=1 packed=0 alphaChnl=0 redChnl=0 greenChnl=0 blueChnl=0
-page id=0 file="mplus1_medium_36_0.png"
+page id=0 file="big_font.png"
 chars count=96
 char id=32   x=115   y=22    width=3     height=1     xoffset=-1    yoffset=35    xadvance=8     page=0  chnl=15
 char id=33   x=250   y=22    width=5     height=19    xoffset=3     yoffset=9     xadvance=10    page=0  chnl=15
