@@ -27,7 +27,6 @@ class TimeinHRView extends WatchUi.DataField {
   hidden var bigFont = WatchUi.loadResource(Rez.Fonts.big_font);
   hidden var bigFontHeight = Graphics.getFontHeight(bigFont);
   hidden var smallFont = WatchUi.loadResource(Rez.Fonts.small_font);
-  //hidden var smallFont = Graphics.FONT_SYSTEM_SMALL;
   hidden var smallFontHeight = Graphics.getFontHeight(smallFont);
   hidden var currentHeartRate as Number = 0;
   hidden var averageHeartRate as Number = 0;
@@ -38,6 +37,7 @@ class TimeinHRView extends WatchUi.DataField {
   hidden var currentMaxHR as Number = 0;
   hidden var rectanglePenWidth = WatchUi.loadResource(Rez.Strings.rectanglePenWidth).toNumber();
   hidden var penWidth = rectanglePenWidth - 2;
+  hidden var lastTimerState as Number = 0;
 
   function initialize() {
     DataField.initialize();
@@ -129,6 +129,25 @@ class TimeinHRView extends WatchUi.DataField {
   // guarantee that compute() will be called before onUpdate().
   function compute(info as Activity.Info) as Void {
     // See Activity.Info in the documentation for available information.
+    var timerState = info.timerState as Number;
+    var elapsedTime = info.elapsedTime as Number;
+    var timerTime = info.timerTime as Number;
+    System.println("compute. timerState: " + timerState + " elapsedTime: " + elapsedTime + " timerTime: " + timerTime);
+    
+    // Reset the time in zones when the timer is stopped
+    if (timerState != lastTimerState && lastTimerState <= Activity.TIMER_STATE_STOPPED && timerState >= Activity.TIMER_STATE_PAUSED) {
+      System.println("Reset time in zones");
+      timeInHeartRateZones = [0, 0, 0, 0, 0, 0];
+      timeInZoneFraction = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0];
+      currentHeartRate = 0;
+      averageHeartRate = 0;
+      currentMaxHR = 0;
+    }
+    
+    if (timerState != lastTimerState) {
+      lastTimerState = timerState;
+    }
+
     updateHeartRateZonesTime(info);
   }
 
